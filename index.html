@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
   <title>Lestari Alam Club · SK Bukit Damansara</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -39,23 +40,244 @@
 
   <main>
     <section class="hero">
-      <div class="wrap">
-        <p class="kicker">Lestari Alam Club · SK Bukit Damansara</p>
-        <h1>A school club growing <em>greener habits</em>.</h1>
-        <p class="lede">
-          Members can log recycling contributions, earn Green Points, unlock badges,
-          and register for club activities.
-        </p>
+      <div class="hero__orb hero__orb--one" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--two" aria-hidden="true"></div>
+      <div class="hero__leaf hero__leaf--one" aria-hidden="true">🌿</div>
+      <div class="hero__leaf hero__leaf--two" aria-hidden="true">♻️</div>
+      <div class="hero__leaf hero__leaf--three" aria-hidden="true">🌱</div>
 
-        <div class="hero__meta">
-          <span class="chip">Club meetings · <b>Tue & Thu</b></span>
-          <span class="chip">Active members · <b>24 students</b></span>
-          <span class="chip">Classes · <b>Year 4–6</b></span>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <span class="pill">Official school club</span>
+
+          <p class="kicker">Lestari Alam Club · SK Bukit Damansara</p>
+
+          <h1>
+            Grow <em>green habits</em>,
+            one club activity at a time.
+          </h1>
+
+          <p class="lede">
+            Lestari Alam Club helps students recycle, plant, compost, save water,
+            and take part in environmental activities inside SK Bukit Damansara.
+            Every member can track their contribution and earn Green Points.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--solid" data-auth-open="signup">
+              Join Lestari Alam Club 🌱
+            </button>
+            <button class="btn btn--ghost" data-auth-open="login">
+              Member login
+            </button>
+          </div>
+
+          <div class="hero__stats">
+            <div>
+              <b>24</b>
+              <span>active members</span>
+            </div>
+            <div>
+              <b>2,400 kg</b>
+              <span>recycled in 2026</span>
+            </div>
+            <div>
+              <b>8</b>
+              <span>club badges</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero__actions">
-          <button class="btn btn--solid" data-auth-open="signup">Join Lestari Alam Club 🌱</button>
-          <button class="btn btn--ghost" data-auth-open="login">Member login</button>
+        <aside class="hero__card">
+          <div class="hero__card-top">
+            <span class="live-dot"></span>
+            Club pulse
+          </div>
+
+          <ul class="hero__list">
+            <li>
+              <span>♻️</span>
+              <div>
+                <b>Recycling duty</b>
+                <small>Tuesday & Thursday</small>
+              </div>
+            </li>
+            <li>
+              <span>🌱</span>
+              <div>
+                <b>School garden care</b>
+                <small>Weekly member rota</small>
+              </div>
+            </li>
+            <li>
+              <span>🪱</span>
+              <div>
+                <b>Compost checkpoint</b>
+                <small>Food waste to garden feed</small>
+              </div>
+            </li>
+            <li>
+              <span>🏅</span>
+              <div>
+                <b>Green Points</b>
+                <small>Earn points, unlock badges</small>
+              </div>
+            </li>
+          </ul>
+
+          <div class="hero__card-foot">
+            <b>Year 4–6 club</b>
+            <small>Inovatif · Dinamik · Bestari · Efektif · Kreatif · Proaktif</small>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="ribbon">
+      <div class="wrap ribbon__grid">
+        <div class="ribbon__item">
+          <span>🌿</span>
+          <div>
+            <b>Student-led</b>
+            <p>Members take real responsibility, not just attendance.</p>
+          </div>
+        </div>
+
+        <div class="ribbon__item">
+          <span>📊</span>
+          <div>
+            <b>Trackable impact</b>
+            <p>Every kg logged becomes visible progress for the club.</p>
+          </div>
+        </div>
+
+        <div class="ribbon__item">
+          <span>🏅</span>
+          <div>
+            <b>Reward system</b>
+            <p>Green Points, levels, badges, and class leaderboard.</p>
+          </div>
+        </div>
+
+        <div class="ribbon__item">
+          <span>🤝</span>
+          <div>
+            <b>School community</b>
+            <p>Supports teachers, students, and club committee members.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="life">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">What our club does</p>
+          <h2>Simple actions, visible impact</h2>
+          <p>
+            Lestari Alam Club focuses on practical school sustainability activities
+            that students can join consistently.
+          </p>
+        </div>
+
+        <div class="life__grid">
+          <article class="life__card">
+            <span>♻️</span>
+            <h3>Recycling Records</h3>
+            <p>
+              Members separate paper, plastic, cans, glass, and small e-waste
+              before recording the weight in the portal.
+            </p>
+            <em>Every kg earns Green Points</em>
+          </article>
+
+          <article class="life__card">
+            <span>🌱</span>
+            <h3>School Garden Care</h3>
+            <p>
+              Students help water, weed, and maintain school planting areas
+              through a simple weekly member rota.
+            </p>
+            <em>Responsibility through routine</em>
+          </article>
+
+          <article class="life__card">
+            <span>🪱</span>
+            <h3>Compost Lab</h3>
+            <p>
+              Food scraps and garden waste can be recorded when used for
+              compost activities supported by the club.
+            </p>
+            <em>Waste becomes garden feed</em>
+          </article>
+
+          <article class="life__card">
+            <span>💧</span>
+            <h3>Water Saving</h3>
+            <p>
+              The club encourages simple water-saving habits around school
+              and supports rainwater-aware activities.
+            </p>
+            <em>Small habit, big value</em>
+          </article>
+
+          <article class="life__card">
+            <span>📣</span>
+            <h3>Green Awareness</h3>
+            <p>
+              Members can take part in presentations, posters, quizzes,
+              and school assembly sharing sessions.
+            </p>
+            <em>Students teaching students</em>
+          </article>
+
+          <article class="life__card">
+            <span>🏅</span>
+            <h3>Badges & Levels</h3>
+            <p>
+              The portal tracks progress, unlocks badges, and shows class
+              ranking to encourage consistent participation.
+            </p>
+            <em>Make participation visible</em>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rhythm">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Club rhythm</p>
+          <h2>How members stay active</h2>
+          <p>
+            A school club works best when the routine is clear and easy to follow.
+          </p>
+        </div>
+
+        <div class="rhythm__grid">
+          <div class="rhythm__step">
+            <b>01</b>
+            <h3>Join the club</h3>
+            <p>Student members register with name, email, and password only.</p>
+          </div>
+
+          <div class="rhythm__step">
+            <b>02</b>
+            <h3>Attend activities</h3>
+            <p>Take part in recycling duty, garden care, or club programmes.</p>
+          </div>
+
+          <div class="rhythm__step">
+            <b>03</b>
+            <h3>Log contribution</h3>
+            <p>Record recycling weight or activity participation in the portal.</p>
+          </div>
+
+          <div class="rhythm__step">
+            <b>04</b>
+            <h3>Earn recognition</h3>
+            <p>Green Points, badges, levels, and leaderboard update automatically.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -85,7 +307,7 @@
 
               <div class="kad__who">
                 <h3 id="kadName">Club Member</h3>
-                <p id="kadMeta">Role · Class · Member since 2026</p>
+                <p id="kadMeta">Student Member · Member since 2026</p>
               </div>
 
               <div class="kad__nums">
@@ -104,7 +326,7 @@
               <div><span>🏅</span><b id="msBadge">0/8</b><small>Badges earned</small></div>
               <div><span>🌱</span><b id="msPokok">0</b><small>Trees cared for</small></div>
               <div><span>⏱️</span><b id="msJam">0 h</b><small>Service hours</small></div>
-              <div><span>📈</span><b id="msRank">—</b><small>Your class rank</small></div>
+              <div><span>📈</span><b id="msRank">—</b><small>Class rank</small></div>
             </div>
 
             <article class="pc">
@@ -128,7 +350,7 @@
                   </div>
                 </div>
 
-                <label for="lgNota">Note (optional)</label>
+                <label for="lgNota">Note optional</label>
                 <input id="lgNota" type="text" maxlength="60" placeholder="e.g. club recycling duty" />
 
                 <button class="btn btn--lime submit" type="submit" id="lgSubmit">Submit record</button>
@@ -259,99 +481,29 @@
 
       <section class="view" id="viewSignup">
         <h2>Join Lestari Alam Club</h2>
-        <p class="lead">Open a club member account to track participation and earn Green Points.</p>
+        <p class="lead">Create a club account using only your name, email, and password.</p>
 
         <form id="formSignup" novalidate>
-          <label class="small-label">I am registering as *</label>
-
-          <div class="roles" id="roles">
-            <label class="role">
-              <input type="radio" name="role" value="murid" checked />
-              <span><b>🎒</b>Student Member<em>Years 4–6</em></span>
-            </label>
-            <label class="role">
-              <input type="radio" name="role" value="guru" />
-              <span><b>📚</b>Teacher Advisor<em>Club supervisor</em></span>
-            </label>
-          </div>
-
           <div class="field" id="f-suName">
             <label for="suName">Full name *</label>
             <div class="inp">
-              <input id="suName" type="text" placeholder="e.g. Nur Aisyah binti Rahman" />
+              <input id="suName" type="text" autocomplete="name" placeholder="e.g. Nur Aisyah binti Rahman" />
             </div>
             <div class="err" data-err></div>
           </div>
 
-          <div class="row2">
-            <div class="field" id="f-suEmail">
-              <label for="suEmail">Email *</label>
-              <div class="inp">
-                <input id="suEmail" type="email" placeholder="name@email.com" />
-              </div>
-              <div class="err" data-err></div>
+          <div class="field" id="f-suEmail">
+            <label for="suEmail">Email *</label>
+            <div class="inp">
+              <input id="suEmail" type="email" autocomplete="email" placeholder="name@email.com" />
             </div>
-
-            <div class="field" id="f-suPhone">
-              <label for="suPhone">Phone</label>
-              <div class="inp">
-                <input id="suPhone" type="tel" placeholder="012-345 6789" />
-              </div>
-              <div class="err" data-err></div>
-            </div>
-          </div>
-
-          <div class="row2" id="muridOnly">
-            <div class="field" id="f-suKelas">
-              <label for="suKelas">Class *</label>
-              <div class="inp">
-                <select id="suKelas">
-                  <option value="">Select class…</option>
-
-                  <optgroup label="Year 4">
-                    <option value="4 Inovatif">Inovatif</option>
-                    <option value="4 Dinamik">Dinamik</option>
-                    <option value="4 Bestari">Bestari</option>
-                    <option value="4 Efektif">Efektif</option>
-                    <option value="4 Kreatif">Kreatif</option>
-                    <option value="4 Proaktif">Proaktif</option>
-                  </optgroup>
-
-                  <optgroup label="Year 5">
-                    <option value="5 Inovatif">Inovatif</option>
-                    <option value="5 Dinamik">Dinamik</option>
-                    <option value="5 Bestari">Bestari</option>
-                    <option value="5 Efektif">Efektif</option>
-                    <option value="5 Kreatif">Kreatif</option>
-                    <option value="5 Proaktif">Proaktif</option>
-                  </optgroup>
-
-                  <optgroup label="Year 6">
-                    <option value="6 Inovatif">Inovatif</option>
-                    <option value="6 Dinamik">Dinamik</option>
-                    <option value="6 Bestari">Bestari</option>
-                    <option value="6 Efektif">Efektif</option>
-                    <option value="6 Kreatif">Kreatif</option>
-                    <option value="6 Proaktif">Proaktif</option>
-                  </optgroup>
-                </select>
-              </div>
-              <div class="err" data-err></div>
-            </div>
-
-            <div class="field" id="f-suNoKad">
-              <label for="suNoKad">IC / Birth Cert No.</label>
-              <div class="inp">
-                <input id="suNoKad" type="text" inputmode="numeric" placeholder="9 digits" />
-              </div>
-              <div class="err" data-err></div>
-            </div>
+            <div class="err" data-err></div>
           </div>
 
           <div class="field" id="f-suPass">
             <label for="suPass">Password *</label>
             <div class="inp">
-              <input id="suPass" type="password" placeholder="At least 8 characters" />
+              <input id="suPass" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
             </div>
             <div class="err" data-err></div>
           </div>
@@ -359,23 +511,20 @@
           <div class="field" id="f-suConfirm">
             <label for="suConfirm">Confirm password *</label>
             <div class="inp">
-              <input id="suConfirm" type="password" placeholder="Retype password" />
+              <input id="suConfirm" type="password" autocomplete="new-password" placeholder="Retype password" />
             </div>
             <div class="err" data-err></div>
           </div>
 
           <label class="check">
             <input type="checkbox" id="suTerms" />
-            <span>I agree to the Club Rules & Student Data Privacy Policy. *</span>
+            <span>I agree to the Club Rules. *</span>
           </label>
           <div class="err" id="errTerms"></div>
 
-          <label class="check">
-            <input type="checkbox" id="suNews" checked />
-            <span>I want club announcements and activity reminders</span>
-          </label>
-
-          <button class="btn btn--solid submit" type="submit" id="suSubmit">Create club account</button>
+          <button class="btn btn--solid submit" type="submit" id="suSubmit">
+            Create club account
+          </button>
         </form>
 
         <p class="swap">
@@ -516,9 +665,7 @@
         email: p.email || "",
         role: p.role || "murid",
         kelas: p.kelas || "",
-        phone: p.phone || "",
         joined: p.joined || "",
-        newsletter: p.newsletter,
         mata: Number(p.mata || 0),
         kg: Number(bundle.kg || 0),
         aktif: Number(p.aktif || 0),
@@ -557,11 +704,8 @@
         options: {
           data: {
             full_name: input.name,
-            role: input.role,
-            kelas: input.role === "murid" ? (input.kelas || "") : "",
-            phone: input.phone || "",
-            ic: input.ic || "",
-            newsletter: input.newsletter !== false
+            role: "murid",
+            newsletter: false
           }
         }
       });
@@ -651,6 +795,10 @@
         return { field: "password", message: msg };
       }
 
+      if (/relation .* does not exist|function .* does not exist|Could not find|Profile not found/i.test(msg)) {
+        return { field: null, message: "Supabase database setup is incomplete. Run the SQL schema in Supabase SQL Editor." };
+      }
+
       return { field: null, message: msg };
     }
 
@@ -704,9 +852,10 @@
 
     function renderPortal(u, board) {
       const L = levelOf(u.mata);
+      const kelasLabel = u.kelas && u.kelas !== "Unassigned" ? u.kelas : "";
 
       $("#kadName").textContent = u.name;
-      $("#kadMeta").textContent = `${ROLE_LABEL[u.role] || "Member"}${u.kelas ? " · " + u.kelas : ""} · Member since ${u.joined || "—"}`;
+      $("#kadMeta").textContent = `${ROLE_LABEL[u.role] || "Member"}${kelasLabel ? " · " + kelasLabel : ""} · Member since ${u.joined || "—"}`;
 
       const idNum = String(
         Math.abs([...(u.email || "member")].reduce((a, c) => a + c.charCodeAt(0) * 31, 0)) % 9000 + 1000
@@ -729,8 +878,8 @@
       $("#msJam").textContent = u.jam + " h";
 
       const sortedBoard = [...board].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
-      const rankIdx = u.kelas ? sortedBoard.findIndex(r => r.kelas === u.kelas) + 1 : 0;
-      $("#msRank").textContent = u.kelas ? ("#" + (rankIdx || "—") + " · " + u.kelas) : "—";
+      const rankIdx = kelasLabel ? sortedBoard.findIndex(r => r.kelas === kelasLabel) + 1 : 0;
+      $("#msRank").textContent = kelasLabel ? ("#" + (rankIdx || "—") + " · " + kelasLabel) : "—";
 
       const recs = Array.from({ length: 12 }, (_, i) => Number(u.recs?.[i] || 0));
       const max = Math.max(...recs, 1);
@@ -758,7 +907,7 @@
 
       $("#badgeCount").textContent = u.badges.length + "/" + BADGES.length;
 
-      renderLeaderboard(board, u.kelas);
+      renderLeaderboard(board, kelasLabel);
 
       $("#acts").innerHTML = ACTIVITIES.map(a => {
         const on = u.registered.includes(a.id);
@@ -776,11 +925,11 @@
       $("#regCount").textContent = u.registered.length + " registered";
 
       const miss = [
-        ["Complete profile & choose role", !!(u.phone && (u.role !== "murid" || u.kelas))],
         ["Record first recycling contribution", u.kg > 0],
-        ["Register one upcoming activity", u.registered.length > 0],
+        ["Register one club activity", u.registered.length > 0],
         ["Collect first 50 Green Points", u.mata >= 50],
-        ["Join tree planting session", u.badges.includes("tanam")]
+        ["Unlock your second badge", u.badges.length >= 2],
+        ["Reach Guardian level", u.mata >= 150]
       ];
 
       $("#missions").innerHTML = miss.map(m => `
@@ -890,11 +1039,6 @@
       if (!auth.hidden && e.key === "Escape") closeAuth();
     });
 
-    $("#roles").addEventListener("change", () => {
-      const r = $("input[name=role]:checked").value;
-      $("#muridOnly").style.display = r === "murid" ? "grid" : "none";
-    });
-
     $("#formLogin").addEventListener("submit", async e => {
       e.preventDefault();
 
@@ -943,10 +1087,6 @@
 
       const name = $("#suName").value.trim();
       const em = $("#suEmail").value.trim();
-      const ph = $("#suPhone").value.trim();
-      const role = $("input[name=role]:checked").value;
-      const kelas = $("#suKelas").value;
-      const ic = $("#suNoKad").value.trim();
       const pw = $("#suPass").value;
       const cf = $("#suConfirm").value;
       const terms = $("#suTerms").checked;
@@ -956,7 +1096,9 @@
       if (name.length < 3) {
         setErr("f-suName", "Enter your full name (min. 3 characters).");
         bad = true;
-      } else setErr("f-suName", "");
+      } else {
+        setErr("f-suName", "");
+      }
 
       if (!em) {
         setErr("f-suEmail", "Email is required.");
@@ -964,34 +1106,23 @@
       } else if (!RX_EMAIL.test(em)) {
         setErr("f-suEmail", "Invalid email format.");
         bad = true;
-      } else setErr("f-suEmail", "");
-
-      if (ph && !/^[0-9+\-\s()]{7,}$/.test(ph)) {
-        setErr("f-suPhone", "Invalid phone number.");
-        bad = true;
-      } else setErr("f-suPhone", "");
-
-      if (role === "murid") {
-        if (!kelas) {
-          setErr("f-suKelas", "Please select your class.");
-          bad = true;
-        } else setErr("f-suKelas", "");
-
-        if (ic && !/^\d{6,12}$/.test(ic.replace(/\s/g, ""))) {
-          setErr("f-suNoKad", "Use 6–12 digits only.");
-          bad = true;
-        } else setErr("f-suNoKad", "");
+      } else {
+        setErr("f-suEmail", "");
       }
 
       if (pw.length < 8) {
         setErr("f-suPass", "Password too short (min. 8 characters).");
         bad = true;
-      } else setErr("f-suPass", "");
+      } else {
+        setErr("f-suPass", "");
+      }
 
       if (cf !== pw || !cf) {
         setErr("f-suConfirm", "Passwords do not match.");
         bad = true;
-      } else setErr("f-suConfirm", "");
+      } else {
+        setErr("f-suConfirm", "");
+      }
 
       $("#errTerms").textContent = terms ? "" : "You must accept the club rules to continue.";
       if (!terms) bad = true;
@@ -1008,12 +1139,7 @@
         const result = await signUp({
           name,
           email: em,
-          password: pw,
-          role,
-          kelas: role === "murid" ? kelas : "",
-          phone: ph,
-          ic,
-          newsletter: $("#suNews").checked
+          password: pw
         });
 
         if (result.pendingVerification) {
@@ -1028,17 +1154,17 @@
         toast("Club account created 🌿", "Welcome to Lestari Alam Club.");
       } catch (err) {
         const f = friendlyError(err);
+
         if (f.field) {
           const map = {
             name: "f-suName",
             email: "f-suEmail",
-            phone: "f-suPhone",
-            kelas: "f-suKelas",
-            ic: "f-suNoKad",
             password: "f-suPass"
           };
+
           setErr(map[f.field] || "f-suEmail", f.message);
         }
+
         toast("Registration failed", f.message, true);
       } finally {
         busy(btn, false);
