@@ -619,7 +619,7 @@
               <div><span>🏅</span><b id="msBadge">0/8</b><small>Badges earned</small></div>
               <div><span>🌱</span><b id="msPokok">0</b><small>Trees cared for</small></div>
               <div><span>⏱️</span><b id="msJam">0 h</b><small>Service hours</small></div>
-              <div><span>📈</span><b id="msRank">—</b><small>Class rank</small></div>
+              <div><span>📈</span><b id="msRank">—</b><small>Your rank</small></div>
             </div>
 
             <article class="pc">
@@ -660,7 +660,7 @@
             </article>
 
             <article class="pc">
-              <h3 class="pc__t">Class leaderboard <small>live</small></h3>
+              <h3 class="pc__t">SKBD Leaderboard <small>top members</small></h3>
               <ul class="lb" id="leaderboard"></ul>
             </article>
 
@@ -894,20 +894,29 @@
     ];
 
     const LEADERBOARD_FALLBACK = [
-      { kelas: "6 Proaktif", kg: 412 },
-      { kelas: "5 Kreatif", kg: 398 },
-      { kelas: "4 Efektif", kg: 387 },
-      { kelas: "6 Bestari", kg: 371 },
-      { kelas: "5 Dinamik", kg: 356 },
-      { kelas: "4 Inovatif", kg: 342 }
+      { id: "demo-1", name: "Aisyah Rahman", kelas: "5 Kreatif", kg: 92, mata: 460 },
+      { id: "demo-2", name: "Danish Hakim", kelas: "6 Proaktif", kg: 84, mata: 420 },
+      { id: "demo-3", name: "Nur Liyana", kelas: "4 Efektif", kg: 76, mata: 380 },
+      { id: "demo-4", name: "Haziq Iman", kelas: "6 Bestari", kg: 68, mata: 340 },
+      { id: "demo-5", name: "Amira Sofea", kelas: "5 Dinamik", kg: 61, mata: 305 },
+      { id: "demo-6", name: "Faris Danial", kelas: "4 Inovatif", kg: 54, mata: 270 }
     ];
 
     const MONTHS_FULL = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
+    function esc(s) {
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
     function toast(title, msg, bad = false) {
       const t = document.createElement("div");
       t.className = "toast" + (bad ? " bad" : "");
-      t.innerHTML = `<span class="ic">${bad ? "⚠️" : "🌿"}</span><span><b>${title}</b>${msg || ""}</span>`;
+      t.innerHTML = `<span class="ic">${bad ? "⚠️" : "🌿"}</span><span><b>${esc(title)}</b>${msg ? esc(msg) : ""}</span>`;
       $("#toasts").appendChild(t);
       requestAnimationFrame(() => t.classList.add("on"));
       setTimeout(() => {
@@ -955,15 +964,6 @@
 
     function cap(s) {
       return s[0].toUpperCase() + s.slice(1);
-    }
-
-    function esc(s) {
-      return String(s ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
     }
 
     function mapBundle(bundle) {
@@ -1074,7 +1074,7 @@
 
     async function fetchLeaderboard() {
       try {
-        const { data, error } = await supabase.rpc("get_class_leaderboard");
+        const { data, error } = await supabase.rpc("get_skbd_leaderboard");
         if (error) return null;
         return Array.isArray(data) && data.length ? data : null;
       } catch {
@@ -1123,38 +1123,39 @@
       return { cur, nxt, prog: Math.max(0, Math.min(1, prog)) };
     }
 
-    function renderLeaderboard(rows, myClass) {
+    function renderLeaderboard(rows, me) {
       const sorted = [...rows].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
       const el = $("#leaderboard");
 
       if (!el) return;
 
       if (!sorted.length) {
-        el.innerHTML = "<li>No class records yet.</li>";
+        el.innerHTML = "<li>No SKBD records yet.</li>";
         return;
       }
 
-      const visible = sorted.slice(0, 8);
+      const visible = sorted.slice(0, 10);
       const mx = Math.max(...visible.map(r => Number(r.kg || 0)), 1);
 
       let html = visible.map((r, i) => `
-        <li class="${r.kelas === myClass ? "me" : ""}">
+        <li class="${me && r.id === me.id ? "me" : ""}">
           <span class="rk">${i + 1}</span>
           <span>
-            <span class="nm">${esc(r.kelas)}${r.kelas === myClass ? ' <em>← your class</em>' : ""}</span>
+            <span class="nm">${esc(r.name || "Member")}${me && r.id === me.id ? ' <em>← you</em>' : ""}</span>
+            <span class="sub">${r.kelas ? esc(r.kelas) : "SKBD Member"}</span>
             <span class="track"><i style="width:${(Number(r.kg) / mx * 100).toFixed(1)}%"></i></span>
           </span>
           <span class="kg">${Math.round(Number(r.kg))} kg</span>
         </li>
       `).join("");
 
-      if (sorted.length > 8) {
-        const myRank = myClass ? sorted.findIndex(r => r.kelas === myClass) + 1 : 0;
+      if (sorted.length > 10) {
+        const myRank = me ? sorted.findIndex(r => r.id === me.id) + 1 : 0;
         html += `
           <li class="more">
             <span>
-              +${sorted.length - 8} more classes tracked
-              ${myRank > 8 ? `· your class is #${myRank}` : ""}
+              +${sorted.length - 10} more members tracked
+              ${myRank > 10 ? `· your rank is #${myRank}` : ""}
             </span>
           </li>
         `;
@@ -1195,8 +1196,8 @@
       $("#msJam").textContent = u.jam + " h";
 
       const sortedBoard = [...board].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
-      const rankIdx = kelasLabel ? sortedBoard.findIndex(r => r.kelas === kelasLabel) + 1 : 0;
-      $("#msRank").textContent = kelasLabel ? ("#" + (rankIdx || "—") + " · " + kelasLabel) : "—";
+      const rankIdx = sortedBoard.findIndex(r => r.id === u.id) + 1;
+      $("#msRank").textContent = rankIdx ? "#" + rankIdx : "—";
 
       const recs = Array.from({ length: 12 }, (_, i) => Number(u.recs?.[i] || 0));
       const max = Math.max(...recs, 1);
@@ -1224,7 +1225,7 @@
 
       $("#badgeCount").textContent = u.badges.length + "/" + BADGES.length;
 
-      renderLeaderboard(board, kelasLabel);
+      renderLeaderboard(board, u);
 
       $("#acts").innerHTML = ACTIVITIES.map(a => {
         const on = u.registered.includes(a.id);
@@ -1275,7 +1276,30 @@
       });
 
       u.log = u.log.slice(0, 20);
-      renderPortal(u, state.board || LEADERBOARD_FALLBACK);
+
+      const board = [...(state.board || LEADERBOARD_FALLBACK)];
+      const idx = board.findIndex(r => r.id === u.id);
+
+      if (idx > -1) {
+        board[idx] = {
+          ...board[idx],
+          kg: Number(board[idx].kg || 0) + kg,
+          mata: u.mata
+        };
+      } else {
+        board.unshift({
+          id: u.id,
+          name: u.name,
+          kelas: u.kelas || "—",
+          kg,
+          mata: u.mata
+        });
+      }
+
+      board.sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
+      state.board = board;
+
+      renderPortal(u, state.board);
     }
 
     function toggleLocalActivity(id, action) {
@@ -1303,7 +1327,15 @@
       }
 
       u.log = u.log.slice(0, 20);
-      renderPortal(u, state.board || LEADERBOARD_FALLBACK);
+
+      const board = [...(state.board || LEADERBOARD_FALLBACK)];
+      const idx = board.findIndex(r => r.id === u.id);
+      if (idx > -1) {
+        board[idx] = { ...board[idx], mata: u.mata };
+      }
+      state.board = board;
+
+      renderPortal(u, state.board);
     }
 
     const auth = $("#auth");
@@ -1573,25 +1605,21 @@
       try {
         const bundle = await addContribution(jenis, kg, nota);
 
-        if (bundle) {
-          state.user = mapBundle(bundle);
-          state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
-          renderPortal(state.user, state.board);
-          toast("Record received 🌿", "Your total is now " + fmtKg(state.user.kg) + " kg");
-        } else {
-          addLocalContribution(jenis, kg, nota);
-          toast("Saved locally 🌿", "Database record failed, so this record is saved on this device only.");
-        }
+        if (!bundle) throw new Error("No database response.");
 
-        $("#lgKg").value = "";
-        $("#lgNota").value = "";
+        state.user = mapBundle(bundle);
+        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
+
+        renderPortal(state.user, state.board);
+
+        toast("Record received 🌿", "Your total is now " + fmtKg(state.user.kg) + " kg");
       } catch (err) {
         console.warn("Contribution RPC failed, using local fallback:", err);
         addLocalContribution(jenis, kg, nota);
-        $("#lgKg").value = "";
-        $("#lgNota").value = "";
         toast("Saved locally 🌿", "Database record failed, so this record is saved on this device only.");
       } finally {
+        $("#lgKg").value = "";
+        $("#lgNota").value = "";
         busy(btn, false);
       }
     });
@@ -1614,13 +1642,12 @@
       try {
         const bundle = await toggleActivity(id, action);
 
-        if (bundle) {
-          state.user = mapBundle(bundle);
-          state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
-          renderPortal(state.user, state.board);
-        } else {
-          toggleLocalActivity(id, action);
-        }
+        if (!bundle) throw new Error("No database response.");
+
+        state.user = mapBundle(bundle);
+        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
+
+        renderPortal(state.user, state.board);
 
         toast(
           action === "register" ? "You are registered ✓" : "Registration cancelled",
