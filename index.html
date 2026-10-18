@@ -4,46 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lestari Alam Club · SK Bukit Damansara</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=Spline+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap"
-    rel="stylesheet"
-  />
-
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="grain"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="progress" id="progress"></div>
   <div class="toasts" id="toasts" aria-live="polite"></div>
 
-  <!-- ===================== NAV ===================== -->
-  <header class="nav" id="nav">
+  <header class="nav">
     <div class="wrap nav__inner">
-      <a href="#home" class="brand" aria-label="Lestari Alam Club SK Bukit Damansara">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <path d="M20 3C11 9 8 18 12 27c3 6 8 8 8 8s5-2 8-8c4-9 1-18-8-24Z" fill="#3E6B47" />
-          <path
-            d="M20 8v24M20 14l-5-3M20 14l5-3M20 20l-6-3.5M20 20l6-3.5M20 26l-5-3M20 26l5-3"
-            stroke="#A7CE3C"
-            stroke-width="1.4"
-            stroke-linecap="round"
-          />
-        </svg>
-        <span><b>Lestari Alam Club</b><small>SK Bukit Damansara</small></span>
-      </a>
-
-      <nav class="nav__links" aria-label="Main navigation">
-        <a href="#achievements">Achievements</a>
-        <a href="#recycling">Recycling</a>
-        <a href="#programs">Activities</a>
-        <a href="#portal">Member Portal</a>
-        <a href="#stories">Stories</a>
-        <a href="#join">Join Club</a>
-      </nav>
+      <div class="brand">
+        <span class="brand-icon">🌿</span>
+        <div>
+          <b>Lestari Alam Club</b>
+          <small>SK Bukit Damansara</small>
+        </div>
+      </div>
 
       <div class="nav__right">
         <div class="nav__auth" id="navAuth">
@@ -52,224 +26,47 @@
         </div>
 
         <div class="nav__user" id="navUser" hidden>
-          <button class="uchip" id="uchip" aria-haspopup="true" aria-expanded="false">
-            <span class="avatar" id="uAvatar">LA</span>
-            <span style="text-align:left">
-              <span class="nm" id="uName">—</span>
-              <span class="cr" id="uRole">member</span>
-            </span>
-          </button>
-
-          <div class="udrop" id="udrop" role="menu">
-            <div class="hdr"><b id="dName">—</b><small id="dEmail">—</small></div>
-            <a href="#portal" role="menuitem">🌿 My Club Portal</a>
-            <a href="#recycling" role="menuitem">♻️ Log Contribution</a>
-            <button type="button" id="btnSettings" role="menuitem">⚙️ Account Settings</button>
-            <button type="button" class="danger" data-logout role="menuitem">↩ Log Out</button>
+          <span class="avatar" id="uAvatar">LA</span>
+          <div class="user-meta">
+            <b id="uName">—</b>
+            <small id="uRole">member</small>
           </div>
+          <button class="btn btn--ghost btn--sm" data-logout>Log Out</button>
         </div>
-
-        <button class="burger" id="burger" aria-label="Menu"><span></span></button>
       </div>
     </div>
   </header>
 
-  <nav class="mmenu" id="mmenu" aria-label="Mobile navigation">
-    <a href="#achievements">Club Achievements<i>01</i></a>
-    <a href="#recycling">Recycling Records<i>02</i></a>
-    <a href="#programs">Activities & Projects<i>03</i></a>
-    <a href="#portal">Member Portal<i>04</i></a>
-    <a href="#stories">Club Stories<i>05</i></a>
-    <a href="#join">Join Club<i>06</i></a>
-
-    <div class="mfoot" id="mAuth">
-      <button class="btn btn--lime btn--sm" data-auth-open="login">Member Login</button>
-      <button class="btn btn--ghost btn--sm" style="border-color:var(--paper);color:var(--paper)" data-auth-open="signup">Join Club</button>
-    </div>
-
-    <div class="note">🌿 Official website of Lestari Alam Club, SK Bukit Damansara</div>
-  </nav>
-
   <main>
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" id="home">
-      <div class="hero__bg" aria-hidden="true">
-        <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 700">
-          <defs>
-            <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.4" fill="#1C3A28" />
-            </pattern>
-          </defs>
-          <rect width="1200" height="700" fill="url(#dots)" />
-        </svg>
-      </div>
-
-      <div class="wrap hero__grid">
-        <div>
-          <p class="kicker scramble">Lestari Alam Club · SK Bukit Damansara</p>
-          <h1 class="reveal in">A school club growing <em>greener habits,</em> one leaf at a time.</h1>
-          <p class="lede reveal">
-            The <strong>Lestari Alam Club</strong> brings together students, teachers, and school partners to practise sustainability inside SK Bukit Damansara — through recycling, gardening, composting, water saving, and environmental awareness activities.
-          </p>
-
-          <div class="hero__meta reveal">
-            <span class="chip"><span class="dot-live"></span> Club report · <b>Oct 2026</b></span>
-            <span class="chip">Club meetings · <b>Tue & Thu</b></span>
-            <span class="chip">Active members · <b>24 students</b></span>
-          </div>
-
-          <div class="hero__actions reveal">
-            <button class="btn btn--solid" data-auth-open="signup">Join Lestari Alam Club 🌱</button>
-            <button class="btn btn--ghost" data-auth-open="login">Member login</button>
-          </div>
-        </div>
-
-        <div class="hero-media kb reveal">
-          <img src="https://picsum.photos/seed/schoolchildren-green-earth-day/900/1120" alt="Students planting trees during Earth Day at school" />
-          <div class="float-badge"><b data-count="2400">0</b><span>kg recycled<br />this year</span></div>
-          <div class="cap">
-            <span class="k">This week’s highlight</span>
-            <strong>Earth Day 2026 — “Plant the Future”</strong>
-          </div>
-        </div>
-      </div>
-
+    <section class="hero">
       <div class="wrap">
-        <div class="ticker" aria-hidden="true">
-          <div class="ticker__track" id="tickerTrack">
-            <span>Club recycling duty</span>
-            <span>School vegetable garden</span>
-            <span>Classroom compost bins</span>
-            <span>Rainwater saving</span>
-            <span>Plastic-free school bazaar</span>
-            <span>Environmental quiz</span>
-            <span>Tree planting day</span>
-            <span>Club mural project</span>
-            <span>Green assembly presentation</span>
-            <span>Monthly club champion</span>
-          </div>
+        <p class="kicker">Lestari Alam Club · SK Bukit Damansara</p>
+        <h1>A school club growing <em>greener habits</em>.</h1>
+        <p class="lede">
+          Members can log recycling contributions, earn Green Points, unlock badges,
+          and register for club activities.
+        </p>
+
+        <div class="hero__meta">
+          <span class="chip">Club meetings · <b>Tue & Thu</b></span>
+          <span class="chip">Active members · <b>24 students</b></span>
+          <span class="chip">Classes · <b>Year 4–6</b></span>
+        </div>
+
+        <div class="hero__actions">
+          <button class="btn btn--solid" data-auth-open="signup">Join Lestari Alam Club 🌱</button>
+          <button class="btn btn--ghost" data-auth-open="login">Member login</button>
         </div>
       </div>
     </section>
 
-    <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,40 C240,10 480,70 720,45 C960,20 1200,60 1440,35 L1440,70 L0,70 Z" />
-    </svg>
-
-    <!-- ===================== STATS ===================== -->
-    <section class="stats">
+    <section class="portal" id="portal" data-locked="true">
       <div class="wrap">
-        <div class="stats__head reveal">
-          <h2>Numbers that grow every day</h2>
-          <p>Every kilogram, every litre, every hand involved — recorded transparently by the Lestari Alam Club committee throughout 2026.</p>
-        </div>
-
-        <div class="stat-grid reveal">
-          <div class="stat"><div class="num" data-count="2400" data-suffix=" kg">0</div><div class="lbl">Recyclable materials weighed until Oct 2026</div></div>
-          <div class="stat"><div class="num" data-count="18600">0</div><div class="lbl">Litres of rainwater stored and reused</div></div>
-          <div class="stat"><div class="num" data-count="340">0</div><div class="lbl">Local trees planted since the club began</div></div>
-          <div class="stat"><div class="num" data-count="1240">0</div><div class="lbl">Service hours recorded</div></div>
-          <div class="stat"><div class="num" data-count="15">0</div><div class="lbl">Awards won since 2016</div></div>
-          <div class="stat"><div class="num" data-count="42">0</div><div class="lbl">School and external partners</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== ACHIEVEMENTS ===================== -->
-    <section class="pad" id="achievements">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker scramble">01 — Club Achievements</p>
-          <h2 class="sec-title mask-line"><span>Awards earned by our club</span></h2>
-          <p class="sec-sub">Recognition achieved by Lestari Alam Club members through school-level, district-level, and national environmental programmes.</p>
-        </div>
-        <div class="timeline" id="timeline"></div>
-      </div>
-    </section>
-
-    <!-- ===================== RECYCLING ===================== -->
-    <section class="pad recycle" id="recycling">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker scramble">02 — Club Recycling Records</p>
-          <h2 class="sec-title mask-line"><span>Recycling results recorded by the club</span></h2>
-          <p class="sec-sub">Materials collected through club activities are separated, weighed, and recorded by student committee members before being verified by the supervising teacher.</p>
-        </div>
-
-        <div class="rg-stats reveal">
-          <div class="rg-stat"><div class="v" data-count="2400" data-suffix=" kg">0</div><div class="l">Total collected Jan–Oct 2026</div></div>
-          <div class="rg-stat"><div class="v" data-count="2680" data-suffix=" kg">0</div><div class="l">Full-year record 2025</div></div>
-          <div class="rg-stat"><div class="v" data-count="312" data-suffix=" kg">0</div><div class="l">September 2026 collection</div></div>
-          <div class="rg-stat"><div class="v" data-count="18" data-suffix="%">0</div><div class="l">YoY growth (Sep 2026 vs 2025)</div></div>
-          <div class="rg-stat"><div class="v" data-count="3184" data-prefix="RM">0</div><div class="l">Fund raised in 2026*</div></div>
-        </div>
-
-        <p class="footnote reveal">*Proceeds from recycled materials are fully channelled into the Garden & Lestari Alam Club Activity Fund.</p>
-
-        <div class="chart-card reveal" id="chartCard">
-          <div class="chart-card__head">
-            <div>
-              <h3>Monthly Collection 2026 vs 2025</h3>
-              <p style="font-size:.85rem;color:var(--forest);opacity:.7">Unit: kilograms · hover bars for details</p>
-            </div>
-            <div class="legend">
-              <span><i class="cur"></i>2026</span>
-              <span><i class="prev"></i>2025</span>
-            </div>
-          </div>
-          <div class="monthly-chart" id="monthlyChart"></div>
-          <p class="hint-scroll">← scroll sideways to see all months →</p>
-        </div>
-
-        <div class="breakdown" id="breakdown"></div>
-      </div>
-    </section>
-
-    <!-- ===================== PROGRAMS ===================== -->
-    <section class="pad prog" id="programs">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker scramble">03 — Club Activities & Projects</p>
-          <h2 class="sec-title mask-line"><span>What our club does every term</span></h2>
-          <p class="sec-sub">Lestari Alam Club activities are planned around school routines, classroom responsibilities, and special environmental programmes guided by teachers.</p>
-        </div>
-
-        <div class="ptabs reveal" role="tablist" id="ptabs"></div>
-        <div id="panels"></div>
-
-        <div class="impact reveal">
-          <div class="impact__note">
-            <h4>Why are these club activities important?</h4>
-            <ul>
-              <li>Shapes <b>ecological responsibility</b> from a young age through action, not just theory.</li>
-              <li>Builds <b>applied STEM skills</b> — measurement, data analysis, and problem solving.</li>
-              <li>Strengthens the <b>club ↔ school</b> relationship through shared work with real benefits.</li>
-              <li>Contributes directly to <b>UN SDGs 4, 11, 12 & 13</b>.</li>
-            </ul>
-          </div>
-          <div class="impact__stat">
-            <div class="big">±3.4 tons</div>
-            <p>of solid waste diverted from landfill every year through the club activities above.</p>
-          </div>
-        </div>
-
-        <div class="partners reveal">
-          <h4>Our school and external partners</h4>
-          <div class="partner-row" id="partners"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PORTAL ===================== -->
-    <section class="pad portal" id="portal" data-locked="true">
-      <div class="wrap">
-        <div class="portal__head reveal">
+        <div class="portal__head">
           <div>
-            <p class="kicker scramble">04 — Club Member Portal</p>
-            <h2 class="sec-title mask-line" style="margin-top:.6rem"><span>Your club profile, your contribution</span></h2>
-            <p class="sec-sub">Club members can log participation, track recycling contributions, earn Green Points, unlock badges, and register for upcoming club activities.</p>
+            <p class="kicker">Club Member Portal</p>
+            <h2>Your club profile, your contribution</h2>
           </div>
-
           <div id="portalAuthBtns">
             <button class="btn btn--solid" data-auth-open="login">Member login ↗</button>
           </div>
@@ -277,31 +74,19 @@
 
         <div class="portal__stage">
           <div class="portal__body" id="portalBody">
-            <article class="pc kad">
+            <article class="pc kad wide">
               <div class="kad__top">
                 <div>
                   <div class="kad__id">Lestari Alam Club Card</div>
                   <div class="kad__no" id="kadNo">SKBD-0000-0000</div>
-                  <div style="margin-top:.7rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)">
-                    Level · <b id="kadLevelName" style="color:var(--lime);letter-spacing:.06em">Sprout</b>
-                  </div>
-                </div>
-
-                <div class="kad__ring">
-                  <svg width="86" height="86" viewBox="0 0 86 86">
-                    <circle class="trk" cx="43" cy="43" r="36" fill="none" stroke-width="6" />
-                    <circle class="val" id="ringVal" cx="43" cy="43" r="36" fill="none" stroke-width="6" stroke-dasharray="226.2" stroke-dashoffset="226.2" />
-                  </svg>
-                  <div class="mid"><b id="ringLv">1</b><small>level</small></div>
+                  <div class="kad__level">Level · <b id="kadLevelName">Sprout</b></div>
                 </div>
               </div>
 
               <div class="kad__who">
-                <h4 id="kadName">Club Member</h4>
+                <h3 id="kadName">Club Member</h3>
                 <p id="kadMeta">Role · Class · Member since 2026</p>
               </div>
-
-              <div class="kad__perf"></div>
 
               <div class="kad__nums">
                 <div><b id="kadMata">0</b><small>Green Points</small></div>
@@ -310,29 +95,20 @@
               </div>
 
               <div class="kad__bot">
-                <div class="xp">
-                  <small id="xpLabel">0 / 150 XP to next level</small>
-                  <div class="xpbar"><i id="xpFill"></i></div>
-                </div>
-                <div class="qr" id="kadQR" title="Member QR code"></div>
+                <small id="xpLabel">0 / 150 XP to next level</small>
+                <div class="xpbar"><i id="xpFill"></i></div>
               </div>
             </article>
 
-            <div class="mini">
-              <div><span class="ic">🏅</span><b id="msBadge">0</b><small>Badges earned</small></div>
-              <div><span class="ic">🌱</span><b id="msPokok">0</b><small>Trees cared for</small></div>
-              <div><span class="ic">⏱️</span><b id="msJam">0 h</b><small>Service hours</small></div>
-              <div><span class="ic">📈</span><b id="msRank">—</b><small>Your class rank</small></div>
+            <div class="mini wide">
+              <div><span>🏅</span><b id="msBadge">0/8</b><small>Badges earned</small></div>
+              <div><span>🌱</span><b id="msPokok">0</b><small>Trees cared for</small></div>
+              <div><span>⏱️</span><b id="msJam">0 h</b><small>Service hours</small></div>
+              <div><span>📈</span><b id="msRank">—</b><small>Your class rank</small></div>
             </div>
 
-            <article class="pc span3">
-              <div class="pc__t">Your monthly contribution <small id="pchartTotal">0 kg</small></div>
-              <div class="pchart" id="pchart"></div>
-              <div id="pchartEmpty"></div>
-            </article>
-
-            <article class="pc span3">
-              <div class="pc__t">Log a contribution ♻️ <small>+5 points / kg</small></div>
+            <article class="pc">
+              <h3 class="pc__t">Log a contribution ♻️ <small>+5 points / kg</small></h3>
               <form class="logform" id="logForm">
                 <div class="lr">
                   <div>
@@ -352,39 +128,41 @@
                   </div>
                 </div>
 
-                <div style="margin-bottom:.7rem">
-                  <label for="lgNota">Note (optional)</label>
-                  <input id="lgNota" type="text" maxlength="60" placeholder="e.g. club recycling duty" />
-                </div>
+                <label for="lgNota">Note (optional)</label>
+                <input id="lgNota" type="text" maxlength="60" placeholder="e.g. club recycling duty" />
 
-                <button class="btn btn--lime submit" type="submit" id="lgSubmit">
-                  Submit record <span class="arrow">→</span>
-                </button>
+                <button class="btn btn--lime submit" type="submit" id="lgSubmit">Submit record</button>
               </form>
             </article>
 
-            <article class="pc span2">
-              <div class="pc__t">My badges <small id="badgeCount">0/8</small></div>
+            <article class="pc">
+              <h3 class="pc__t">My badges <small id="badgeCount">0/8</small></h3>
               <div class="badges" id="badges"></div>
             </article>
 
-            <article class="pc span2">
-              <div class="pc__t">Class leaderboard <small>live</small></div>
+            <article class="pc">
+              <h3 class="pc__t">Class leaderboard <small>live</small></h3>
               <ul class="lb" id="leaderboard"></ul>
             </article>
 
-            <article class="pc span2">
-              <div class="pc__t">Upcoming club activities <small id="regCount">0 registered</small></div>
+            <article class="pc">
+              <h3 class="pc__t">Upcoming club activities <small id="regCount">0 registered</small></h3>
               <div class="acts" id="acts"></div>
             </article>
 
-            <article class="pc span3">
-              <div class="pc__t">Your first missions <small>new member onboarding</small></div>
+            <article class="pc wide">
+              <h3 class="pc__t">Your monthly contribution <small id="pchartTotal">0 kg</small></h3>
+              <div class="pchart" id="pchart"></div>
+              <div id="pchartEmpty"></div>
+            </article>
+
+            <article class="pc">
+              <h3 class="pc__t">Your first missions <small>new member onboarding</small></h3>
               <ul class="miss" id="missions"></ul>
             </article>
 
-            <article class="pc span3">
-              <div class="pc__t">Recent activity log <small>live</small></div>
+            <article class="pc">
+              <h3 class="pc__t">Recent activity log <small>live</small></h3>
               <ul class="alog" id="alog"></ul>
             </article>
           </div>
@@ -393,460 +171,224 @@
             <div class="veil__box">
               <div class="lk">🔐</div>
               <h3>This portal is for Lestari Alam Club members</h3>
-              <p>Club members can log in to view their member card, track contributions, collect badges, and register for upcoming club activities.</p>
-
+              <p>
+                Club members can log in to view their member card, track contributions,
+                collect badges, and register for upcoming club activities.
+              </p>
               <div class="veil__acts">
                 <button class="btn btn--solid btn--sm" data-auth-open="login">Member Login</button>
                 <button class="btn btn--ghost btn--sm" data-auth-open="signup">Join Club</button>
               </div>
-
-              <p style="font-size:.75rem;margin:1rem 0 0;opacity:.7">Accounts are secured by Supabase — your data is encrypted and private.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== STORIES ===================== -->
-    <section class="pad" id="stories">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker scramble">05 — Club Stories</p>
-          <h2 class="sec-title mask-line"><span>Moments from our club activities</span></h2>
-          <p class="sec-sub">Photos and short stories from Lestari Alam Club members during recycling duties, gardening sessions, clean-ups, and environmental projects.</p>
-        </div>
-        <div class="gallery reveal" id="gallery"></div>
-      </div>
-    </section>
-
-    <!-- ===================== QUOTE ===================== -->
-    <section class="quote-band">
-      <div class="wrap quote-inner reveal">
-        <div class="mark">“</div>
-        <blockquote>
-          Through the Lestari Alam Club, students do not only learn about the environment — they take responsibility for it. Small actions, when practised together, become a school culture.
-          <cite><b>Mrs. Siti Rahmah Abdullah</b> · Headmaster, SK Bukit Damansara</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- ===================== JOIN ===================== -->
-    <section class="pad join" id="join">
-      <div class="wrap join__grid">
-        <div>
-          <p class="kicker scramble">06 — Join the Club</p>
-          <h2 class="reveal">Green habits start with <em>one member.</em></h2>
-          <p class="sec-sub reveal" style="margin-top:1.2rem">
-            The Lestari Alam Club is open to SK Bukit Damansara students who want to take part in recycling, gardening, composting, and environmental awareness activities.
-          </p>
-
-          <ol class="steps reveal">
-            <li class="step">
-              <span class="n">1</span>
-              <div>
-                <b>Register as a club member</b>
-                <p>Students can create a club account using their class and member details.</p>
-              </div>
-            </li>
-            <li class="step">
-              <span class="n">2</span>
-              <div>
-                <b>Attend club briefing</b>
-                <p>New members receive a short introduction to club rules, safety, and responsibilities.</p>
-              </div>
-            </li>
-            <li class="step">
-              <span class="n">3</span>
-              <div>
-                <b>Join activities and earn points</b>
-                <p>Participation in recycling, gardening, and club programmes earns Green Points and badges.</p>
-              </div>
-            </li>
-          </ol>
-
-          <div class="hero__actions reveal" style="margin-top:2rem">
-            <button class="btn btn--solid" data-auth-open="signup">Join Lestari Alam Club 🌿</button>
-            <a href="#" class="btn btn--ghost">Download club brochure ⤓</a>
-          </div>
-        </div>
-
-        <div class="join__media reveal">
-          <div class="frame kb">
-            <img src="https://picsum.photos/seed/volunteer-group-nature-clean/700/930" alt="Club members doing environmental activity" />
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div class="foot-brand">
-          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M20 3C11 9 8 18 12 27c3 6 8 8 8 8s5-2 8-8c4-9 1-18-8-24Z" fill="#5FA05A" />
-            <path
-              d="M20 8v24M20 14l-5-3M20 14l5-3M20 20l-6-3.5M20 20l6-3.5M20 26l-5-3M20 26l5-3"
-              stroke="#1C3A28"
-              stroke-width="1.4"
-              stroke-linecap="round"
-            />
-          </svg>
-          <p>
-            <b style="font-family:var(--f-disp);color:var(--paper)">Lestari Alam Club</b><br />
-            Official school club of SK Bukit Damansara — building green habits through student-led environmental activities.
-          </p>
-        </div>
-
-        <div>
-          <h5>Explore</h5>
-          <ul>
-            <li><a href="#achievements">Club Achievements</a></li>
-            <li><a href="#recycling">Recycling Records</a></li>
-            <li><a href="#programs">Activities & Projects</a></li>
-            <li><a href="#portal">Member Portal</a></li>
-            <li><a href="#stories">Club Stories</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h5>Account</h5>
-          <ul>
-            <li><a href="#" data-auth-open="login">Member Login</a></li>
-            <li><a href="#" data-auth-open="signup">Join Club</a></li>
-            <li><a href="#" data-auth-open="forgot">Forgot Password</a></li>
-            <li><a href="#portal">Club Member Card</a></li>
-            <li><a href="#portal">Class Leaderboard</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h5>Contact Us</h5>
-          <ul class="contact">
-            <li><b>Address:</b> Sekolah Kebangsaan Bukit Damansara, Jalan Beringin, Bukit Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
-            <li><b>Phone:</b> 03-2094 8350</li>
-            <li><b>Email:</b> lestari.alam@skbd.edu.my</li>
-          </ul>
-        </div>
+    <div class="wrap foot-grid">
+      <div>
+        <b>Lestari Alam Club</b>
+        <p>
+          Official school club of SK Bukit Damansara — building green habits
+          through student-led environmental activities.
+        </p>
       </div>
 
-      <div class="foot-bottom">
-        <span>© 2026 Lestari Alam Club · SK Bukit Damansara. Made with ❤️ for the planet.</span>
-        <button class="to-top" id="toTop">↑ Back to top</button>
+      <div>
+        <h4>Contact Us</h4>
+        <ul class="contact">
+          <li><b>Address:</b> Sekolah Kebangsaan Bukit Damansara, Jalan Beringin, Bukit Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+          <li><b>Phone:</b> 03-2094 8350</li>
+          <li><b>Email:</b> lestari.alam@skbd.edu.my</li>
+        </ul>
       </div>
+    </div>
+
+    <div class="wrap foot-bottom">
+      <span>© 2026 Lestari Alam Club · SK Bukit Damansara.</span>
     </div>
   </footer>
 
-  <!-- ===================== AUTH MODAL ===================== -->
   <div class="auth" id="auth" hidden>
     <div class="auth__scrim" data-close></div>
 
-    <div class="auth__panel" role="dialog" aria-modal="true" aria-labelledby="authHeading">
-      <aside class="auth__aside">
-        <svg class="vein" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="46" stroke="#A7CE3C" stroke-width=".6" />
-          <circle cx="50" cy="50" r="34" stroke="#A7CE3C" stroke-width=".6" stroke-dasharray="3 5" />
-          <circle cx="50" cy="50" r="22" stroke="#A7CE3C" stroke-width=".6" />
-          <path d="M50 4v92M4 50h92M18 18l64 64M82 18L18 82" stroke="#A7CE3C" stroke-width=".4" />
-        </svg>
+    <div class="auth__panel" role="dialog" aria-modal="true">
+      <button class="auth__close" data-close aria-label="Close">✕</button>
 
-        <div class="aside-top">
-          <div class="aside-mark"><span></span> Lestari Alam Club Portal</div>
-          <h3 id="authHeading">One club account, <em>every green</em> contribution.</h3>
-          <p>Your Lestari Alam Club card stores your contributions, service hours, badges, and activity participation — visible to you and your supervising teacher.</p>
-
-          <ul class="aside-perks">
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              Personal club contribution records
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              Green Points, levels & club badges
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              Registration for Lestari Alam Club activities
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              Class leaderboard for club participation
-            </li>
-          </ul>
-        </div>
-
-        <div class="aside-foot">
-          <div class="aside-mini">
-            <div><b>86</b><small>Club members</small></div>
-            <div><b>2,400</b><small>kg this year</small></div>
-            <div><b id="asideOnline">12</b><small>Online now</small></div>
-          </div>
-          <p class="aside-quote">“We do not need a few people doing zero waste perfectly — we need many students doing it together.”</p>
-        </div>
-      </aside>
-
-      <div class="auth__main auth__scroll">
-        <button class="auth__close" data-close aria-label="Close">✕</button>
-
-        <div class="auth__brand">
-          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M20 3C11 9 8 18 12 27c3 6 8 8 8 8s5-2 8-8c4-9 1-18-8-24Z" fill="#3E6B47" />
-            <path d="M20 8v24" stroke="#A7CE3C" stroke-width="1.6" stroke-linecap="round" />
-          </svg>
-          <b>Lestari Alam Club</b><i>SK Bukit Damansara</i>
-        </div>
-
-        <div class="tabs" id="authTabs">
-          <div class="tabs__ind" id="tabsInd"></div>
-          <button type="button" class="on" data-view="login">Member Login</button>
-          <button type="button" data-view="signup">Join Club</button>
-        </div>
-
-        <!-- LOGIN -->
-        <section class="view on" id="viewLogin" aria-label="Member login">
-          <h2>Member login 🌿</h2>
-          <p class="lead">Log in to open your Lestari Alam Club card and continue recording your club contributions.</p>
-
-          <form id="formLogin" novalidate>
-            <div class="field" id="f-loginEmail">
-              <label for="loginEmail">Email <span class="req">*</span></label>
-              <div class="inp">
-                <input id="loginEmail" name="email" type="email" autocomplete="username" placeholder="member@skbd.edu.my" required />
-              </div>
-              <div class="err" data-err></div>
-            </div>
-
-            <div class="field" id="f-loginPass">
-              <label for="loginPass">Password <span class="req">*</span></label>
-              <div class="inp">
-                <input id="loginPass" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required />
-                <button type="button" class="peek" data-peek="loginPass" aria-pressed="false">Show</button>
-              </div>
-              <div class="caps" id="capsLogin">⚠ Caps Lock is on</div>
-              <div class="err" data-err></div>
-            </div>
-
-            <div class="between">
-              <label class="check" style="margin:0">
-                <input type="checkbox" id="remember" checked />
-                <span class="bx"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
-                Remember me
-              </label>
-              <button type="button" class="link" data-view="forgot">Forgot password?</button>
-            </div>
-
-            <button class="btn btn--solid submit" type="submit" id="loginSubmit">
-              Enter portal <span class="arrow">→</span>
-            </button>
-          </form>
-
-          <p class="swap">Not a club member yet? <button type="button" class="link" data-view="signup">Join club</button></p>
-        </section>
-
-        <!-- SIGNUP -->
-        <section class="view" id="viewSignup" aria-label="Join club">
-          <h2>Join Lestari Alam Club</h2>
-          <p class="lead">Open a club member account to track your participation, earn Green Points, and register for upcoming activities.</p>
-
-          <form id="formSignup" novalidate>
-            <label style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--moss);display:block;margin-bottom:.5rem">
-              I am registering as <span class="req">*</span>
-            </label>
-
-            <div class="roles" id="roles">
-              <label class="role">
-                <input type="radio" name="role" value="murid" checked />
-                <span><b>🎒</b>Student Member<em>Years 4–6</em></span>
-              </label>
-              <label class="role">
-                <input type="radio" name="role" value="guru" />
-                <span><b>📚</b>Teacher Advisor<em>Club supervisor</em></span>
-              </label>
-            </div>
-
-            <div class="field" id="f-suName">
-              <label for="suName">Full name <span class="req">*</span></label>
-              <div class="inp">
-                <input id="suName" type="text" autocomplete="name" placeholder="e.g. Nur Aisyah binti Rahman" required />
-              </div>
-              <div class="err" data-err></div>
-            </div>
-
-            <div class="row2">
-              <div class="field" id="f-suEmail">
-                <label for="suEmail">Email <span class="req">*</span></label>
-                <div class="inp">
-                  <input id="suEmail" type="email" autocomplete="email" placeholder="name@email.com" required />
-                </div>
-                <div class="err" data-err></div>
-              </div>
-
-              <div class="field" id="f-suPhone">
-                <label for="suPhone">Phone</label>
-                <div class="inp">
-                  <input id="suPhone" type="tel" autocomplete="tel" placeholder="012-345 6789" />
-                </div>
-                <div class="err" data-err></div>
-              </div>
-            </div>
-
-            <div class="row2" id="muridOnly">
-              <div class="field" id="f-suKelas">
-                <label for="suKelas">Class <span class="req">*</span></label>
-                <div class="inp">
-                  <select id="suKelas">
-                    <option value="">Select class…</option>
-
-                    <optgroup label="Year 4">
-                      <option value="4 Inovatif">Inovatif</option>
-                      <option value="4 Dinamik">Dinamik</option>
-                      <option value="4 Bestari">Bestari</option>
-                      <option value="4 Efektif">Efektif</option>
-                      <option value="4 Kreatif">Kreatif</option>
-                      <option value="4 Proaktif">Proaktif</option>
-                    </optgroup>
-
-                    <optgroup label="Year 5">
-                      <option value="5 Inovatif">Inovatif</option>
-                      <option value="5 Dinamik">Dinamik</option>
-                      <option value="5 Bestari">Bestari</option>
-                      <option value="5 Efektif">Efektif</option>
-                      <option value="5 Kreatif">Kreatif</option>
-                      <option value="5 Proaktif">Proaktif</option>
-                    </optgroup>
-
-                    <optgroup label="Year 6">
-                      <option value="6 Inovatif">Inovatif</option>
-                      <option value="6 Dinamik">Dinamik</option>
-                      <option value="6 Bestari">Bestari</option>
-                      <option value="6 Efektif">Efektif</option>
-                      <option value="6 Kreatif">Kreatif</option>
-                      <option value="6 Proaktif">Proaktif</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div class="err" data-err></div>
-              </div>
-
-              <div class="field" id="f-suNoKad">
-                <label for="suNoKad">IC / Birth Cert No.</label>
-                <div class="inp">
-                  <input id="suNoKad" type="text" inputmode="numeric" placeholder="9 digits, e.g. 120101015523" />
-                </div>
-                <div class="err" data-err></div>
-              </div>
-            </div>
-
-            <div class="field" id="f-suPass">
-              <label for="suPass">Password <span class="req">*</span></label>
-              <div class="inp">
-                <input id="suPass" type="password" autocomplete="new-password" placeholder="At least 8 characters" required />
-                <button type="button" class="peek" data-peek="suPass" aria-pressed="false">Show</button>
-              </div>
-              <div class="caps" id="capsSignup">⚠ Caps Lock is on</div>
-
-              <div class="str" id="strength" data-s="0">
-                <div class="str__bars"><i></i><i></i><i></i><i></i></div>
-                <div class="str__lbl">
-                  <span id="strText">Strength: —</span>
-                  <span id="strTime">≈ —</span>
-                </div>
-                <ul class="str__tips" id="strTips">
-                  <li data-t="len">8+ chars</li>
-                  <li data-t="up">Uppercase</li>
-                  <li data-t="lo">Lowercase</li>
-                  <li data-t="num">Number</li>
-                  <li data-t="sym">Symbol</li>
-                </ul>
-              </div>
-
-              <div class="err" data-err></div>
-            </div>
-
-            <div class="field" id="f-suConfirm">
-              <label for="suConfirm">Confirm password <span class="req">*</span></label>
-              <div class="inp">
-                <input id="suConfirm" type="password" autocomplete="new-password" placeholder="Retype password" required />
-                <button type="button" class="peek" data-peek="suConfirm" aria-pressed="false">Show</button>
-              </div>
-              <div class="err" data-err></div>
-            </div>
-
-            <label class="check">
-              <input type="checkbox" id="suTerms" />
-              <span class="bx"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
-              <span>
-                I agree to the <a href="#">Club Rules</a> & <a href="#">Student Data Privacy Policy</a>. <span class="req">*</span>
-              </span>
-            </label>
-            <div class="err" id="errTerms" data-err style="margin-top:-.4rem;margin-bottom:.5rem"></div>
-
-            <label class="check">
-              <input type="checkbox" id="suNews" checked />
-              <span class="bx"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
-              I want to receive club announcements and activity reminders
-            </label>
-
-            <button class="btn btn--solid submit" type="submit" id="suSubmit">
-              Create club account <span class="arrow">→</span>
-            </button>
-          </form>
-
-          <p class="swap">Already a club member? <button type="button" class="link" data-view="login">Member login</button></p>
-        </section>
-
-        <!-- FORGOT -->
-        <section class="view" id="viewForgot" aria-label="Forgot password">
-          <h2>Recover your access</h2>
-          <p class="lead">Enter your registered email. We will send a reset link valid for 30 minutes.</p>
-
-          <form id="formForgot" novalidate>
-            <div class="field" id="f-fgEmail">
-              <label for="fgEmail">Registered email <span class="req">*</span></label>
-              <div class="inp">
-                <input id="fgEmail" type="email" autocomplete="email" placeholder="member@skbd.edu.my" required />
-              </div>
-              <div class="err" data-err></div>
-            </div>
-
-            <button class="btn btn--solid submit" type="submit" id="fgSubmit">
-              Send link <span class="arrow">→</span>
-            </button>
-          </form>
-
-          <p class="swap"><button type="button" class="link" data-view="login">← Back to member login</button></p>
-        </section>
-
-        <!-- SENT -->
-        <section class="view" id="viewSent" aria-label="Reset link sent">
-          <div class="sent-ico">
-            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-          </div>
-
-          <h2>Link sent</h2>
-          <p class="lead">
-            We have sent instructions to <b id="sentTo" style="color:var(--moss)">—</b>. Check your inbox, including the spam folder.
-            For urgent help, contact <b>03-2094 8350</b>.
-          </p>
-
-          <div class="empty" style="text-align:left;margin-bottom:1.2rem">
-            <b style="font-family:var(--f-disp)">Did not receive anything?</b><br />
-            <span style="font-size:.85rem">A security code can also be requested through the club teacher advisor.</span>
-          </div>
-
-          <button class="btn btn--ghost" data-view="login" type="button">← Back to member login</button>
-        </section>
+      <div class="auth__brand">
+        <span>🌿</span>
+        <b>Lestari Alam Club</b>
       </div>
+
+      <div class="tabs" id="authTabs">
+        <button type="button" class="on" data-view="login">Member Login</button>
+        <button type="button" data-view="signup">Join Club</button>
+      </div>
+
+      <section class="view on" id="viewLogin">
+        <h2>Member login 🌿</h2>
+        <p class="lead">Log in to open your Lestari Alam Club card.</p>
+
+        <form id="formLogin" novalidate>
+          <div class="field" id="f-loginEmail">
+            <label for="loginEmail">Email *</label>
+            <div class="inp">
+              <input id="loginEmail" type="email" placeholder="member@skbd.edu.my" />
+            </div>
+            <div class="err" data-err></div>
+          </div>
+
+          <div class="field" id="f-loginPass">
+            <label for="loginPass">Password *</label>
+            <div class="inp">
+              <input id="loginPass" type="password" placeholder="••••••••" />
+            </div>
+            <div class="err" data-err></div>
+          </div>
+
+          <button class="btn btn--solid submit" type="submit" id="loginSubmit">Enter portal</button>
+        </form>
+
+        <p class="swap">
+          Not a club member yet?
+          <button type="button" class="link" data-view="signup">Join club</button>
+        </p>
+      </section>
+
+      <section class="view" id="viewSignup">
+        <h2>Join Lestari Alam Club</h2>
+        <p class="lead">Open a club member account to track participation and earn Green Points.</p>
+
+        <form id="formSignup" novalidate>
+          <label class="small-label">I am registering as *</label>
+
+          <div class="roles" id="roles">
+            <label class="role">
+              <input type="radio" name="role" value="murid" checked />
+              <span><b>🎒</b>Student Member<em>Years 4–6</em></span>
+            </label>
+            <label class="role">
+              <input type="radio" name="role" value="guru" />
+              <span><b>📚</b>Teacher Advisor<em>Club supervisor</em></span>
+            </label>
+          </div>
+
+          <div class="field" id="f-suName">
+            <label for="suName">Full name *</label>
+            <div class="inp">
+              <input id="suName" type="text" placeholder="e.g. Nur Aisyah binti Rahman" />
+            </div>
+            <div class="err" data-err></div>
+          </div>
+
+          <div class="row2">
+            <div class="field" id="f-suEmail">
+              <label for="suEmail">Email *</label>
+              <div class="inp">
+                <input id="suEmail" type="email" placeholder="name@email.com" />
+              </div>
+              <div class="err" data-err></div>
+            </div>
+
+            <div class="field" id="f-suPhone">
+              <label for="suPhone">Phone</label>
+              <div class="inp">
+                <input id="suPhone" type="tel" placeholder="012-345 6789" />
+              </div>
+              <div class="err" data-err></div>
+            </div>
+          </div>
+
+          <div class="row2" id="muridOnly">
+            <div class="field" id="f-suKelas">
+              <label for="suKelas">Class *</label>
+              <div class="inp">
+                <select id="suKelas">
+                  <option value="">Select class…</option>
+
+                  <optgroup label="Year 4">
+                    <option value="4 Inovatif">Inovatif</option>
+                    <option value="4 Dinamik">Dinamik</option>
+                    <option value="4 Bestari">Bestari</option>
+                    <option value="4 Efektif">Efektif</option>
+                    <option value="4 Kreatif">Kreatif</option>
+                    <option value="4 Proaktif">Proaktif</option>
+                  </optgroup>
+
+                  <optgroup label="Year 5">
+                    <option value="5 Inovatif">Inovatif</option>
+                    <option value="5 Dinamik">Dinamik</option>
+                    <option value="5 Bestari">Bestari</option>
+                    <option value="5 Efektif">Efektif</option>
+                    <option value="5 Kreatif">Kreatif</option>
+                    <option value="5 Proaktif">Proaktif</option>
+                  </optgroup>
+
+                  <optgroup label="Year 6">
+                    <option value="6 Inovatif">Inovatif</option>
+                    <option value="6 Dinamik">Dinamik</option>
+                    <option value="6 Bestari">Bestari</option>
+                    <option value="6 Efektif">Efektif</option>
+                    <option value="6 Kreatif">Kreatif</option>
+                    <option value="6 Proaktif">Proaktif</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="err" data-err></div>
+            </div>
+
+            <div class="field" id="f-suNoKad">
+              <label for="suNoKad">IC / Birth Cert No.</label>
+              <div class="inp">
+                <input id="suNoKad" type="text" inputmode="numeric" placeholder="9 digits" />
+              </div>
+              <div class="err" data-err></div>
+            </div>
+          </div>
+
+          <div class="field" id="f-suPass">
+            <label for="suPass">Password *</label>
+            <div class="inp">
+              <input id="suPass" type="password" placeholder="At least 8 characters" />
+            </div>
+            <div class="err" data-err></div>
+          </div>
+
+          <div class="field" id="f-suConfirm">
+            <label for="suConfirm">Confirm password *</label>
+            <div class="inp">
+              <input id="suConfirm" type="password" placeholder="Retype password" />
+            </div>
+            <div class="err" data-err></div>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" id="suTerms" />
+            <span>I agree to the Club Rules & Student Data Privacy Policy. *</span>
+          </label>
+          <div class="err" id="errTerms"></div>
+
+          <label class="check">
+            <input type="checkbox" id="suNews" checked />
+            <span>I want club announcements and activity reminders</span>
+          </label>
+
+          <button class="btn btn--solid submit" type="submit" id="suSubmit">Create club account</button>
+        </form>
+
+        <p class="swap">
+          Already a club member?
+          <button type="button" class="link" data-view="login">Member login</button>
+        </p>
+      </section>
     </div>
   </div>
 
   <script type="module">
     import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-    /* =========================================================
-       SUPABASE CONFIG
-    ========================================================= */
     const SUPABASE_URL = "https://jypruhcygbilvlxfimlo.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_biYNeEjlpge2Fxf1pX0-kA_HKT59QYb";
 
@@ -858,787 +400,112 @@
       }
     });
 
-    /* =========================================================
-       HELPERS
-    ========================================================= */
     const $ = (s, c = document) => c.querySelector(s);
     const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
-    const REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const state = {
       user: null,
       board: null
     };
 
-    function fmt(n, dec = 0) {
-      return Number(n).toLocaleString("en-US", {
-        minimumFractionDigits: dec,
-        maximumFractionDigits: dec
-      });
-    }
-
-    function fmtKg(n) {
-      return Number(n).toLocaleString("en-US", { maximumFractionDigits: 1 });
-    }
-
-    function timeAgo(iso) {
-      const diff = Math.max(0, Date.now() - new Date(iso).getTime());
-
-      const mins = Math.floor(diff / 60000);
-      if (mins < 1) return "just now";
-      if (mins < 60) return `${mins} min ago`;
-
-      const hrs = Math.floor(mins / 60);
-      if (hrs < 24) return `${hrs} hr ago`;
-
-      const days = Math.floor(hrs / 24);
-      if (days < 7) return `${days} d ago`;
-
-      const weeks = Math.floor(days / 7);
-      if (weeks < 5) return `${weeks} wk ago`;
-
-      const months = Math.floor(days / 30);
-      if (months < 12) return `${months} mo ago`;
-
-      return `${Math.floor(days / 365)} yr ago`;
-    }
-
-    function toast(title, msg, bad = false) {
-      const t = document.createElement("div");
-      t.className = "toast" + (bad ? " bad" : "");
-      t.innerHTML = `<span class="ic">${bad ? "⚠️" : "🌿"}</span><span><b>${title}</b>${msg || ""}</span>`;
-
-      $("#toasts").appendChild(t);
-      requestAnimationFrame(() => t.classList.add("on"));
-
-      setTimeout(() => {
-        t.classList.remove("on");
-        setTimeout(() => t.remove(), 500);
-      }, 4200);
-    }
-
-    function busy(btn, on) {
-      if (!btn) return;
-      btn.classList.toggle("loading", on);
-      btn.disabled = on;
-    }
-
-    function setErr(id, msg) {
-      const f = $("#" + id);
-      if (!f) return;
-
-      f.classList.toggle("bad", !!msg);
-      f.classList.toggle("ok", !msg);
-
-      const e = $("[data-err]", f);
-      if (e) e.textContent = msg || "";
-    }
-
     const RX_EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
-
-    function maskEmail(e) {
-      const [a, b] = e.split("@");
-      return a.slice(0, 2) + "••••@" + b;
-    }
-
-    function cap(s) {
-      return s[0].toUpperCase() + s.slice(1);
-    }
-
-    function human(s) {
-      if (s < 60) return s + " seconds";
-      if (s < 3600) return Math.round(s / 60) + " minutes";
-      if (s < 86400) return Math.round(s / 3600) + " hours";
-      if (s < 2592000) return Math.round(s / 86400) + " days";
-      if (s < 31536000) return Math.round(s / 2592000) + " months";
-      return Math.round(s / 31536000) + " years";
-    }
-
-    function siteBase() {
-      return location.origin + location.pathname.replace(/[^/]*$/, "");
-    }
-
-    const COMMON_PASSWORDS = [
-      "password",
-      "12345678",
-      "qwerty",
-      "admin",
-      "school",
-      "student",
-      "lestari",
-      "skbd",
-      "damansara",
-      "club"
-    ];
-
-    function strengthOf(v) {
-      const checks = {
-        len: v.length >= 8,
-        up: /[A-Z]/.test(v),
-        lo: /[a-z]/.test(v),
-        num: /\d/.test(v),
-        sym: /[^A-Za-z0-9]/.test(v)
-      };
-
-      let score = Object.values(checks).filter(Boolean).length;
-
-      if (v.length >= 12 && score >= 4) score = 4;
-      if (COMMON_PASSWORDS.some(c => v.toLowerCase().includes(c))) score = Math.min(score, 1);
-      if (v.length < 8) score = Math.min(score, 1);
-
-      return {
-        score: v.length ? score : 0,
-        checks
-      };
-    }
-
-    /* =========================================================
-       SITE DATA
-    ========================================================= */
-    const MONTHS_FULL = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-
-    const monthly = [
-      { m:"Jan", cur:180, prev:150 },
-      { m:"Feb", cur:210, prev:175 },
-      { m:"Mar", cur:265, prev:210 },
-      { m:"Apr", cur:240, prev:195 },
-      { m:"May", cur:290, prev:230 },
-      { m:"Jun", cur:275, prev:220 },
-      { m:"Jul", cur:310, prev:250 },
-      { m:"Aug", cur:330, prev:270 },
-      { m:"Sep", cur:312, prev:265 },
-      { m:"Oct", cur:295, prev:240 }
-    ];
-
-    const materials = [
-      { name:"Paper & Cardboard", val:1180, pct:49, color:"#DE9A2E", ico:"📄" },
-      { name:"PET Plastic", val:620, pct:26, color:"#4E8CA6", ico:"🥤" },
-      { name:"Aluminium Cans", val:340, pct:14, color:"#8AA888", ico:"🥫" },
-      { name:"Glass", val:180, pct:7, color:"#3E6B47", ico:"🫙" },
-      { name:"Small E-Waste", val:80, pct:4, color:"#BC5A34", ico:"🔌" }
-    ];
-
-    const achievements = [
-      {
-        y:"2026",
-        tag:"Until October",
-        items:[
-          ["gold","★","Gold Green School Title","Education for Sustainable Development (ESD) National Award","National"],
-          ["silver","◆","Runner-Up Community Vegetable Garden Competition","Hulu Langat District Level","District"]
-        ]
-      },
-      {
-        y:"2025",
-        items:[
-          ["gold","★","Best Solid Waste Collection Campaign Champion","NADMA & FGV Holdings Berhad","Federal Territory"],
-          ["bronze","▲","Third Place School Compost Innovation Challenge","Universiti Malaya – Biomass Centre of Excellence","State"]
-        ]
-      },
-      {
-        y:"2024",
-        items:[
-          ["gold","★","Young Environmental Ambassador Award","Ministry of Education Malaysia (MOE)","National"],
-          ["silver","◆","Runner-Up International Green Leadership Quiz","UNESCO ASPnet","International"]
-        ]
-      },
-      {
-        y:"2023",
-        items:[
-          ["gold","★","Best Plastic-Free School Adoption","World Wide Fund for Nature (WWF-Malaysia)","National"],
-          ["bronze","▲","Second Place Environmental Mural","KL City Art Festival","Federal Territory"]
-        ]
-      },
-      {
-        y:"2022",
-        items:[
-          ["gold","★","JPPKL Sustainability Award","Kuala Lumpur Federal Education Department","Federal Territory"],
-          ["silver","◆","Runner-Up Mangrove Reforestation Programme","Suria Darul Ehsan Foundation","State"]
-        ]
-      },
-      {
-        y:"2021",
-        items:[
-          ["silver","◆","Runner-Up Essay “My Nature, My Responsibility”","DBKL Green Initiative","Federal Territory"]
-        ]
-      },
-      {
-        y:"2020",
-        items:[
-          ["gold","★","Green Primary School Recognition Certificate","Eco-Schools Programme Asia","Asia"]
-        ]
-      },
-      {
-        y:"2019",
-        items:[
-          ["bronze","▲","Third Place School Zero Waste Campaign","KL Urban Sustainability Community","Community"]
-        ]
-      },
-      {
-        y:"2018",
-        items:[
-          ["gold","★","Sustainability Driver Teacher Award","Teacher mentor Cikgu Nur Hidayah Ramli","State"]
-        ]
-      },
-      {
-        y:"2017",
-        items:[
-          ["silver","◆","Runner-Up Student Environmental Poster","Klang Valley Combined Level","Combined"]
-        ]
-      },
-      {
-        y:"2016",
-        tag:"Origin",
-        items:[
-          ["bronze","▲","Third Place Green Science Championship","Petaling District Level","District"]
-        ]
-      }
-    ];
-
-    const programmes = {
-      classroom:{
-        label:"In The Classroom",
-        n:5,
-        items:[
-          ["Classroom Recycling Corner","Every class has three colour-coded bins — paper, clean plastic, and metal. The Corner Leader records weekly weighing in a digital logbook.","Daily","6 kg/class/week"],
-          ["Mini Table Garden","Plant boxes on the windowsill with basil, chilli, and sunflowers. Children learn photosynthesis while building responsibility.","Weekly","42 active boxes"],
-          ["Waste-Free Class","Initiative for packed meals from home using reusable containers. No single-use plastic wrapping in the class canteen.","Every session","~70% bring containers"],
-          ["Carbon Footprint Logbook","Students record how they travel to school — walking, bicycle, or parents’ car — and calculate the collective monthly carbon impact.","Monthly","report to school assembly"],
-          ["Class Compost","Food scraps are collected into a small compost bin; the result fertilises the mini table garden every quarter.","2× per week","closed loop"]
-        ]
-      },
-      school:{
-        label:"Whole School",
-        n:5,
-        items:[
-          ["Got-Green School Clean-up","Campus-wide cleaning session every Monday morning involving all students and school citizens.","Monday 7.30am","whole school"],
-          ["Vertical Herb Garden","Green wall in the main lobby with cooking herbs and air-purifying plants, maintained by the Lestari Club.","Periodic","3 walls · 120 species"],
-          ["Rainwater Bank","5,000-litre tank stores rainwater for garden irrigation and school toilet cleaning.","Seasonal","5,000 L capacity"],
-          ["Rooftop Solar Panel","Roof solar system generates clean energy to light corridors and school signage.","Passive","4 kWp installed"],
-          ["Green Month Award Ceremony","Public appreciation for the most consistent class and the peer-voted “Green Person” student.","Monthly","during assembly"]
-        ]
-      },
-      community:{
-        label:"School Community",
-        n:4,
-        items:[
-          ["Parent Helper Session","Zero-waste practices and garden care workshop organised for parents and school helpers.","Bi-monthly","6× per year"],
-          ["Sungai Batu River Clean-up","Bank cleaning and water quality monitoring of the nearby tributary every quarter.","Quarterly","4× per year"],
-          ["Plastic-Free School Bazaar","School farmers market that completely bans single-use plastic bags and containers.","Triangular","garden product sales"],
-          ["Club Recruitment Day","New member recruitment and awareness booth during school programme weeks.","Per semester","2× per year"]
-        ]
-      },
-      external:{
-        label:"External Partners",
-        n:4,
-        items:[
-          ["Landfill Site Educational Visit","Educational visit to understand the national solid waste flow from source to land rehabilitation.","Annual","SWCorp"],
-          ["WWF-Malaysia Reforestation Programme","Long-term partnership planting selected catchment areas with conservation experts.","Biennial","2× per year"],
-          ["DBKL Green Office Talk","Talk and green innovation workshop slots by KL Landscape and Environment Department officers.","Scheduled","4× per year"],
-          ["Universiti Malaya Partner","Postgraduate student research measures school project impact — real data returns to the curriculum.","Collaborative","2 active theses"]
-        ]
-      },
-      digital:{
-        label:"Digital & Media",
-        n:4,
-        items:[
-          ["“Suara Daun” Podcast","Short audio series by students discussing local environmental issues with invited guests.","Monthly","12 episodes"],
-          ["Lestari Alam Blog","Visual record of activities, DIY recycling guides, and monthly committee reflections.","Weekly","archive since 2019"],
-          ["#PlastikFreePS Campaign","30-day social media challenge inviting families to practise plastic-free living.","Campaign","February 2026"],
-          ["Digital Scoreboard","LED display in the lobby shows real-time recycling weights — immediate motivation for everyone.","Real-time","automatic update"]
-        ]
-      }
-    };
-
-    const partnerList = [
-      "WWF-Malaysia",
-      "DBKL Green Office",
-      "SWCorp",
-      "FGV Holdings",
-      "Universiti Malaya",
-      "NADMA",
-      "Suria Darul Ehsan Foundation",
-      "Petronas Green School Grant",
-      "GreenTech MY",
-      "PIBG SKBD",
-      "School Administration",
-      "The Body Shop Malaysia"
-    ];
-
-    const galleryItems = [
-      ["Earth Day 2026","planting-seedlings-school","“My first seed!”","Zarif, 5 Kreatif · vertical garden","4/5"],
-      ["Clean-up","cleanup-community-park","Sungai Batu shines again","Third quarter · 40 members","4/3"],
-      ["Compost","composting-bin-garden","New blood of the earth","60kg compost ready this season","1/1"],
-      ["Recycle","recycling-sorting-kids","Weigh, record, be grateful","Recycling corner, level 2","3/4"],
-      ["Solar","solar-roof-school","Light becomes power","4 kWp rooftop panel · March 2025","4/3"],
-      ["Mural","environmental-mural-art","Our canvas, our message","Winner KL Art Festival 2023","4/5"],
-      ["Herbs","herbs-vertical-garden","The lobby that breathes","Vertical herb garden · 120 species","1/1"],
-      ["Water","rainwater-tank-capture","Save the sky’s drops","Rainwater bank 5,000 litres","3/4"]
-    ];
-
-    const LEADERBOARD_FALLBACK = [
-      { kelas:"6 Proaktif", kg:412 },
-      { kelas:"5 Kreatif", kg:398 },
-      { kelas:"4 Efektif", kg:387 },
-      { kelas:"6 Bestari", kg:371 },
-      { kelas:"5 Dinamik", kg:356 },
-      { kelas:"4 Inovatif", kg:342 },
-      { kelas:"6 Kreatif", kg:331 },
-      { kelas:"5 Proaktif", kg:318 },
-      { kelas:"4 Bestari", kg:304 },
-      { kelas:"6 Efektif", kg:289 },
-      { kelas:"5 Inovatif", kg:276 },
-      { kelas:"4 Dinamik", kg:263 },
-      { kelas:"6 Dinamik", kg:248 },
-      { kelas:"5 Efektif", kg:232 },
-      { kelas:"4 Kreatif", kg:219 },
-      { kelas:"6 Inovatif", kg:204 },
-      { kelas:"5 Bestari", kg:188 },
-      { kelas:"4 Proaktif", kg:171 }
-    ];
-
-    const BADGES = [
-      { id:"warga", ic:"🌱", n:"New Member", d:"Registration completed" },
-      { id:"kitar50", ic:"♻️", n:"50kg Recycler", d:"Collect 50 kg contribution" },
-      { id:"kitar100", ic:"🥇", n:"100kg Club", d:"Collect 100 kg contribution" },
-      { id:"tanam", ic:"🌳", n:"Tree Planter", d:"Join one planting session" },
-      { id:"kompos", ic:"🪱", n:"Compost Master", d:"Record compost material" },
-      { id:"air", ic:"💧", n:"Water Guardian", d:"Join river monitoring" },
-      { id:"sukwan", ic:"🤝", n:"10h Volunteer", d:"10 service hours" },
-      { id:"suara", ic:"🎙️", n:"Suara Daun", d:"Be a podcast guest" }
-    ];
-
-    const ACTIVITIES = [
-      { id:"a1", n:"Sungai Batu River Clean-up", d:"Sat, 24 Oct 2026", t:"8:00 AM · 3 hrs", slot:"12 / 40" },
-      { id:"a2", n:"Bucket Compost Workshop", d:"Wed, 29 Oct 2026", t:"2:30 PM · Hall", slot:"31 / 50" },
-      { id:"a3", n:"Kuala Selangor Mangrove Planting", d:"Sun, 9 Nov 2026", t:"7:00 AM · full day", slot:"8 / 60" },
-      { id:"a4", n:"Suara Daun Podcast Recording", d:"Thu, 13 Nov 2026", t:"4:00 PM · Media Room", slot:"2 / 6" }
-    ];
-
-    const LEVELS = [
-      { lv:1, name:"Sprout", need:0 },
-      { lv:2, name:"Guardian", need:150 },
-      { lv:3, name:"Pioneer", need:400 },
-      { lv:4, name:"Driver", need:800 },
-      { lv:5, name:"Forest Heir", need:1400 },
-      { lv:6, name:"Lestari Ambassador", need:2200 }
-    ];
 
     const ROLE_LABEL = {
       murid: "Student Member",
       guru: "Teacher Advisor"
     };
 
-    /* =========================================================
-       RENDER STATIC CONTENT
-    ========================================================= */
-    function renderStatic() {
-      $("#timeline").innerHTML = achievements.map(y => `
-        <article class="year reveal">
-          <span class="year__node"></span>
-          <h3 class="year__label">${y.y}${y.tag ? ` <span class="year__tag">${y.tag}</span>` : ""}</h3>
-          <ul class="awards">
-            ${y.items.map(it => `
-              <li class="award">
-                <span class="medal ${it[0]}">${it[1]}</span>
-                <span class="txt"><b>${it[2]}</b><small>${it[3]}</small></span>
-                <span class="lvl">${it[4]}</span>
-              </li>
-            `).join("")}
-          </ul>
-        </article>
-      `).join("");
+    const LEVELS = [
+      { lv: 1, name: "Sprout", need: 0 },
+      { lv: 2, name: "Guardian", need: 150 },
+      { lv: 3, name: "Pioneer", need: 400 },
+      { lv: 4, name: "Driver", need: 800 },
+      { lv: 5, name: "Forest Heir", need: 1400 },
+      { lv: 6, name: "Lestari Ambassador", need: 2200 }
+    ];
 
-      const chart = $("#monthlyChart");
-      const max = Math.max(...monthly.flatMap(d => [d.cur, d.prev]));
+    const BADGES = [
+      { id: "warga", ic: "🌱", n: "New Member", d: "Registration completed" },
+      { id: "kitar50", ic: "♻️", n: "50kg Recycler", d: "Collect 50 kg contribution" },
+      { id: "kitar100", ic: "🥇", n: "100kg Club", d: "Collect 100 kg contribution" },
+      { id: "tanam", ic: "🌳", n: "Tree Planter", d: "Join one planting session" },
+      { id: "kompos", ic: "🪱", n: "Compost Master", d: "Record compost material" },
+      { id: "air", ic: "💧", n: "Water Guardian", d: "Join river monitoring" },
+      { id: "sukwan", ic: "🤝", n: "10h Volunteer", d: "10 service hours" },
+      { id: "suara", ic: "🎙️", n: "Suara Daun", d: "Be a podcast guest" }
+    ];
 
-      chart.innerHTML = monthly.map(d => `
-        <div class="bar-col">
-          <div class="bar-stack">
-            <div class="bar prev" data-h="${(d.prev / max * 100).toFixed(1)}">
-              <span class="tip">${d.m} 2025 · <b>${d.prev} kg</b></span>
-            </div>
-            <div class="bar cur" style="z-index:2" data-h="${(d.cur / max * 100).toFixed(1)}">
-              <span class="tip">${d.m} 2026 · <b>${d.cur} kg</b></span>
-            </div>
-          </div>
-          <div class="bar-label">${d.m}</div>
-        </div>
-      `).join("");
+    const ACTIVITIES = [
+      { id: "a1", n: "Sungai Batu River Clean-up", d: "Sat, 24 Oct 2026", t: "8:00 AM · 3 hrs", slot: "12 / 40" },
+      { id: "a2", n: "Bucket Compost Workshop", d: "Wed, 29 Oct 2026", t: "2:30 PM · Hall", slot: "31 / 50" },
+      { id: "a3", n: "Kuala Selangor Mangrove Planting", d: "Sun, 9 Nov 2026", t: "7:00 AM · full day", slot: "8 / 60" },
+      { id: "a4", n: "Suara Daun Podcast Recording", d: "Thu, 13 Nov 2026", t: "4:00 PM · Media Room", slot: "2 / 6" }
+    ];
 
-      $("#breakdown").innerHTML = materials.map(m => `
-        <div class="mat reveal">
-          <div class="mat__ico" style="background:${m.color}22;color:${m.color}">${m.ico}</div>
-          <div class="mat__name">${m.name}</div>
-          <div class="mat__val" data-count="${m.val}" data-suffix=" kg">0</div>
-          <div class="mat__bar"><i data-fill="${m.pct}" style="background:${m.color}"></i></div>
-          <div class="mat__sub">${m.pct}% of total · ~${Math.round(m.val / monthly.length)} kg/month average</div>
-        </div>
-      `).join("");
+    const LEADERBOARD_FALLBACK = [
+      { kelas: "6 Proaktif", kg: 412 },
+      { kelas: "5 Kreatif", kg: 398 },
+      { kelas: "4 Efektif", kg: 387 },
+      { kelas: "6 Bestari", kg: 371 },
+      { kelas: "5 Dinamik", kg: 356 },
+      { kelas: "4 Inovatif", kg: 342 }
+    ];
 
-      $("#ptabs").innerHTML = Object.entries(programmes).map(([k, v], i) =>
-        `<button type="button" class="ptab${i === 0 ? " active" : ""}" data-tab="${k}">${v.label} <span>x${v.n}</span></button>`
-      ).join("");
+    const MONTHS_FULL = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-      $("#panels").innerHTML = Object.entries(programmes).map(([k, v], i) => `
-        <div class="panel${i === 0 ? " active" : ""}" data-panel="${k}">
-          <div class="prog-list">
-            ${v.items.map((it, j) => `
-              <div class="prog-item">
-                <span class="idx">${String(j + 1).padStart(2, "0")}</span>
-                <div>
-                  <h4>${it[0]}</h4>
-                  <p>${it[1]}</p>
-                  <div class="prog-meta">
-                    <span class="tag">${it[2]}</span>
-                    <span class="tag alt">${it[3]}</span>
-                  </div>
-                </div>
-                <div class="prog-freq"><b>${it[2]}</b><small>${it[3]}</small></div>
-              </div>
-            `).join("")}
-          </div>
-        </div>
-      `).join("");
-
-      $("#ptabs").addEventListener("click", e => {
-        const b = e.target.closest(".ptab");
-        if (!b) return;
-
-        $$(".ptab").forEach(x => x.classList.toggle("active", x === b));
-        $$(".panel").forEach(p => p.classList.toggle("active", p.dataset.panel === b.dataset.tab));
-      });
-
-      $("#partners").innerHTML = partnerList.map(p => {
-        const i = p.indexOf(" ");
-        return i > 0 && i < 12
-          ? `<span class="partner"><b>${p.slice(0, i)}</b>${p.slice(i)}</span>`
-          : `<span class="partner">${p}</span>`;
-      }).join("");
-
-      $("#gallery").innerHTML = galleryItems.map(g => `
-        <figure class="gitem kb" style="--ar:${g[4]}">
-          <span class="gbadge">${g[0]}</span>
-          <div class="gitem__media">
-            <img loading="lazy" src="https://picsum.photos/seed/${g[1]}/600/700" alt="${g[2]}" />
-          </div>
-          <figcaption><b>${g[2]}</b><small>${g[3]}</small></figcaption>
-        </figure>
-      `).join("");
-    }
-
-    /* =========================================================
-       MOTION / UI
-    ========================================================= */
-    function initMotion() {
-      function countUp(el) {
-        if (el._done) return;
-        el._done = true;
-
-        const target = parseFloat(el.dataset.count) || 0;
-        const suffix = el.dataset.suffix || "";
-        const prefix = el.dataset.prefix || "";
-
-        if (REDUCE) {
-          el.textContent = prefix + fmt(target) + suffix;
-          return;
-        }
-
-        const dur = 1500;
-        const start = performance.now();
-
-        (function tick(now) {
-          let p = Math.min(1, (now - start) / dur);
-          p = 1 - Math.pow(1 - p, 3);
-          el.textContent = prefix + fmt(target * p) + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-          else el.textContent = prefix + fmt(target) + suffix;
-        })(start);
-      }
-
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-
-          e.target.classList.add("in");
-          $$("[data-count]", e.target).forEach(countUp);
-          if (e.target.hasAttribute("data-count")) countUp(e.target);
-          $$(".bar", e.target).forEach(b => b.style.height = b.dataset.h + "%");
-          $$("[data-fill]", e.target).forEach(f => f.style.width = f.dataset.fill + "%");
-
-          io.unobserve(e.target);
-        });
-      }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
-
-      $$(".reveal").forEach(el => io.observe(el));
-
-      $$(".scramble").forEach(el => {
-        const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789§∆◇▚░▒█";
-
-        new IntersectionObserver((ents, obs) => {
-          ents.forEach(en => {
-            if (!en.isIntersecting) return;
-            obs.disconnect();
-
-            const txt = el.textContent.trim();
-            if (REDUCE) return;
-
-            const total = txt.length;
-            const start = performance.now();
-
-            (function frame(now) {
-              const rev = Math.floor(((now - start) / 1000) * (total * 1.5));
-              let out = "";
-
-              for (let i = 0; i < total; i++) {
-                out += txt[i] === " " ? " " : (i < rev ? txt[i] : glyphs[Math.random() * glyphs.length | 0]);
-              }
-
-              el.textContent = out;
-              if (rev < total) requestAnimationFrame(frame);
-              else el.textContent = txt;
-            })(start);
-          });
-        }, { threshold: 0.6 }).observe(el);
-      });
-    }
-
-    function initNav() {
-      const nav = $("#nav");
-      const progress = $("#progress");
-
-      window.addEventListener("scroll", () => {
-        const y = window.scrollY;
-        nav.classList.toggle("scrolled", y > 20);
-
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        progress.style.width = (h > 0 ? y / h * 100 : 0) + "%";
-      }, { passive: true });
-
-      $("#toTop").onclick = () => window.scrollTo({ top: 0, behavior: REDUCE ? "auto" : "smooth" });
-      $("#burger").onclick = () => document.body.classList.toggle("menu-open");
-      $$("#mmenu a").forEach(a => a.onclick = () => document.body.classList.remove("menu-open"));
-
-      const links = $$(".nav__links a");
-      const secs = links.map(l => $(l.getAttribute("href"))).filter(Boolean);
-
-      const spy = new IntersectionObserver(ents => {
-        ents.forEach(en => {
-          if (en.isIntersecting) {
-            const id = "#" + en.target.id;
-            links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === id));
-          }
-        });
-      }, { rootMargin: "-45% 0px -50% 0px" });
-
-      secs.forEach(s => spy.observe(s));
-    }
-
-    function initCursor() {
-      if (!REDUCE && matchMedia("(pointer:fine)").matches) {
-        const g = $(".cursor-glow");
-        let tx = 0, ty = 0, cx = 0, cy = 0;
-
-        window.addEventListener("mousemove", e => {
-          tx = e.clientX;
-          ty = e.clientY;
-          g.style.opacity = "1";
-        });
-
-        (function loop() {
-          cx += (tx - cx) * 0.12;
-          cy += (ty - cy) * 0.12;
-          g.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-          requestAnimationFrame(loop);
-        })();
-      } else {
-        const g = $(".cursor-glow");
-        if (g) g.style.display = "none";
-      }
-    }
-
-    function initTicker() {
-      const t = $("#tickerTrack");
-      if (t) t.innerHTML += t.innerHTML;
-    }
-
-    function initOnlineCounter() {
-      setInterval(() => {
-        const el = $("#asideOnline");
-        if (el) el.textContent = 8 + Math.floor(Math.random() * 18);
+    function toast(title, msg, bad = false) {
+      const t = document.createElement("div");
+      t.className = "toast" + (bad ? " bad" : "");
+      t.innerHTML = `<span class="ic">${bad ? "⚠️" : "🌿"}</span><span><b>${title}</b>${msg || ""}</span>`;
+      $("#toasts").appendChild(t);
+      requestAnimationFrame(() => t.classList.add("on"));
+      setTimeout(() => {
+        t.classList.remove("on");
+        setTimeout(() => t.remove(), 400);
       }, 4200);
     }
 
-    const auth = $("#auth");
-    let lastFocus = null;
-    let focusables = [];
-
-    function openAuth(view) {
-      lastFocus = document.activeElement;
-      auth.hidden = false;
-      document.body.classList.add("no-scroll");
-
-      requestAnimationFrame(() => {
-        auth.dataset.open = "true";
-        moveIndicator(view);
-      });
-
-      focusables = $$('a[href], button:not([disabled]), input:not([disabled]), select', $(".auth__panel"));
-      const first = view === "signup" ? $("#suName") : $("#view" + cap(view) + " input");
-      setTimeout(() => (first || $(".auth__close")).focus(), REDUCE ? 0 : 420);
+    function busy(btn, on) {
+      if (!btn) return;
+      btn.disabled = on;
     }
 
-    function closeAuth() {
-      auth.dataset.open = "false";
-      document.body.classList.remove("no-scroll");
-      setTimeout(() => { auth.hidden = true; }, REDUCE ? 0 : 420);
-      if (lastFocus) lastFocus.focus();
+    function setErr(id, msg) {
+      const f = $("#" + id);
+      if (!f) return;
+      f.classList.toggle("bad", !!msg);
+      const e = $("[data-err]", f);
+      if (e) e.textContent = msg || "";
     }
 
-    function showView(name) {
-      $$(".view").forEach(v => v.classList.toggle("on", v.id === "view" + cap(name)));
-      $$("#authTabs button").forEach(b => b.classList.toggle("on", b.dataset.view === name));
-      moveIndicator(name === "signup" ? "signup" : "login");
-
-      const sc = $(".auth__scroll");
-      if (sc) sc.scrollTop = 0;
+    function fmt(n) {
+      return Number(n || 0).toLocaleString("en-US");
     }
 
-    function moveIndicator(name) {
-      const btn = $(`#authTabs button[data-view="${name === "signup" ? "signup" : "login"}"]`) || $("#authTabs button");
-      const ind = $("#tabsInd");
-      if (!btn || !ind) return;
-
-      ind.style.width = btn.offsetWidth + "px";
-      ind.style.transform = `translateX(${btn.offsetLeft - 4}px)`;
+    function fmtKg(n) {
+      return Number(n || 0).toLocaleString("en-US", { maximumFractionDigits: 1 });
     }
 
-    function initAuthModalEvents() {
-      document.addEventListener("click", e => {
-        const open = e.target.closest("[data-auth-open]");
-        if (open) {
-          e.preventDefault();
-          document.body.classList.remove("menu-open");
-          openAuth(open.dataset.authOpen);
-          return;
-        }
-
-        const view = e.target.closest("[data-view]");
-        if (view) {
-          e.preventDefault();
-          showView(view.dataset.view);
-          return;
-        }
-
-        if (e.target.closest("[data-close]")) {
-          closeAuth();
-        }
-      });
-
-      window.addEventListener("keydown", e => {
-        if (auth.hidden) return;
-
-        if (e.key === "Escape") closeAuth();
-
-        if (e.key === "Tab" && focusables.length) {
-          const f = focusables.filter(el => el.offsetParent !== null);
-          if (!f.length) return;
-
-          const first = f[0];
-          const last = f[f.length - 1];
-
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
-        }
-      });
-
-      window.addEventListener("resize", () => {
-        const active = $("#authTabs .on");
-        moveIndicator(active ? active.dataset.view : "login");
-      });
+    function timeAgo(iso) {
+      const diff = Math.max(0, Date.now() - new Date(iso).getTime());
+      const mins = Math.floor(diff / 60000);
+      if (mins < 1) return "just now";
+      if (mins < 60) return `${mins} min ago`;
+      const hrs = Math.floor(mins / 60);
+      if (hrs < 24) return `${hrs} hr ago`;
+      const days = Math.floor(hrs / 24);
+      if (days < 7) return `${days} d ago`;
+      const weeks = Math.floor(days / 7);
+      if (weeks < 5) return `${weeks} wk ago`;
+      const months = Math.floor(days / 30);
+      if (months < 12) return `${months} mo ago`;
+      return `${Math.floor(days / 365)} yr ago`;
     }
 
-    function initPasswordFieldTools() {
-      $$(".peek").forEach(b => {
-        b.onclick = () => {
-          const i = $("#" + b.dataset.peek);
-          const on = i.type === "password";
-          i.type = on ? "text" : "password";
-          b.textContent = on ? "Hide" : "Show";
-          b.setAttribute("aria-pressed", String(on));
-        };
-      });
-
-      [["loginPass", "capsLogin"], ["suPass", "capsSignup"]].forEach(([inp, box]) => {
-        const el = $("#" + inp);
-        const w = $("#" + box);
-
-        ["keyup", "keydown"].forEach(ev => {
-          el.addEventListener(ev, e => {
-            if (typeof e.getModifierState === "function") {
-              w.classList.toggle("on", e.getModifierState("CapsLock"));
-            }
-          });
-        });
-
-        el.addEventListener("blur", () => w.classList.remove("on"));
-      });
-
-      $("#suPass").addEventListener("input", e => {
-        const { score, checks } = strengthOf(e.target.value);
-        $("#strength").dataset.s = score;
-
-        const lbl = ["—", "Very weak", "Moderate", "Strong", "Excellent — sturdy!"][score] || "—";
-        $("#strText").textContent = "Strength: " + lbl;
-
-        const secs = [0, 40, 90000, 60000000, 300000000000][score] || 0;
-        $("#strTime").textContent = score ? "≈ " + human(secs) : "≈ —";
-
-        $$("#strTips li").forEach(li => li.classList.toggle("hit", !!checks[li.dataset.t]));
-      });
-
-      $("#roles").addEventListener("change", () => {
-        const r = $("input[name=role]:checked").value;
-        $("#muridOnly").style.display = r === "murid" ? "grid" : "none";
-      });
+    function cap(s) {
+      return s[0].toUpperCase() + s.slice(1);
     }
 
-    function initUserDropdown() {
-      $("#uchip").onclick = e => {
-        e.stopPropagation();
-        const d = $("#udrop");
-        d.classList.toggle("open");
-        $("#uchip").setAttribute("aria-expanded", d.classList.contains("open"));
-      };
-
-      document.addEventListener("click", e => {
-        if (!e.target.closest(".nav__user")) $("#udrop").classList.remove("open");
-      });
-
-      $("#btnSettings").onclick = () => {
-        if (!state.user) return;
-        toast("Account settings", "Profile editing can be added next using Supabase auth.updateUser().");
-      };
-    }
-
-    function initUI() {
-      initMotion();
-      initNav();
-      initCursor();
-      initTicker();
-      initOnlineCounter();
-      initAuthModalEvents();
-      initPasswordFieldTools();
-      initUserDropdown();
-    }
-
-    /* =========================================================
-       SUPABASE ACTIONS
-    ========================================================= */
     function mapBundle(bundle) {
       const p = bundle.profile || {};
       const monthlyArr = Array.isArray(bundle.monthly) ? bundle.monthly : [];
@@ -1695,8 +562,7 @@
             phone: input.phone || "",
             ic: input.ic || "",
             newsletter: input.newsletter !== false
-          },
-          emailRedirectTo: siteBase()
+          }
         }
       });
 
@@ -1729,16 +595,6 @@
       } catch {
         // ignore
       }
-    }
-
-    async function resetRequest(email) {
-      const redirectTo = siteBase() + "reset-password.html";
-
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo
-      });
-
-      if (error) throw error;
     }
 
     async function addContribution(jenis, kg, nota) {
@@ -1798,9 +654,6 @@
       return { field: null, message: msg };
     }
 
-    /* =========================================================
-       PORTAL RENDER
-    ========================================================= */
     function levelOf(mata) {
       let cur = LEVELS[0];
       for (const l of LEVELS) if (mata >= l.need) cur = l;
@@ -1812,39 +665,14 @@
       return { cur, nxt, prog: Math.max(0, Math.min(1, prog)) };
     }
 
-    function qrFor(str) {
-      let h = 2166136261;
-      for (let i = 0; i < str.length; i++) {
-        h ^= str.charCodeAt(i);
-        h = Math.imul(h, 16777619);
-      }
-
-      const rnd = () => {
-        h ^= h << 13;
-        h ^= h >>> 17;
-        h ^= h << 5;
-        return (h >>> 0) / 4294967295;
-      };
-
-      let cells = "";
-      const N = 11;
-
-      for (let y = 0; y < N; y++) {
-        for (let x = 0; x < N; x++) {
-          const finder = (x < 3 && y < 3) || (x > N - 4 && y < 3) || (x < 3 && y > N - 4);
-          const on = finder
-            ? !((x === 1 && y === 1) || (x === N - 2 && y === 1) || (x === 1 && y === N - 2))
-            : rnd() > 0.52;
-
-          if (on) cells += `<rect x="${x}" y="${y}" width="1" height="1"/>`;
-        }
-      }
-
-      return `<svg viewBox="0 0 ${N} ${N}" fill="#1C3A28" shape-rendering="crispEdges">${cells}</svg>`;
-    }
-
     function renderLeaderboard(rows, myClass) {
       const sorted = [...rows].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
+
+      if (!sorted.length) {
+        $("#leaderboard").innerHTML = "<li>No class records yet.</li>";
+        return;
+      }
+
       const visible = sorted.slice(0, 8);
       const mx = Math.max(...visible.map(r => Number(r.kg || 0)), 1);
 
@@ -1852,8 +680,8 @@
         <li class="${r.kelas === myClass ? "me" : ""}">
           <span class="rk">${i + 1}</span>
           <span>
-            <span class="nm">${r.kelas}${r.kelas === myClass ? ' <em style="font-style:normal;font-size:.7rem;color:var(--moss)">← your class</em>' : ""}</span>
-            <span class="track"><i data-w="${(Number(r.kg) / mx * 100).toFixed(1)}"></i></span>
+            <span class="nm">${r.kelas}${r.kelas === myClass ? ' <em>← your class</em>' : ""}</span>
+            <span class="track"><i style="width:${(Number(r.kg) / mx * 100).toFixed(1)}%"></i></span>
           </span>
           <span class="kg">${Math.round(Number(r.kg))} kg</span>
         </li>
@@ -1862,7 +690,7 @@
       if (sorted.length > 8) {
         const myRank = myClass ? sorted.findIndex(r => r.kelas === myClass) + 1 : 0;
         html += `
-          <li style="grid-template-columns:1fr;font-size:.78rem;color:var(--moss);padding:.75rem .5rem;">
+          <li class="more">
             <span>
               +${sorted.length - 8} more classes tracked
               ${myRank > 8 ? `· your class is #${myRank}` : ""}
@@ -1872,12 +700,6 @@
       }
 
       $("#leaderboard").innerHTML = html;
-
-      setTimeout(() => {
-        $$("#leaderboard .track i").forEach(el => {
-          el.style.width = el.dataset.w + "%";
-        });
-      }, 140);
     }
 
     function renderPortal(u, board) {
@@ -1891,9 +713,7 @@
       );
 
       $("#kadNo").textContent = `SKBD-${idNum}-${String(u.joined ? new Date(u.joined).getFullYear() : new Date().getFullYear()).slice(2)}`;
-
       $("#kadLevelName").textContent = L.cur.name;
-      $("#ringLv").textContent = L.cur.lv;
       $("#kadMata").textContent = fmt(u.mata);
       $("#kadKg").textContent = fmtKg(u.kg) + " kg";
       $("#kadAktif").textContent = u.aktif;
@@ -1902,13 +722,7 @@
         ? `${u.mata - L.cur.need} / ${L.nxt.need - L.cur.need} XP to ${L.nxt.name}`
         : "Highest level reached — Lestari Ambassador";
 
-      requestAnimationFrame(() => {
-        $("#xpFill").style.width = (L.prog * 100) + "%";
-        const c = 2 * Math.PI * 36;
-        $("#ringVal").style.strokeDashoffset = c * (1 - L.prog);
-      });
-
-      $("#kadQR").innerHTML = qrFor(u.email || u.name || "lestari");
+      $("#xpFill").style.width = (L.prog * 100) + "%";
 
       $("#msBadge").textContent = u.badges.length + "/" + BADGES.length;
       $("#msPokok").textContent = u.pokok;
@@ -1923,7 +737,7 @@
 
       $("#pchart").innerHTML = recs.map((v, i) => `
         <div class="pbar">
-          <div class="stem" data-zero="${v ? 0 : 1}" data-h="${v ? (v / max * 100).toFixed(1) : 0}" title="${MONTHS_FULL[i]}: ${v} kg">
+          <div class="stem" style="height:${v ? (v / max * 100).toFixed(1) : 0}%" title="${MONTHS_FULL[i]}: ${v} kg">
             <span class="tip">${MONTHS_FULL[i]} · <b>${v} kg</b></span>
           </div>
           <span>${MONTHS_FULL[i].slice(0, 3)}</span>
@@ -1935,13 +749,7 @@
 
       $("#pchartEmpty").innerHTML = tot
         ? ""
-        : `<div class="empty" style="margin-top:1rem">No personal records yet. Use the <b>Log contribution</b> form beside this to start your chart 🌱</div>`;
-
-      setTimeout(() => {
-        $$("#pchart .stem").forEach(s => {
-          if (s.dataset.h !== "0") s.style.height = s.dataset.h + "%";
-        });
-      }, 80);
+        : `<div class="empty">No personal records yet. Use the <b>Log contribution</b> form to start your chart 🌱</div>`;
 
       $("#badges").innerHTML = BADGES.map(b => {
         const got = u.badges.includes(b.id);
@@ -1984,9 +792,27 @@
       `).join("") || '<li><span class="dot"></span><span>No activity yet.<time>start now</time></span></li>';
     }
 
-    /* =========================================================
-       SESSION
-    ========================================================= */
+    const auth = $("#auth");
+
+    function openAuth(view) {
+      auth.hidden = false;
+      document.body.classList.add("no-scroll");
+      showView(view);
+
+      const first = view === "signup" ? $("#suName") : $("#loginEmail");
+      setTimeout(() => first?.focus(), 80);
+    }
+
+    function closeAuth() {
+      auth.hidden = true;
+      document.body.classList.remove("no-scroll");
+    }
+
+    function showView(name) {
+      $$(".view").forEach(v => v.classList.toggle("on", v.id === "view" + cap(name)));
+      $$("#authTabs button").forEach(b => b.classList.toggle("on", b.dataset.view === name));
+    }
+
     async function bootSession(announce = false) {
       state.user = await restoreSession();
       const has = !!state.user;
@@ -1997,13 +823,6 @@
       $("#portalAuthBtns").innerHTML = has
         ? `<button class="btn btn--ghost btn--sm" data-logout>Log Out</button>`
         : `<button class="btn btn--solid" data-auth-open="login">Member login ↗</button>`;
-
-      $("#mAuth").innerHTML = has
-        ? `<button class="btn btn--lime btn--sm" data-logout>Log Out</button>`
-        : `
-          <button class="btn btn--lime btn--sm" data-auth-open="login">Member Login</button>
-          <button class="btn btn--ghost btn--sm" style="border-color:var(--paper);color:var(--paper)" data-auth-open="signup">Join Club</button>
-        `;
 
       if (has) {
         const parts = String(state.user.name || "")
@@ -2019,17 +838,14 @@
         $("#uAvatar").textContent = initials;
         $("#uName").textContent = displayName;
         $("#uRole").textContent = ROLE_LABEL[state.user.role] || "Member";
-        $("#dName").textContent = state.user.name;
-        $("#dEmail").textContent = state.user.email;
 
-        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
+        state.board = await fetchLeaderboard() || LEADERBOARD_FALLBACK;
 
         renderPortal(state.user, state.board);
         $("#portal").dataset.locked = "false";
 
         if (announce) {
           toast("Welcome back, " + (parts[0] || "member") + " 🌿", "Your Lestari Alam Club portal has been unlocked.");
-          setTimeout(() => $("#portal").scrollIntoView({ behavior: REDUCE ? "auto" : "smooth", block: "start" }), 450);
         }
       } else {
         $("#portal").dataset.locked = "true";
@@ -2039,300 +855,268 @@
     async function doLogout() {
       await signOut();
       state.user = null;
-      $("#udrop").classList.remove("open");
       await bootSession(false);
       toast("You have logged out", "Your club records are safely stored in Supabase.");
-      window.scrollTo({ top: $("#portal").offsetTop - 80, behavior: REDUCE ? "auto" : "smooth" });
     }
 
-    /* =========================================================
-       FORM BINDINGS
-    ========================================================= */
-    function bindGlobalActions() {
-      document.addEventListener("click", e => {
-        const logout = e.target.closest("[data-logout]");
-        if (logout) {
-          e.preventDefault();
-          document.body.classList.remove("menu-open");
-          doLogout();
-        }
-      });
-    }
-
-    function bindLoginForm() {
-      $("#formLogin").addEventListener("submit", async e => {
+    document.addEventListener("click", e => {
+      const open = e.target.closest("[data-auth-open]");
+      if (open) {
         e.preventDefault();
+        openAuth(open.dataset.authOpen);
+        return;
+      }
 
-        const em = $("#loginEmail").value.trim();
-        const pw = $("#loginPass").value;
-
-        let bad = false;
-
-        if (!em) {
-          setErr("f-loginEmail", "Please enter your email.");
-          bad = true;
-        } else if (!RX_EMAIL.test(em)) {
-          setErr("f-loginEmail", "Invalid email format.");
-          bad = true;
-        } else {
-          setErr("f-loginEmail", "");
-        }
-
-        if (!pw) {
-          setErr("f-loginPass", "Please enter your password.");
-          bad = true;
-        } else {
-          setErr("f-loginPass", "");
-        }
-
-        if (bad) return;
-
-        const btn = $("#loginSubmit");
-        busy(btn, true);
-
-        try {
-          state.user = await signIn(em, pw);
-          closeAuth();
-          await bootSession(true);
-        } catch (err) {
-          const f = friendlyError(err);
-          setErr(f.field === "email" ? "f-loginEmail" : "f-loginPass", f.message);
-          toast("Login failed", f.message, true);
-        } finally {
-          busy(btn, false);
-        }
-      });
-    }
-
-    function bindSignupForm() {
-      $("#formSignup").addEventListener("submit", async e => {
+      const view = e.target.closest("[data-view]");
+      if (view) {
         e.preventDefault();
+        showView(view.dataset.view);
+        return;
+      }
 
-        const name = $("#suName").value.trim();
-        const em = $("#suEmail").value.trim();
-        const ph = $("#suPhone").value.trim();
-        const role = $("input[name=role]:checked").value;
-        const kelas = $("#suKelas").value;
-        const ic = $("#suNoKad").value.trim();
-        const pw = $("#suPass").value;
-        const cf = $("#suConfirm").value;
-        const terms = $("#suTerms").checked;
-
-        let bad = false;
-
-        if (name.length < 3) {
-          setErr("f-suName", "Enter your full name (min. 3 characters).");
-          bad = true;
-        } else setErr("f-suName", "");
-
-        if (!em) {
-          setErr("f-suEmail", "Email is required.");
-          bad = true;
-        } else if (!RX_EMAIL.test(em)) {
-          setErr("f-suEmail", "Invalid email format.");
-          bad = true;
-        } else setErr("f-suEmail", "");
-
-        if (ph && !/^[0-9+\-\s()]{7,}$/.test(ph)) {
-          setErr("f-suPhone", "Invalid phone number.");
-          bad = true;
-        } else setErr("f-suPhone", "");
-
-        if (role === "murid") {
-          if (!kelas) {
-            setErr("f-suKelas", "Please select your class.");
-            bad = true;
-          } else setErr("f-suKelas", "");
-
-          if (ic && !/^\d{6,12}$/.test(ic.replace(/\s/g, ""))) {
-            setErr("f-suNoKad", "Use 6–12 digits only.");
-            bad = true;
-          } else setErr("f-suNoKad", "");
-        }
-
-        if (pw.length < 8) {
-          setErr("f-suPass", "Password too short (min. 8 characters).");
-          bad = true;
-        } else setErr("f-suPass", "");
-
-        if (cf !== pw || !cf) {
-          setErr("f-suConfirm", "Passwords do not match.");
-          bad = true;
-        } else setErr("f-suConfirm", "");
-
-        $("#errTerms").textContent = terms ? "" : "You must accept the club rules to continue.";
-        if (!terms) bad = true;
-
-        if (bad) {
-          toast("Please check the form", "Some fields are incomplete.", true);
-          return;
-        }
-
-        const btn = $("#suSubmit");
-        busy(btn, true);
-
-        try {
-          const result = await signUp({
-            name,
-            email: em,
-            password: pw,
-            role,
-            kelas: role === "murid" ? kelas : "",
-            phone: ph,
-            ic,
-            newsletter: $("#suNews").checked
-          });
-
-          if (result.pendingVerification) {
-            showView("login");
-            toast("Check your email", "Confirm your email address, then log in.");
-            return;
-          }
-
-          state.user = result.user;
-          closeAuth();
-          await bootSession(true);
-          toast("Club account created 🌿", "Welcome to Lestari Alam Club.");
-        } catch (err) {
-          const f = friendlyError(err);
-          if (f.field) {
-            const map = {
-              name: "f-suName",
-              email: "f-suEmail",
-              phone: "f-suPhone",
-              kelas: "f-suKelas",
-              ic: "f-suNoKad",
-              password: "f-suPass"
-            };
-            setErr(map[f.field] || "f-suEmail", f.message);
-          }
-          toast("Registration failed", f.message, true);
-        } finally {
-          busy(btn, false);
-        }
-      });
-    }
-
-    function bindForgotForm() {
-      $("#formForgot").addEventListener("submit", async e => {
+      const logout = e.target.closest("[data-logout]");
+      if (logout) {
         e.preventDefault();
+        doLogout();
+        return;
+      }
 
-        const em = $("#fgEmail").value.trim();
+      if (e.target.closest("[data-close]")) {
+        closeAuth();
+      }
+    });
 
-        if (!RX_EMAIL.test(em)) {
-          setErr("f-fgEmail", "Enter a valid email.");
+    window.addEventListener("keydown", e => {
+      if (!auth.hidden && e.key === "Escape") closeAuth();
+    });
+
+    $("#roles").addEventListener("change", () => {
+      const r = $("input[name=role]:checked").value;
+      $("#muridOnly").style.display = r === "murid" ? "grid" : "none";
+    });
+
+    $("#formLogin").addEventListener("submit", async e => {
+      e.preventDefault();
+
+      const em = $("#loginEmail").value.trim();
+      const pw = $("#loginPass").value;
+
+      let bad = false;
+
+      if (!em) {
+        setErr("f-loginEmail", "Please enter your email.");
+        bad = true;
+      } else if (!RX_EMAIL.test(em)) {
+        setErr("f-loginEmail", "Invalid email format.");
+        bad = true;
+      } else {
+        setErr("f-loginEmail", "");
+      }
+
+      if (!pw) {
+        setErr("f-loginPass", "Please enter your password.");
+        bad = true;
+      } else {
+        setErr("f-loginPass", "");
+      }
+
+      if (bad) return;
+
+      const btn = $("#loginSubmit");
+      busy(btn, true);
+
+      try {
+        state.user = await signIn(em, pw);
+        closeAuth();
+        await bootSession(true);
+      } catch (err) {
+        const f = friendlyError(err);
+        setErr(f.field === "email" ? "f-loginEmail" : "f-loginPass", f.message);
+        toast("Login failed", f.message, true);
+      } finally {
+        busy(btn, false);
+      }
+    });
+
+    $("#formSignup").addEventListener("submit", async e => {
+      e.preventDefault();
+
+      const name = $("#suName").value.trim();
+      const em = $("#suEmail").value.trim();
+      const ph = $("#suPhone").value.trim();
+      const role = $("input[name=role]:checked").value;
+      const kelas = $("#suKelas").value;
+      const ic = $("#suNoKad").value.trim();
+      const pw = $("#suPass").value;
+      const cf = $("#suConfirm").value;
+      const terms = $("#suTerms").checked;
+
+      let bad = false;
+
+      if (name.length < 3) {
+        setErr("f-suName", "Enter your full name (min. 3 characters).");
+        bad = true;
+      } else setErr("f-suName", "");
+
+      if (!em) {
+        setErr("f-suEmail", "Email is required.");
+        bad = true;
+      } else if (!RX_EMAIL.test(em)) {
+        setErr("f-suEmail", "Invalid email format.");
+        bad = true;
+      } else setErr("f-suEmail", "");
+
+      if (ph && !/^[0-9+\-\s()]{7,}$/.test(ph)) {
+        setErr("f-suPhone", "Invalid phone number.");
+        bad = true;
+      } else setErr("f-suPhone", "");
+
+      if (role === "murid") {
+        if (!kelas) {
+          setErr("f-suKelas", "Please select your class.");
+          bad = true;
+        } else setErr("f-suKelas", "");
+
+        if (ic && !/^\d{6,12}$/.test(ic.replace(/\s/g, ""))) {
+          setErr("f-suNoKad", "Use 6–12 digits only.");
+          bad = true;
+        } else setErr("f-suNoKad", "");
+      }
+
+      if (pw.length < 8) {
+        setErr("f-suPass", "Password too short (min. 8 characters).");
+        bad = true;
+      } else setErr("f-suPass", "");
+
+      if (cf !== pw || !cf) {
+        setErr("f-suConfirm", "Passwords do not match.");
+        bad = true;
+      } else setErr("f-suConfirm", "");
+
+      $("#errTerms").textContent = terms ? "" : "You must accept the club rules to continue.";
+      if (!terms) bad = true;
+
+      if (bad) {
+        toast("Please check the form", "Some fields are incomplete.", true);
+        return;
+      }
+
+      const btn = $("#suSubmit");
+      busy(btn, true);
+
+      try {
+        const result = await signUp({
+          name,
+          email: em,
+          password: pw,
+          role,
+          kelas: role === "murid" ? kelas : "",
+          phone: ph,
+          ic,
+          newsletter: $("#suNews").checked
+        });
+
+        if (result.pendingVerification) {
+          showView("login");
+          toast("Check your email", "Confirm your email address, then log in.");
           return;
         }
 
-        setErr("f-fgEmail", "");
-
-        const btn = $("#fgSubmit");
-        busy(btn, true);
-
-        try {
-          await resetRequest(em);
-          $("#sentTo").textContent = maskEmail(em);
-          showView("sent");
-          toast("Link sent", "Check your inbox " + maskEmail(em));
-        } catch (err) {
-          toast("Could not send link", friendlyError(err).message, true);
-        } finally {
-          busy(btn, false);
+        state.user = result.user;
+        closeAuth();
+        await bootSession(true);
+        toast("Club account created 🌿", "Welcome to Lestari Alam Club.");
+      } catch (err) {
+        const f = friendlyError(err);
+        if (f.field) {
+          const map = {
+            name: "f-suName",
+            email: "f-suEmail",
+            phone: "f-suPhone",
+            kelas: "f-suKelas",
+            ic: "f-suNoKad",
+            password: "f-suPass"
+          };
+          setErr(map[f.field] || "f-suEmail", f.message);
         }
-      });
-    }
+        toast("Registration failed", f.message, true);
+      } finally {
+        busy(btn, false);
+      }
+    });
 
-    function bindContributionForm() {
-      $("#logForm").addEventListener("submit", async e => {
-        e.preventDefault();
+    $("#logForm").addEventListener("submit", async e => {
+      e.preventDefault();
 
-        if (!state.user) {
-          openAuth("login");
-          return;
-        }
+      if (!state.user) {
+        openAuth("login");
+        return;
+      }
 
-        const kg = parseFloat($("#lgKg").value);
-        const jenis = $("#lgJenis").value;
-        const nota = $("#lgNota").value.trim();
+      const kg = parseFloat($("#lgKg").value);
+      const jenis = $("#lgJenis").value;
+      const nota = $("#lgNota").value.trim();
 
-        if (!kg || kg <= 0 || kg > 500) {
-          toast("Invalid amount", "Enter between 0.1 and 500 kg.", true);
-          return;
-        }
+      if (!kg || kg <= 0 || kg > 500) {
+        toast("Invalid amount", "Enter between 0.1 and 500 kg.", true);
+        return;
+      }
 
-        const btn = $("#lgSubmit");
-        busy(btn, true);
+      const btn = $("#lgSubmit");
+      busy(btn, true);
 
-        try {
-          const bundle = await addContribution(jenis, kg, nota);
-          state.user = mapBundle(bundle);
-          state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
+      try {
+        const bundle = await addContribution(jenis, kg, nota);
+        state.user = mapBundle(bundle);
+        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
 
-          renderPortal(state.user, state.board);
+        renderPortal(state.user, state.board);
 
-          $("#lgKg").value = "";
-          $("#lgNota").value = "";
+        $("#lgKg").value = "";
+        $("#lgNota").value = "";
 
-          toast("Record received 🌿", "Your total is now " + fmtKg(state.user.kg) + " kg");
-        } catch (err) {
-          toast("Could not save record", friendlyError(err).message, true);
-        } finally {
-          busy(btn, false);
-        }
-      });
-    }
+        toast("Record received 🌿", "Your total is now " + fmtKg(state.user.kg) + " kg");
+      } catch (err) {
+        toast("Could not save record", friendlyError(err).message, true);
+      } finally {
+        busy(btn, false);
+      }
+    });
 
-    function bindActivityButtons() {
-      $("#acts").addEventListener("click", async e => {
-        const btn = e.target.closest(".reg");
-        if (!btn) return;
+    $("#acts").addEventListener("click", async e => {
+      const btn = e.target.closest(".reg");
+      if (!btn) return;
 
-        if (!state.user) {
-          openAuth("login");
-          return;
-        }
+      if (!state.user) {
+        openAuth("login");
+        return;
+      }
 
-        const id = btn.dataset.act;
-        const already = state.user.registered.includes(id);
-        const action = already ? "cancel" : "register";
+      const id = btn.dataset.act;
+      const already = state.user.registered.includes(id);
+      const action = already ? "cancel" : "register";
 
-        btn.disabled = true;
+      btn.disabled = true;
 
-        try {
-          const bundle = await toggleActivity(id, action);
-          state.user = mapBundle(bundle);
-          state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
+      try {
+        const bundle = await toggleActivity(id, action);
+        state.user = mapBundle(bundle);
+        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
 
-          renderPortal(state.user, state.board);
+        renderPortal(state.user, state.board);
 
-          toast(
-            action === "register" ? "You are registered ✓" : "Registration cancelled",
-            action === "register" ? "+15 Green Points added." : "Points and hours reversed."
-          );
-        } catch (err) {
-          toast("Could not update activity", friendlyError(err).message, true);
-        } finally {
-          btn.disabled = false;
-        }
-      });
-    }
+        toast(
+          action === "register" ? "You are registered ✓" : "Registration cancelled",
+          action === "register" ? "+15 Green Points added." : "Points and hours reversed."
+        );
+      } catch (err) {
+        toast("Could not update activity", friendlyError(err).message, true);
+      } finally {
+        btn.disabled = false;
+      }
+    });
 
-    /* =========================================================
-       START
-    ========================================================= */
-    function init() {
-      renderStatic();
-      initUI();
-      bindGlobalActions();
-      bindLoginForm();
-      bindSignupForm();
-      bindForgotForm();
-      bindContributionForm();
-      bindActivityButtons();
-      bootSession(false);
-    }
-
-    init();
+    bootSession(false);
   </script>
 </body>
 </html>
