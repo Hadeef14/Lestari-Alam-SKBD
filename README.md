@@ -1,14 +1,16 @@
 # Lestari Alam Club · SK Bukit Damansara
 
-Hi, I'm Hadeef, an ex-student from SK Bukit Damansara. I made this website for the Lestari Alam Club to help students, teachers, and club committee members track recycling contributions, club activities, Green Points, badges, and member records in one place.
+Hi! I'm Hadeef, an ex student from skbd that wants to improve school sustainability by making a website for the Lestari Alam Club. My journey was to help students, teachers, and club committee members track recycling contributions, club activities, Green Points, badges, and member records in one place.
 
-This project is open-source and free to use.
+The goal is to make school sustainability easier, more organized, and more fun for students. Its open-source for everyone and its completely free. Welp, thats from me (hadeef). Goodluck!!!
+
+Founder, Hadeef
 
 ## Features
 
 - Club member sign up and login
 - Supabase authentication
-- Member portal
+- Club member portal
 - Recycling contribution records
 - Green Points and level system
 - Club badges
@@ -27,7 +29,7 @@ This project is open-source and free to use.
 
 ## Live Site
 
-https://YOUR-USERNAME.github.io/lestari-alam-club/
+https://hadeef14.github.io/Lestari-Alam-SKBD/
 
 ## Notes
 
