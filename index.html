@@ -98,7 +98,7 @@
             <li>
               <span>♻️</span>
               <div>
-                <b>Kitar Semula Kelas</b>
+                <b>Kitar Semula Sekolah</b>
                 <small>Setiap Selasa & Khamis</small>
               </div>
             </li>
@@ -127,7 +127,7 @@
 
           <div class="ls-panel__foot">
             <b>Tahun 4–6</b>
-            <small>Inovatif · Dinamik · Bestari · Efektif · Kreatif · Proaktif</small>
+            <small>Open to students in Years 4 to 6.</small>
           </div>
         </aside>
       </div>
@@ -219,7 +219,7 @@
         <div class="ls-grid">
           <article class="ls-card">
             <span class="ls-emoji">♻️</span>
-            <h3>Kitar Semula Kelas</h3>
+            <h3>Kitar Semula Sekolah</h3>
             <p>
               Kertas, plastik bersih, dan tin aluminium dipisahkan sebelum direkod.
             </p>
@@ -357,8 +357,8 @@
               </tr>
               <tr>
                 <td>Februari</td>
-                <td>Kitar Semula Kelas</td>
-                <td>6 kelas</td>
+                <td>Kitar Semula Sekolah</td>
+                <td>6 kumpulan</td>
                 <td>180 kg kertas dikumpul</td>
                 <td><span class="ls-status done">Selesai</span></td>
               </tr>
@@ -457,9 +457,9 @@
         <div class="ls-comp-grid">
           <article class="ls-comp">
             <span class="ls-comp__level school">Peringkat Sekolah</span>
-            <h3>Cabaran Kelas Hijau</h3>
+            <h3>Cabaran Hijau Sekolah</h3>
             <p>
-              Kelas paling bersih dan paling banyak kitar semula dapat anugerah bulanan.
+              Kumpulan paling bersih dan paling banyak kitar semula dapat anugerah bulanan.
             </p>
             <small>Untuk semua Tahun 4–6</small>
           </article>
@@ -546,7 +546,7 @@
           <article class="ls-project">
             <span>📦</span>
             <h3>Stesen Kitar Semula Pintar</h3>
-            <p>Tong berlabel dan rekod mudah untuk kelas Tahun 4–6.</p>
+            <p>Tong berlabel dan rekod mudah untuk murid Tahun 4–6.</p>
           </article>
 
           <article class="ls-project">
@@ -732,108 +732,220 @@
     </div>
   </footer>
 
-  <!-- ===================== AUTH MODAL ===================== -->
-  <div class="auth" id="auth" hidden>
-    <div class="auth__scrim" data-close></div>
+  <!-- ===================== IMPROVED AUTH MODAL ===================== -->
+  <div class="authx" id="auth" hidden>
+    <div class="authx__scrim" data-close></div>
 
-    <div class="auth__panel" role="dialog" aria-modal="true">
-      <button class="auth__close" data-close aria-label="Close">✕</button>
+    <div class="authx__card" id="authCard" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <aside class="authx__side">
+        <div class="authx__side-glow" aria-hidden="true"></div>
+        <div class="authx__leaf authx__leaf--1" aria-hidden="true">🌿</div>
+        <div class="authx__leaf authx__leaf--2" aria-hidden="true">♻️</div>
+        <div class="authx__leaf authx__leaf--3" aria-hidden="true">🌱</div>
 
-      <div class="auth__brand">
-        <span>🌿</span>
-        <b>Lestari Alam Club</b>
+        <div class="authx__side-top">
+          <div class="authx__mark">🌿</div>
+          <h3 id="authSideTitle">One club account. <em>Every green record.</em></h3>
+          <p id="authSideText">
+            Login to open your Lestari Alam Club card, track contributions,
+            collect badges, and see your SKBD rank.
+          </p>
+
+          <ul class="authx__perks">
+            <li>
+              <span>✓</span>
+              Personal contribution records
+            </li>
+            <li>
+              <span>✓</span>
+              Green Points, levels & badges
+            </li>
+            <li>
+              <span>✓</span>
+              SKBD Leaderboard ranking
+            </li>
+            <li>
+              <span>✓</span>
+              Simple student-friendly portal
+            </li>
+          </ul>
+        </div>
+
+        <div class="authx__side-foot">
+          <div class="authx__mini-stats">
+            <div>
+              <b>24</b>
+              <small>members</small>
+            </div>
+            <div>
+              <b>2,400</b>
+              <small>kg recycled</small>
+            </div>
+            <div>
+              <b>8</b>
+              <small>badges</small>
+            </div>
+          </div>
+
+          <p class="authx__quote">
+            “Small green actions, logged properly, become a school habit.”
+          </p>
+        </div>
+      </aside>
+
+      <div class="authx__main">
+        <button class="authx__close" data-close aria-label="Close">✕</button>
+
+        <div class="authx__brand">
+          <span>🌿</span>
+          <div>
+            <b>Lestari Alam Club</b>
+            <small>SK Bukit Damansara</small>
+          </div>
+        </div>
+
+        <div class="authx__tabs" id="authTabs">
+          <span class="authx__indicator" id="authIndicator"></span>
+          <button type="button" class="authx__tab on" data-view="login">Login</button>
+          <button type="button" class="authx__tab" data-view="signup">Join Club</button>
+        </div>
+
+        <!-- LOGIN -->
+        <section class="authx__view on" id="viewLogin">
+          <h2 id="authTitle">Welcome back 🌿</h2>
+          <p class="authx__lead">
+            Log in to continue your green record.
+          </p>
+
+          <form id="formLogin" novalidate>
+            <div class="field" id="f-loginEmail">
+              <label for="loginEmail">Email</label>
+              <div class="input-wrap">
+                <input
+                  id="loginEmail"
+                  class="input"
+                  type="email"
+                  autocomplete="username"
+                  placeholder="member@skbd.edu.my"
+                />
+              </div>
+              <div class="err" data-err></div>
+            </div>
+
+            <div class="field" id="f-loginPass">
+              <label for="loginPass">Password</label>
+              <div class="input-wrap pw-wrap">
+                <input
+                  id="loginPass"
+                  class="input"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                />
+                <button type="button" class="pw-toggle" data-pw-toggle="loginPass">Show</button>
+              </div>
+              <div class="caps">⚠ Caps Lock is on</div>
+              <div class="err" data-err></div>
+            </div>
+
+            <button class="btn btn--solid submit" type="submit" id="loginSubmit">
+              Enter portal
+            </button>
+
+            <p class="authx__note">
+              Forgot password? Contact your teacher advisor or club admin.
+            </p>
+          </form>
+        </section>
+
+        <!-- SIGNUP -->
+        <section class="authx__view" id="viewSignup">
+          <h2>Join Lestari Alam Club</h2>
+          <p class="authx__lead">
+            Create a club account using only your name, email, and password.
+          </p>
+
+          <form id="formSignup" novalidate>
+            <div class="field" id="f-suName">
+              <label for="suName">Full name</label>
+              <div class="input-wrap">
+                <input
+                  id="suName"
+                  class="input"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="e.g. Nur Aisyah binti Rahman"
+                />
+              </div>
+              <div class="err" data-err></div>
+            </div>
+
+            <div class="field" id="f-suEmail">
+              <label for="suEmail">Email</label>
+              <div class="input-wrap">
+                <input
+                  id="suEmail"
+                  class="input"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="name@email.com"
+                />
+              </div>
+              <div class="err" data-err></div>
+            </div>
+
+            <div class="field" id="f-suPass">
+              <label for="suPass">Password</label>
+              <div class="input-wrap pw-wrap">
+                <input
+                  id="suPass"
+                  class="input"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="At least 8 characters"
+                />
+                <button type="button" class="pw-toggle" data-pw-toggle="suPass">Show</button>
+              </div>
+
+              <div class="strength" id="suStrength" data-s="0">
+                <div class="strength__bars">
+                  <i></i><i></i><i></i><i></i>
+                </div>
+                <div class="strength__label">Password strength</div>
+              </div>
+
+              <div class="caps">⚠ Caps Lock is on</div>
+              <div class="err" data-err></div>
+            </div>
+
+            <div class="field" id="f-suConfirm">
+              <label for="suConfirm">Confirm password</label>
+              <div class="input-wrap pw-wrap">
+                <input
+                  id="suConfirm"
+                  class="input"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Retype password"
+                />
+                <button type="button" class="pw-toggle" data-pw-toggle="suConfirm">Show</button>
+              </div>
+              <div class="caps">⚠ Caps Lock is on</div>
+              <div class="err" data-err></div>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" id="suTerms" />
+              <span>I agree to the Club Rules.</span>
+            </label>
+            <div class="err" id="errTerms"></div>
+
+            <button class="btn btn--solid submit" type="submit" id="suSubmit">
+              Create club account
+            </button>
+          </form>
+        </section>
       </div>
-
-      <div class="tabs" id="authTabs">
-        <button type="button" class="on" data-view="login">Member Login</button>
-        <button type="button" data-view="signup">Join Club</button>
-      </div>
-
-      <section class="view on" id="viewLogin">
-        <h2>Member login 🌿</h2>
-        <p class="lead">Log in to open your Lestari Alam Club card.</p>
-
-        <form id="formLogin" novalidate>
-          <div class="field" id="f-loginEmail">
-            <label for="loginEmail">Email *</label>
-            <div class="inp">
-              <input id="loginEmail" type="email" placeholder="member@skbd.edu.my" />
-            </div>
-            <div class="err" data-err></div>
-          </div>
-
-          <div class="field" id="f-loginPass">
-            <label for="loginPass">Password *</label>
-            <div class="inp">
-              <input id="loginPass" type="password" placeholder="••••••••" />
-            </div>
-            <div class="err" data-err></div>
-          </div>
-
-          <button class="btn btn--solid submit" type="submit" id="loginSubmit">
-            Enter portal
-          </button>
-        </form>
-
-        <p class="swap">
-          Not a club member yet?
-          <button type="button" class="link" data-view="signup">Join club</button>
-        </p>
-      </section>
-
-      <section class="view" id="viewSignup">
-        <h2>Join Lestari Alam Club</h2>
-        <p class="lead">Create a club account using only your name, email, and password.</p>
-
-        <form id="formSignup" novalidate>
-          <div class="field" id="f-suName">
-            <label for="suName">Full name *</label>
-            <div class="inp">
-              <input id="suName" type="text" autocomplete="name" placeholder="e.g. Nur Aisyah binti Rahman" />
-            </div>
-            <div class="err" data-err></div>
-          </div>
-
-          <div class="field" id="f-suEmail">
-            <label for="suEmail">Email *</label>
-            <div class="inp">
-              <input id="suEmail" type="email" autocomplete="email" placeholder="name@email.com" />
-            </div>
-            <div class="err" data-err></div>
-          </div>
-
-          <div class="field" id="f-suPass">
-            <label for="suPass">Password *</label>
-            <div class="inp">
-              <input id="suPass" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
-            </div>
-            <div class="err" data-err></div>
-          </div>
-
-          <div class="field" id="f-suConfirm">
-            <label for="suConfirm">Confirm password *</label>
-            <div class="inp">
-              <input id="suConfirm" type="password" autocomplete="new-password" placeholder="Retype password" />
-            </div>
-            <div class="err" data-err></div>
-          </div>
-
-          <label class="check">
-            <input type="checkbox" id="suTerms" />
-            <span>I agree to the Club Rules. *</span>
-          </label>
-          <div class="err" id="errTerms"></div>
-
-          <button class="btn btn--solid submit" type="submit" id="suSubmit">
-            Create club account
-          </button>
-        </form>
-
-        <p class="swap">
-          Already a club member?
-          <button type="button" class="link" data-view="login">Member login</button>
-        </p>
-      </section>
     </div>
   </div>
 
@@ -915,6 +1027,16 @@
     function busy(btn, on) {
       if (!btn) return;
       btn.disabled = on;
+      btn.classList.toggle("loading", on);
+    }
+
+    function shakeAuth() {
+      const card = $("#authCard");
+      if (!card) return;
+      card.classList.remove("shake");
+      void card.offsetWidth;
+      card.classList.add("shake");
+      setTimeout(() => card.classList.remove("shake"), 450);
     }
 
     function setErr(id, msg) {
@@ -973,7 +1095,6 @@
         name: p.full_name || "Club Member",
         email: p.email || "",
         role: p.role || "murid",
-        kelas: p.kelas || "",
         joined: p.joined || "",
         mata: Number(p.mata || 0),
         kg: Number(bundle.kg || 0),
@@ -1128,7 +1249,7 @@
           <span class="rk">${i + 1}</span>
           <span>
             <span class="nm">
-              ${esc(r.name || "Member")}${me && r.id === me.id ? ' <em>← you</em>' : ""}${r.kelas ? ' · ' + esc(r.kelas) : ""}
+              ${esc(r.name || "Member")}${me && r.id === me.id ? ' <em>← you</em>' : ""}
             </span>
             <span class="track"><i style="width:${(Number(r.kg || 0) / mx * 100).toFixed(1)}%"></i></span>
           </span>
@@ -1153,11 +1274,10 @@
 
     function renderPortal(u, board) {
       const L = levelOf(u.mata);
-      const kelasLabel = u.kelas && u.kelas !== "Unassigned" ? u.kelas : "";
       const monthsActive = (u.recs || []).filter(v => Number(v) > 0).length;
 
       $("#kadName").textContent = u.name;
-      $("#kadMeta").textContent = `${ROLE_LABEL[u.role] || "Member"}${kelasLabel ? " · " + kelasLabel : ""} · Member since ${u.joined || "—"}`;
+      $("#kadMeta").textContent = `${ROLE_LABEL[u.role] || "Member"} · Member since ${u.joined || "—"}`;
 
       const idNum = String(
         Math.abs([...(u.email || "member")].reduce((a, c) => a + c.charCodeAt(0) * 31, 0)) % 9000 + 1000
@@ -1263,7 +1383,6 @@
         board.unshift({
           id: u.id,
           name: u.name,
-          kelas: u.kelas || "",
           kg,
           mata: u.mata
         });
@@ -1277,13 +1396,36 @@
 
     const auth = $("#auth");
 
+    function updateAuthSide(view) {
+      const title = $("#authSideTitle");
+      const text = $("#authSideText");
+
+      if (!title || !text) return;
+
+      if (view === "signup") {
+        title.innerHTML = 'Start your <em>green record</em>.';
+        text.textContent =
+          "Join with only your name, email, and password. No IC. No phone. No extra personal info.";
+      } else {
+        title.innerHTML = 'One club account. <em>Every green record.</em>';
+        text.textContent =
+          "Login to open your Lestari Alam Club card, track contributions, collect badges, and see your SKBD rank.";
+      }
+    }
+
+    function updateAuthIndicator(view) {
+      const ind = $("#authIndicator");
+      if (!ind) return;
+      ind.style.transform = view === "signup" ? "translateX(100%)" : "translateX(0)";
+    }
+
     function openAuth(view) {
       auth.hidden = false;
       document.body.classList.add("no-scroll");
       showView(view);
 
       const first = view === "signup" ? $("#suName") : $("#loginEmail");
-      setTimeout(() => first?.focus(), 80);
+      setTimeout(() => first?.focus(), 120);
     }
 
     function closeAuth() {
@@ -1292,8 +1434,40 @@
     }
 
     function showView(name) {
-      $$(".view").forEach(v => v.classList.toggle("on", v.id === "view" + cap(name)));
-      $$("#authTabs button").forEach(b => b.classList.toggle("on", b.dataset.view === name));
+      $$(".authx__view").forEach(v => v.classList.toggle("on", v.id === "view" + cap(name)));
+      $$("#authTabs .authx__tab").forEach(b => b.classList.toggle("on", b.dataset.view === name));
+      updateAuthIndicator(name);
+      updateAuthSide(name);
+    }
+
+    function scorePassword(pw) {
+      let score = 0;
+      if (!pw) return 0;
+      if (pw.length >= 8) score++;
+      if (pw.length >= 12) score++;
+      if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) score++;
+      if (/\d/.test(pw)) score++;
+      if (/[^A-Za-z0-9]/.test(pw)) score++;
+      return Math.min(4, score);
+    }
+
+    function updateStrength() {
+      const pw = $("#suPass")?.value || "";
+      const box = $("#suStrength");
+      if (!box) return;
+
+      const s = scorePassword(pw);
+      box.dataset.s = String(s);
+
+      const label = $(".strength__label", box);
+      if (label) {
+        label.textContent =
+          s === 0 ? "Password strength" :
+          s === 1 ? "Weak password" :
+          s === 2 ? "Fair password" :
+          s === 3 ? "Good password" :
+          "Strong password";
+      }
     }
 
     async function bootSession(announce = false) {
@@ -1379,6 +1553,18 @@
         return;
       }
 
+      const pwToggle = e.target.closest("[data-pw-toggle]");
+      if (pwToggle) {
+        const input = document.getElementById(pwToggle.dataset.pwToggle);
+        if (!input) return;
+
+        const show = input.type === "password";
+        input.type = show ? "text" : "password";
+        pwToggle.textContent = show ? "Hide" : "Show";
+        pwToggle.setAttribute("aria-pressed", String(show));
+        return;
+      }
+
       if (e.target.closest("[data-close]")) {
         closeAuth();
       }
@@ -1387,6 +1573,26 @@
     window.addEventListener("keydown", e => {
       if (!auth.hidden && e.key === "Escape") closeAuth();
     });
+
+    ["loginPass", "suPass", "suConfirm"].forEach(id => {
+      const input = document.getElementById(id);
+      if (!input) return;
+
+      const field = input.closest(".field");
+      const caps = field ? $(".caps", field) : null;
+
+      const checkCaps = e => {
+        if (!caps) return;
+        const on = typeof e.getModifierState === "function" && e.getModifierState("CapsLock");
+        caps.classList.toggle("show", !!on);
+      };
+
+      input.addEventListener("keyup", checkCaps);
+      input.addEventListener("keydown", checkCaps);
+      input.addEventListener("blur", () => caps?.classList.remove("show"));
+    });
+
+    $("#suPass")?.addEventListener("input", updateStrength);
 
     $("#formLogin").addEventListener("submit", async e => {
       e.preventDefault();
@@ -1413,7 +1619,10 @@
         setErr("f-loginPass", "");
       }
 
-      if (bad) return;
+      if (bad) {
+        shakeAuth();
+        return;
+      }
 
       const btn = $("#loginSubmit");
       busy(btn, true);
@@ -1426,6 +1635,7 @@
         const f = friendlyError(err);
         setErr(f.field === "email" ? "f-loginEmail" : "f-loginPass", f.message);
         toast("Login failed", f.message, true);
+        shakeAuth();
       } finally {
         busy(btn, false);
       }
@@ -1478,6 +1688,7 @@
 
       if (bad) {
         toast("Please check the form", "Some fields are incomplete.", true);
+        shakeAuth();
         return;
       }
 
@@ -1515,6 +1726,7 @@
         }
 
         toast("Registration failed", f.message, true);
+        shakeAuth();
       } finally {
         busy(btn, false);
       }
