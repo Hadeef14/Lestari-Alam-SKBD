@@ -2,7 +2,7 @@
 
 Hi! I'm Hadeef, an ex student from skbd that wants to improve school sustainability by making a website for the Lestari Alam Club. My journey was to help students, teachers, and club committee members track recycling contributions, club activities, Green Points, badges, and member records in one place.
 
-The goal is to make school sustainability easier, more organized, and more fun for students. Its open-source for everyone and its completely free. Welp, thats from me (hadeef). Goodluck!!!
+The goal is to make school sustainability easier, more organized, and more fun for students. Its open-source for everyone and its completely free. Welp, thats from me (hadeef). bye!!!
 
 Founder, Hadeef
 
