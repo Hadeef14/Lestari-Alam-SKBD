@@ -565,7 +565,7 @@
           <h2>Portal ahli dah siap. Jom log rekod pertama kamu.</h2>
           <p>
             Selepas sertai kelab, murid boleh log rekod kitar semula,
-            kumpul Green Points, unlock badge, dan daftar aktiviti kelab.
+            kumpul Green Points, dan unlock badge.
           </p>
         </div>
 
@@ -609,7 +609,7 @@
               <div class="kad__nums">
                 <div><b id="kadMata">0</b><small>Green Points</small></div>
                 <div><b id="kadKg">0 kg</b><small>2026 Contribution</small></div>
-                <div><b id="kadAktif">0</b><small>Activities Joined</small></div>
+                <div><b id="kadAktif">0</b><small>Months active</small></div>
               </div>
 
               <div class="kad__bot">
@@ -667,11 +667,6 @@
               <ul class="lb" id="leaderboard"></ul>
             </article>
 
-            <article class="pc">
-              <h3 class="pc__t">Upcoming club activities <small id="regCount">0 registered</small></h3>
-              <div class="acts" id="acts"></div>
-            </article>
-
             <article class="pc wide">
               <h3 class="pc__t">Your monthly contribution <small id="pchartTotal">0 kg</small></h3>
               <div class="pchart" id="pchart"></div>
@@ -695,7 +690,7 @@
               <h3>This portal is for Lestari Alam Club members</h3>
               <p>
                 Club members can log in to view their member card, track contributions,
-                collect badges, and register for upcoming club activities.
+                collect badges, and view their club progress.
               </p>
 
               <div class="veil__acts">
@@ -861,7 +856,7 @@
 
     const state = {
       user: null,
-      board: null
+      board: []
     };
 
     const RX_EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
@@ -890,13 +885,6 @@
       { id: "air", ic: "💧", n: "Water Guardian", d: "Join river monitoring" },
       { id: "sukwan", ic: "🤝", n: "10h Volunteer", d: "10 service hours" },
       { id: "suara", ic: "🎙️", n: "Suara Daun", d: "Be a podcast guest" }
-    ];
-
-    const ACTIVITIES = [
-      { id: "a1", n: "Sungai Batu River Clean-up", d: "Sat, 24 Oct 2026", t: "8:00 AM · 3 hrs", slot: "12 / 40" },
-      { id: "a2", n: "Bucket Compost Workshop", d: "Wed, 29 Oct 2026", t: "2:30 PM · Hall", slot: "31 / 50" },
-      { id: "a3", n: "Kuala Selangor Mangrove Planting", d: "Sun, 9 Nov 2026", t: "7:00 AM · full day", slot: "8 / 60" },
-      { id: "a4", n: "Suara Daun Podcast Recording", d: "Thu, 13 Nov 2026", t: "4:00 PM · Media Room", slot: "2 / 6" }
     ];
 
     const LEADERBOARD_FALLBACK = [];
@@ -946,18 +934,29 @@
     }
 
     function timeAgo(iso) {
-      const diff = Math.max(0, Date.now() - new Date(iso).getTime());
+      if (!iso) return "—";
+
+      const then = new Date(iso).getTime();
+      if (Number.isNaN(then)) return "—";
+
+      const diff = Math.max(0, Date.now() - then);
       const mins = Math.floor(diff / 60000);
+
       if (mins < 1) return "just now";
       if (mins < 60) return `${mins} min ago`;
+
       const hrs = Math.floor(mins / 60);
       if (hrs < 24) return `${hrs} hr ago`;
+
       const days = Math.floor(hrs / 24);
       if (days < 7) return `${days} d ago`;
+
       const weeks = Math.floor(days / 7);
       if (weeks < 5) return `${weeks} wk ago`;
+
       const months = Math.floor(days / 30);
       if (months < 12) return `${months} mo ago`;
+
       return `${Math.floor(days / 365)} yr ago`;
     }
 
@@ -978,12 +977,10 @@
         joined: p.joined || "",
         mata: Number(p.mata || 0),
         kg: Number(bundle.kg || 0),
-        aktif: Number(p.aktif || 0),
         pokok: Number(p.pokok || 0),
         jam: Number(p.jam || 0),
         badges: Array.isArray(p.badges) ? p.badges : ["warga"],
         recs: Array.from({ length: 12 }, (_, i) => Number(monthlyArr[i] || 0)),
-        registered: Array.isArray(bundle.registered) ? bundle.registered : [],
         log: Array.isArray(bundle.log)
           ? bundle.log.map(l => ({ t: l.text, when: timeAgo(l.created_at) }))
           : []
@@ -1061,21 +1058,11 @@
       return data;
     }
 
-    async function toggleActivity(activityId, action) {
-      const { data, error } = await supabase.rpc("register_activity", {
-        p_activity_id: activityId,
-        p_action: action
-      });
-
-      if (error) throw error;
-      return data;
-    }
-
     async function fetchLeaderboard() {
       try {
         const { data, error } = await supabase.rpc("get_skbd_leaderboard");
         if (error) return null;
-        return Array.isArray(data) && data.length ? data : null;
+        return Array.isArray(data) ? data : null;
       } catch {
         return null;
       }
@@ -1123,13 +1110,13 @@
     }
 
     function renderLeaderboard(rows, me) {
-      const sorted = [...rows].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
+      const sorted = [...(rows || [])].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
       const el = $("#leaderboard");
 
       if (!el) return;
 
       if (!sorted.length) {
-        el.innerHTML = "<li>No SKBD records yet.</li>";
+        el.innerHTML = '<li class="more">No SKBD records yet.</li>';
         return;
       }
 
@@ -1140,11 +1127,12 @@
         <li class="${me && r.id === me.id ? "me" : ""}">
           <span class="rk">${i + 1}</span>
           <span>
-            <span class="nm">${esc(r.name || "Member")}${me && r.id === me.id ? ' <em>← you</em>' : ""}</span>
-            <span class="sub">${r.kelas ? esc(r.kelas) : "SKBD Member"}</span>
-            <span class="track"><i style="width:${(Number(r.kg) / mx * 100).toFixed(1)}%"></i></span>
+            <span class="nm">
+              ${esc(r.name || "Member")}${me && r.id === me.id ? ' <em>← you</em>' : ""}${r.kelas ? ' · ' + esc(r.kelas) : ""}
+            </span>
+            <span class="track"><i style="width:${(Number(r.kg || 0) / mx * 100).toFixed(1)}%"></i></span>
           </span>
-          <span class="kg">${Math.round(Number(r.kg))} kg</span>
+          <span class="kg">${Math.round(Number(r.kg || 0))} kg</span>
         </li>
       `).join("");
 
@@ -1166,6 +1154,7 @@
     function renderPortal(u, board) {
       const L = levelOf(u.mata);
       const kelasLabel = u.kelas && u.kelas !== "Unassigned" ? u.kelas : "";
+      const monthsActive = (u.recs || []).filter(v => Number(v) > 0).length;
 
       $("#kadName").textContent = u.name;
       $("#kadMeta").textContent = `${ROLE_LABEL[u.role] || "Member"}${kelasLabel ? " · " + kelasLabel : ""} · Member since ${u.joined || "—"}`;
@@ -1182,7 +1171,7 @@
       $("#kadLevelName").textContent = L.cur.name;
       $("#kadMata").textContent = fmt(u.mata);
       $("#kadKg").textContent = fmtKg(u.kg) + " kg";
-      $("#kadAktif").textContent = u.aktif;
+      $("#kadAktif").textContent = monthsActive;
 
       $("#xpLabel").textContent = L.nxt
         ? `${u.mata - L.cur.need} / ${L.nxt.need - L.cur.need} XP to ${L.nxt.name}`
@@ -1194,7 +1183,7 @@
       $("#msPokok").textContent = u.pokok;
       $("#msJam").textContent = u.jam + " h";
 
-      const sortedBoard = [...board].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
+      const sortedBoard = [...(board || [])].sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
       const rankIdx = sortedBoard.findIndex(r => r.id === u.id) + 1;
       $("#msRank").textContent = rankIdx ? "#" + rankIdx : "—";
 
@@ -1226,27 +1215,12 @@
 
       renderLeaderboard(board, u);
 
-      $("#acts").innerHTML = ACTIVITIES.map(a => {
-        const on = u.registered.includes(a.id);
-        return `
-          <div class="act">
-            <div>
-              <b>${esc(a.n)}</b>
-              <span class="when"><i>🗓 ${esc(a.d)}</i><i>⏱ ${esc(a.t)}</i><i>👥 ${esc(a.slot)}</i></span>
-            </div>
-            <button class="reg ${on ? "done" : ""}" data-act="${a.id}">${on ? "Registered ✓" : "Register"}</button>
-          </div>
-        `;
-      }).join("");
-
-      $("#regCount").textContent = u.registered.length + " registered";
-
       const miss = [
         ["Record first recycling contribution", u.kg > 0],
-        ["Register one club activity", u.registered.length > 0],
         ["Collect first 50 Green Points", u.mata >= 50],
         ["Unlock your second badge", u.badges.length >= 2],
-        ["Reach Guardian level", u.mata >= 150]
+        ["Reach Guardian level", u.mata >= 150],
+        ["Log records in 3 different months", monthsActive >= 3]
       ];
 
       $("#missions").innerHTML = miss.map(m => `
@@ -1276,7 +1250,7 @@
 
       u.log = u.log.slice(0, 20);
 
-      const board = [...(state.board || LEADERBOARD_FALLBACK)];
+      const board = Array.isArray(state.board) ? [...state.board] : [];
       const idx = board.findIndex(r => r.id === u.id);
 
       if (idx > -1) {
@@ -1289,49 +1263,13 @@
         board.unshift({
           id: u.id,
           name: u.name,
-          kelas: u.kelas || "—",
+          kelas: u.kelas || "",
           kg,
           mata: u.mata
         });
       }
 
       board.sort((a, b) => Number(b.kg || 0) - Number(a.kg || 0));
-      state.board = board;
-
-      renderPortal(u, state.board);
-    }
-
-    function toggleLocalActivity(id, action) {
-      const u = state.user;
-      if (!u) return;
-
-      const act = ACTIVITIES.find(a => a.id === id);
-      const name = act ? act.n : id;
-
-      if (action === "register") {
-        if (!u.registered.includes(id)) {
-          u.registered.push(id);
-          u.aktif = Number(u.aktif || 0) + 1;
-          u.mata = Number(u.mata || 0) + 15;
-          u.log.unshift({ t: `Registered for ${name} (saved on this device)`, when: "just now" });
-        }
-      } else {
-        const idx = u.registered.indexOf(id);
-        if (idx > -1) {
-          u.registered.splice(idx, 1);
-          u.aktif = Math.max(0, Number(u.aktif || 0) - 1);
-          u.mata = Math.max(0, Number(u.mata || 0) - 15);
-          u.log.unshift({ t: `Cancelled registration for ${name}`, when: "just now" });
-        }
-      }
-
-      u.log = u.log.slice(0, 20);
-
-      const board = [...(state.board || LEADERBOARD_FALLBACK)];
-      const idx = board.findIndex(r => r.id === u.id);
-      if (idx > -1) {
-        board[idx] = { ...board[idx], mata: u.mata };
-      }
       state.board = board;
 
       renderPortal(u, state.board);
@@ -1414,6 +1352,7 @@
     async function doLogout() {
       await signOut();
       state.user = null;
+      state.board = [];
       await bootSession(false);
       toast("You have logged out", "Your club records are safely stored in Supabase.");
     }
@@ -1607,7 +1546,7 @@
         if (!bundle) throw new Error("No database response.");
 
         state.user = mapBundle(bundle);
-        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
+        state.board = await fetchLeaderboard() || [];
 
         renderPortal(state.user, state.board);
 
@@ -1620,47 +1559,6 @@
         $("#lgKg").value = "";
         $("#lgNota").value = "";
         busy(btn, false);
-      }
-    });
-
-    $("#acts").addEventListener("click", async e => {
-      const btn = e.target.closest(".reg");
-      if (!btn) return;
-
-      if (!state.user) {
-        openAuth("login");
-        return;
-      }
-
-      const id = btn.dataset.act;
-      const already = state.user.registered.includes(id);
-      const action = already ? "cancel" : "register";
-
-      btn.disabled = true;
-
-      try {
-        const bundle = await toggleActivity(id, action);
-
-        if (!bundle) throw new Error("No database response.");
-
-        state.user = mapBundle(bundle);
-        state.board = await fetchLeaderboard() || state.board || LEADERBOARD_FALLBACK;
-
-        renderPortal(state.user, state.board);
-
-        toast(
-          action === "register" ? "You are registered ✓" : "Registration cancelled",
-          action === "register" ? "+15 Green Points added." : "Points reversed."
-        );
-      } catch (err) {
-        console.warn("Activity RPC failed, using local fallback:", err);
-        toggleLocalActivity(id, action);
-        toast(
-          action === "register" ? "Registered locally ✓" : "Cancelled locally",
-          "Database update failed, so this change is saved on this device only."
-        );
-      } finally {
-        btn.disabled = false;
       }
     });
 
