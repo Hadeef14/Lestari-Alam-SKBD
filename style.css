@@ -1,27 +1,6 @@
 /* ============================================================
    LESTARI ALAM SKBD — SK BUKIT DAMANSARA
-   Full stylesheet
-   ------------------------------------------------------------
-   01. Tokens
-   02. Reset & base
-   03. Utilities
-   04. Buttons
-   05. Language Toggle
-   06. Navigation (desktop + mobile)
-   07. Hero (orbs, panel, marquee)
-   08. Pill section nav
-   09. Sections & typography
-   10. About + mission
-   11. Cards (achievements, programs)
-   12. Recycling Table (NEW)
-   13. Competitions
-   14. Projects
-   15. CTA
-   16. Member Portal (shell, card, mini stats, forms, badges)
-   17. Footer
-   18. Toasts
-   19. Auth Modal
-   20. Responsive
+   Full Stylesheet (Final Repaired Version)
    ============================================================ */
 
 /* ============================================================
@@ -198,9 +177,7 @@ body.no-scroll {
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 /* =========================================================
@@ -627,7 +604,7 @@ body.no-scroll {
 }
 
 /* =========================================================
-   08. CONTENT SECTIONS
+   08. CONTENT SECTIONS & INTRO
 ========================================================= */
 .ls-section {
   padding-block: clamp(3rem, 7vw, 5rem);
@@ -658,6 +635,20 @@ body.no-scroll {
   color: var(--forest);
   opacity: .9;
   font-size: 1.02rem;
+}
+
+/* NEW: The Highlight Quote */
+.intro-highlight {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(167, 206, 60, 0.15);
+  border-left: 5px solid var(--lime);
+  border-radius: 0 16px 16px 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--forest);
+  font-style: italic;
+  box-shadow: 0 10px 30px -20px rgba(22, 36, 27, 0.3);
 }
 
 .ls-chips {
@@ -775,7 +766,7 @@ body.no-scroll {
 }
 
 /* =========================================================
-   09. RECYCLING TABLE
+   09. RECYCLING TABLE (NEW)
 ========================================================= */
 .table-container {
   background: var(--card);
