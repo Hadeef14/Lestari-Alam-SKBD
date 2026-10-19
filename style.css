@@ -1,41 +1,28 @@
 /* ============================================================
-   LESTARI ALAM CLUB — SK BUKIT DAMANSARA
+   LESTARI ALAM SKBD — SK BUKIT DAMANSARA
    Full stylesheet
    ------------------------------------------------------------
    01. Tokens
    02. Reset & base
    03. Utilities
    04. Buttons
-   05. Navigation (desktop + mobile)
-   06. Hero (orbs, panel, marquee)
-   07. Pill section nav
-   08. Sections & typography
-   09. About + mission
-   10. Cards (achievements, programs)
-   11. Kitar semula (data viz)
-   12. Anugerah
-   13. Tabs
-   14. Table
-   15. Projek
-   16. CTA
+   05. Language Toggle
+   06. Navigation (desktop + mobile)
+   07. Hero (orbs, panel, marquee)
+   08. Pill section nav
+   09. Sections & typography
+   10. About + mission
+   11. Cards (achievements, programs)
+   12. Recycling Table (NEW)
+   13. Competitions
+   14. Projects
+   15. CTA
+   16. Member Portal (shell, card, mini stats, forms, badges)
    17. Footer
-   18. Back to top
-   19. Reveal
-   20. MEMBER PORTAL
-       20a. Portal shell
-       20b. Member card
-       20c. Stat / Green Points grid
-       20d. Badge grid
-       20e. Leaderboard
-       20f. Activity log
-       20g. Form controls
-       20h. Locked / guest state
-       20i. Auth modals
-   21. Responsive
-   22. Reduced motion
-   23. Print
+   18. Toasts
+   19. Auth Modal
+   20. Responsive
    ============================================================ */
-
 
 /* ============================================================
    01. TOKENS
@@ -58,6 +45,9 @@
   --shadow-lg: 0 40px 120px -40px rgba(0, 0, 0, .75);
 }
 
+/* ============================================================
+   02. RESET & BASE
+   ============================================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -121,9 +111,8 @@ body.no-scroll {
 }
 
 /* =========================================================
-   BUTTONS
+   03. BUTTONS
 ========================================================= */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -215,9 +204,30 @@ body.no-scroll {
 }
 
 /* =========================================================
-   NAVBAR
+   04. LANGUAGE TOGGLE
 ========================================================= */
+.lang-btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--forest);
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding: 0.55em 0.8em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 0.5rem;
+}
 
+.lang-btn:hover {
+  background: var(--forest);
+  color: var(--lime);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   05. NAVBAR
+========================================================= */
 .nav {
   position: sticky;
   top: 0;
@@ -318,9 +328,8 @@ body.no-scroll {
 }
 
 /* =========================================================
-   HERO
+   06. HERO
 ========================================================= */
-
 .ls-hero {
   position: relative;
   overflow: hidden;
@@ -366,12 +375,8 @@ body.no-scroll {
 }
 
 @keyframes lsFloat {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-14px) scale(1.03);
-  }
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-14px) scale(1.03); }
 }
 
 .ls-hero__grid {
@@ -490,9 +495,7 @@ body.no-scroll {
 }
 
 @keyframes lsPulse {
-  50% {
-    box-shadow: 0 0 0 10px rgba(167, 206, 60, 0);
-  }
+  50% { box-shadow: 0 0 0 10px rgba(167, 206, 60, 0); }
 }
 
 .ls-panel__list {
@@ -589,15 +592,12 @@ body.no-scroll {
 }
 
 @keyframes lsMarquee {
-  to {
-    transform: translateX(-50%);
-  }
+  to { transform: translateX(-50%); }
 }
 
 /* =========================================================
-   QUICK NAV
+   07. QUICK NAV
 ========================================================= */
-
 .ls-nav {
   background: var(--card);
   border-bottom: 1px solid var(--line);
@@ -627,9 +627,8 @@ body.no-scroll {
 }
 
 /* =========================================================
-   CONTENT SECTIONS
+   08. CONTENT SECTIONS
 ========================================================= */
-
 .ls-section {
   padding-block: clamp(3rem, 7vw, 5rem);
   background: var(--paper);
@@ -776,177 +775,79 @@ body.no-scroll {
 }
 
 /* =========================================================
-   REPORT TABLE
+   09. RECYCLING TABLE
 ========================================================= */
-
-.ls-table-wrap {
-  overflow-x: auto;
+.table-container {
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: var(--card);
   box-shadow: var(--shadow);
-}
-
-.ls-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 760px;
-}
-
-.ls-table th,
-.ls-table td {
-  padding: .9rem 1rem;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-  vertical-align: top;
-  font-size: .92rem;
-}
-
-.ls-table th {
-  background: var(--paper-2);
-  color: var(--moss);
-  font-size: .72rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.ls-table tr:last-child td {
-  border-bottom: none;
-}
-
-.ls-status {
-  display: inline-flex;
-  padding: .32rem .6rem;
-  border-radius: 999px;
-  font-size: .75rem;
-  font-weight: 900;
-}
-
-.ls-status.done {
-  background: rgba(167, 206, 60, .25);
-  color: var(--forest);
-}
-
-.ls-status.progress {
-  background: rgba(222, 154, 46, .22);
-  color: #8b5b12;
-}
-
-.ls-status.plan {
-  background: rgba(78, 140, 166, .18);
-  color: #245d75;
-}
-
-/* =========================================================
-   COMPETITIONS
-========================================================= */
-
-.ls-levels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .55rem;
-  margin-top: 1.2rem;
-}
-
-.ls-level {
-  padding: .45rem .8rem;
-  border-radius: 999px;
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.ls-level.school {
-  background: rgba(167, 206, 60, .25);
-  color: var(--forest);
-}
-
-.ls-level.district {
-  background: rgba(78, 140, 166, .18);
-  color: #245d75;
-}
-
-.ls-level.state {
-  background: rgba(222, 154, 46, .22);
-  color: #8b5b12;
-}
-
-.ls-level.international {
-  background: rgba(188, 90, 52, .16);
-  color: var(--clay);
-}
-
-.ls-comp-grid,
-.ls-project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  padding: 1.5rem;
+  overflow-x: auto;
   margin-top: 1.5rem;
 }
 
-.ls-comp__level {
-  display: inline-block;
-  padding: .32rem .65rem;
-  border-radius: 999px;
-  font-size: .72rem;
-  font-weight: 900;
-  margin-bottom: .8rem;
+.recycle-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1400px;
+  font-size: 0.85rem;
 }
 
-.ls-comp__level.school {
-  background: rgba(167, 206, 60, .22);
+.recycle-table th,
+.recycle-table td {
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.recycle-table th {
+  background: var(--paper-2);
   color: var(--forest);
-}
-
-.ls-comp__level.district {
-  background: rgba(78, 140, 166, .18);
-  color: #245d75;
-}
-
-.ls-comp__level.state {
-  background: rgba(222, 154, 46, .22);
-  color: #8b5b12;
-}
-
-.ls-comp__level.international {
-  background: rgba(188, 90, 52, .16);
-  color: var(--clay);
-}
-
-.ls-comp__level.general {
-  background: rgba(28, 58, 40, .08);
-  color: var(--forest);
-}
-
-.ls-comp small {
-  display: block;
-  margin-top: .9rem;
-  color: var(--moss);
-  font-size: .8rem;
   font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+}
+
+.recycle-table td:first-child,
+.recycle-table th:first-child {
+  text-align: left;
+  position: sticky;
+  left: 0;
+  background: var(--card);
+  z-index: 10;
+}
+
+.recycle-table input {
+  width: 100%;
+  min-width: 60px;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: inherit;
+  text-align: center;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.recycle-table input[type="text"] {
+  min-width: 140px;
+  text-align: left;
+}
+
+.recycle-table input:focus {
+  outline: none;
+  border-color: var(--moss);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(62, 107, 71, 0.15);
 }
 
 /* =========================================================
-   PROJECTS
+   10. CTA
 ========================================================= */
-
-.ls-project span {
-  width: 50px;
-  height: 50px;
-  border-radius: 17px;
-  background: rgba(28, 58, 40, .08);
-  display: grid;
-  place-items: center;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-/* =========================================================
-   CTA
-========================================================= */
-
 .ls-cta {
   background: linear-gradient(135deg, var(--forest), #255034 55%, #2f6140);
   color: var(--paper);
@@ -981,9 +882,8 @@ body.no-scroll {
 }
 
 /* =========================================================
-   PORTAL
+   11. MEMBER PORTAL
 ========================================================= */
-
 .portal {
   padding-block: clamp(3rem, 7vw, 5rem);
   background: linear-gradient(180deg, var(--paper-2), var(--paper));
@@ -1103,10 +1003,7 @@ body.no-scroll {
   color: var(--moss);
 }
 
-/* =========================================================
-   MEMBER CARD
-========================================================= */
-
+/* MEMBER CARD */
 .kad {
   background: linear-gradient(140deg, var(--forest), #255034 55%, #2f6140);
   color: var(--paper);
@@ -1214,10 +1111,7 @@ body.no-scroll {
   transition: width .8s;
 }
 
-/* =========================================================
-   MINI STATS
-========================================================= */
-
+/* MINI STATS */
 .mini {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -1253,10 +1147,7 @@ body.no-scroll {
   opacity: .75;
 }
 
-/* =========================================================
-   CONTRIBUTION FORM
-========================================================= */
-
+/* CONTRIBUTION FORM */
 .logform label {
   display: block;
   font-size: .7rem;
@@ -1295,10 +1186,7 @@ body.no-scroll {
   margin-bottom: .8rem;
 }
 
-/* =========================================================
-   BADGES
-========================================================= */
-
+/* BADGES */
 .badges {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1342,10 +1230,7 @@ body.no-scroll {
   opacity: 1;
 }
 
-/* =========================================================
-   LEADERBOARD
-========================================================= */
-
+/* LEADERBOARD */
 .lb {
   list-style: none;
   display: grid;
@@ -1422,10 +1307,7 @@ body.no-scroll {
   white-space: nowrap;
 }
 
-/* =========================================================
-   MONTHLY CHART
-========================================================= */
-
+/* MONTHLY CHART */
 .pchart {
   display: flex;
   align-items: flex-end;
@@ -1491,10 +1373,7 @@ body.no-scroll {
   font-size: .9rem;
 }
 
-/* =========================================================
-   MISSIONS
-========================================================= */
-
+/* MISSIONS */
 .miss {
   list-style: none;
   display: grid;
@@ -1532,10 +1411,7 @@ body.no-scroll {
   opacity: .55;
 }
 
-/* =========================================================
-   ACTIVITY LOG
-========================================================= */
-
+/* ACTIVITY LOG */
 .alog {
   list-style: none;
   display: grid;
@@ -1578,9 +1454,8 @@ body.no-scroll {
 }
 
 /* =========================================================
-   FOOTER
+   12. FOOTER
 ========================================================= */
-
 footer {
   background: var(--forest);
   color: var(--paper);
@@ -1632,9 +1507,8 @@ footer h4 {
 }
 
 /* =========================================================
-   TOASTS
+   13. TOASTS
 ========================================================= */
-
 .toasts {
   position: fixed;
   right: 1rem;
@@ -1682,9 +1556,8 @@ footer h4 {
 }
 
 /* =========================================================
-   IMPROVED AUTH MODAL
+   14. AUTH MODAL
 ========================================================= */
-
 .authx {
   position: fixed;
   inset: 0;
@@ -1721,23 +1594,13 @@ footer h4 {
 }
 
 @keyframes authFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes authPop {
-  from {
-    opacity: 0;
-    transform: translateY(22px) scale(.96);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(22px) scale(.96); }
+  to { opacity: 1; transform: none; }
 }
 
 .authx__card.shake {
@@ -1745,18 +1608,10 @@ footer h4 {
 }
 
 @keyframes authShake {
-  10%, 90% {
-    transform: translateX(-2px);
-  }
-  20%, 80% {
-    transform: translateX(4px);
-  }
-  30%, 50%, 70% {
-    transform: translateX(-8px);
-  }
-  40%, 60% {
-    transform: translateX(8px);
-  }
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60% { transform: translateX(8px); }
 }
 
 .authx__side {
@@ -1791,30 +1646,13 @@ footer h4 {
   animation: authFloat 8s ease-in-out infinite;
 }
 
-.authx__leaf--1 {
-  top: 14%;
-  right: 12%;
-}
-
-.authx__leaf--2 {
-  bottom: 18%;
-  left: 10%;
-  animation-delay: 1.4s;
-}
-
-.authx__leaf--3 {
-  top: 58%;
-  right: 8%;
-  animation-delay: 2.8s;
-}
+.authx__leaf--1 { top: 14%; right: 12%; }
+.authx__leaf--2 { bottom: 18%; left: 10%; animation-delay: 1.4s; }
+.authx__leaf--3 { top: 58%; right: 8%; animation-delay: 2.8s; }
 
 @keyframes authFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(8deg);
-  }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(8deg); }
 }
 
 .authx__side-top,
@@ -2035,14 +1873,8 @@ footer h4 {
 }
 
 @keyframes authView {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
 }
 
 .authx__view h2 {
@@ -2180,25 +2012,10 @@ footer h4 {
   transition: width .35s ease, background .25s ease;
 }
 
-.strength[data-s="1"] i:nth-child(-n+1)::after {
-  width: 100%;
-  background: var(--clay);
-}
-
-.strength[data-s="2"] i:nth-child(-n+2)::after {
-  width: 100%;
-  background: var(--amber);
-}
-
-.strength[data-s="3"] i:nth-child(-n+3)::after {
-  width: 100%;
-  background: var(--leaf);
-}
-
-.strength[data-s="4"] i::after {
-  width: 100%;
-  background: var(--lime);
-}
+.strength[data-s="1"] i:nth-child(-n+1)::after { width: 100%; background: var(--clay); }
+.strength[data-s="2"] i:nth-child(-n+2)::after { width: 100%; background: var(--amber); }
+.strength[data-s="3"] i:nth-child(-n+3)::after { width: 100%; background: var(--leaf); }
+.strength[data-s="4"] i::after { width: 100%; background: var(--lime); }
 
 .strength__label {
   margin-top: .38rem;
@@ -2238,9 +2055,8 @@ footer h4 {
 }
 
 /* =========================================================
-   RESPONSIVE
+   15. RESPONSIVE
 ========================================================= */
-
 @media (max-width: 980px) {
   .ls-hero__grid,
   .ls-about,
