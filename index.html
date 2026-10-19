@@ -35,12 +35,14 @@
           <button class="btn btn--ghost btn--sm" data-logout data-i18n="nav.logout">Log Keluar</button>
         </div>
         
+        <!-- LANGUAGE TOGGLE -->
         <button id="langToggle" class="lang-btn" type="button" aria-label="Switch language">BM</button>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="ls-hero">
       <div class="ls-orb ls-orb--1" aria-hidden="true"></div>
       <div class="ls-orb ls-orb--2" aria-hidden="true"></div>
@@ -49,35 +51,103 @@
       <div class="wrap ls-hero__grid">
         <div class="ls-hero__copy">
           <span class="ls-pill" data-i18n="hero.pill">🌿 SK Bukit Damansara</span>
-          <h1 data-i18n="hero.title">Jadi <em>hero hijau</em> untuk sekolah kita.</h1>
-          <p class="ls-lede" data-i18n="hero.subtitle">Lestari Alam SKBD bukan sekadar program. Ini gerakan murid Tahun 4 hingga 6 untuk kitar semula, tanam, kompos, jimat air, dan buat sekolah lebih bersih.</p>
+
+          <h1 data-i18n="hero.title">
+            Jadi <em>hero hijau</em> untuk sekolah kita.
+          </h1>
+
+          <p class="ls-lede" data-i18n="hero.subtitle">
+            Lestari Alam SKBD bukan sekadar program. Ini gerakan murid Tahun 4 hingga 6 untuk kitar semula, tanam, kompos, jimat air, dan buat sekolah lebih bersih.
+          </p>
+
           <div class="ls-actions">
-            <button class="btn btn--solid" data-auth-open="signup" data-i18n="hero.cta">Sertai Program 🚀</button>
-            <button class="btn btn--ghost" data-auth-open="login" data-i18n="hero.login">Login Ahli</button>
+            <button class="btn btn--solid" data-auth-open="signup" data-i18n="hero.cta">
+              Sertai Program 🚀
+            </button>
+            <button class="btn btn--ghost" data-auth-open="login" data-i18n="hero.login">
+              Login Ahli
+            </button>
           </div>
+
           <div class="ls-stats">
-            <div><b>24</b><span data-i18n="hero.stat.members">ahli aktif</span></div>
-            <div><b>2,400 kg</b><span data-i18n="hero.stat.recycled">kitar semula</span></div>
-            <div><b>8</b><span data-i18n="hero.stat.badges">badge boleh unlock</span></div>
+            <div>
+              <b>24</b>
+              <span data-i18n="hero.stat.members">ahli aktif</span>
+            </div>
+            <div>
+              <b>2,400 kg</b>
+              <span data-i18n="hero.stat.recycled">kitar semula</span>
+            </div>
+            <div>
+              <b>8</b>
+              <span data-i18n="hero.stat.badges">badge boleh unlock</span>
+            </div>
           </div>
         </div>
 
         <aside class="ls-panel">
-          <div class="ls-panel__head"><span class="ls-pulse"></span><span data-i18n="hero.panel.title">Program Pulse</span></div>
+          <div class="ls-panel__head">
+            <span class="ls-pulse"></span>
+            <span data-i18n="hero.panel.title">Program Pulse</span>
+          </div>
+
           <ul class="ls-panel__list">
-            <li><span>♻️</span><div><b data-i18n="hero.panel.recycle">Kitar Semula Sekolah</b><small data-i18n="hero.panel.recycle.desc">Setiap Selasa & Khamis</small></div></li>
-            <li><span>🌱</span><div><b data-i18n="hero.panel.garden">Taman Lestari</b><small data-i18n="hero.panel.garden.desc">Jadual penyiraman murid</small></div></li>
-            <li><span>🪱</span><div><b data-i18n="hero.panel.compost">Kompos Sekolah</b><small data-i18n="hero.panel.compost.desc">Sisa hijau jadi baja</small></div></li>
-            <li><span>🏅</span><div><b data-i18n="hero.panel.points">Green Points</b><small data-i18n="hero.panel.points.desc">Log rekod, kumpul badge</small></div></li>
+            <li>
+              <span>♻️</span>
+              <div>
+                <b data-i18n="hero.panel.recycle">Kitar Semula Sekolah</b>
+                <small data-i18n="hero.panel.recycle.desc">Setiap Selasa & Khamis</small>
+              </div>
+            </li>
+            <li>
+              <span>🌱</span>
+              <div>
+                <b data-i18n="hero.panel.garden">Taman Lestari</b>
+                <small data-i18n="hero.panel.garden.desc">Jadual penyiraman murid</small>
+              </div>
+            </li>
+            <li>
+              <span>🪱</span>
+              <div>
+                <b data-i18n="hero.panel.compost">Kompos Sekolah</b>
+                <small data-i18n="hero.panel.compost.desc">Sisa hijau jadi baja</small>
+              </div>
+            </li>
+            <li>
+              <span>🏅</span>
+              <div>
+                <b data-i18n="hero.panel.points">Green Points</b>
+                <small data-i18n="hero.panel.points.desc">Log rekod, kumpul badge</small>
+              </div>
+            </li>
           </ul>
-          <div class="ls-panel__foot"><b>Tahun 4–6</b><small data-i18n="hero.panel.foot">Terbuka kepada murid Tahun 4 hingga 6.</small></div>
+
+          <div class="ls-panel__foot">
+            <b>Tahun 4–6</b>
+            <small data-i18n="hero.panel.foot">Terbuka kepada murid Tahun 4 hingga 6.</small>
+          </div>
         </aside>
       </div>
 
       <div class="ls-marquee" aria-hidden="true">
         <div class="ls-marquee__track">
-          <span data-i18n="mq.1">♻️ Kitar Semula</span><span data-i18n="mq.2">🌱 Tanam</span><span data-i18n="mq.3">🪱 Kompos</span><span data-i18n="mq.4">💧 Jimat Air</span><span data-i18n="mq.5">🧹 Got-Green</span><span data-i18n="mq.6">📣 Kesedaran</span><span data-i18n="mq.7">🏅 Cabaran Hijau</span><span data-i18n="mq.8">🌍 Lestari SKBD</span>
-          <span data-i18n="mq.1">♻️ Kitar Semula</span><span data-i18n="mq.2">🌱 Tanam</span><span data-i18n="mq.3">🪱 Kompos</span><span data-i18n="mq.4">💧 Jimat Air</span><span data-i18n="mq.5">🧹 Got-Green</span><span data-i18n="mq.6">📣 Kesedaran</span><span data-i18n="mq.7">🏅 Cabaran Hijau</span><span data-i18n="mq.8">🌍 Lestari SKBD</span>
+          <span data-i18n="mq.1">♻️ Kitar Semula</span>
+          <span data-i18n="mq.2">🌱 Tanam</span>
+          <span data-i18n="mq.3">🪱 Kompos</span>
+          <span data-i18n="mq.4">💧 Jimat Air</span>
+          <span data-i18n="mq.5">🧹 Got-Green</span>
+          <span data-i18n="mq.6">📣 Kesedaran</span>
+          <span data-i18n="mq.7">🏅 Cabaran Hijau</span>
+          <span data-i18n="mq.8">🌍 Lestari SKBD</span>
+
+          <span data-i18n="mq.1">♻️ Kitar Semula</span>
+          <span data-i18n="mq.2">🌱 Tanam</span>
+          <span data-i18n="mq.3">🪱 Kompos</span>
+          <span data-i18n="mq.4">💧 Jimat Air</span>
+          <span data-i18n="mq.5">🧹 Got-Green</span>
+          <span data-i18n="mq.6">📣 Kesedaran</span>
+          <span data-i18n="mq.7">🏅 Cabaran Hijau</span>
+          <span data-i18n="mq.8">🌍 Lestari SKBD</span>
         </div>
       </div>
     </section>
@@ -91,16 +161,26 @@
       </div>
     </nav>
 
+    <!-- IMPROVED INTRO -->
     <section class="ls-section" id="pengenalan">
       <div class="wrap">
         <p class="kicker" data-i18n="intro.kicker">Gerakan Kita</p>
         <h2 class="ls-title" data-i18n="intro.title">Bukan sekadar program. Ia satu <em>perubahan gaya hidup</em>.</h2>
+
         <div class="ls-about">
           <div class="ls-about__text">
-            <p data-i18n="intro.p1">Kami bukan sekadar belajar tentang alam sekitar; kami turun padang. Dari mengitar semula kertas terpakai hingga menanam taman sekolah sendiri, di sinilah perubahan sebenar berlaku.</p>
-            <p data-i18n="intro.p2">Anggap ini sebagai satu permainan di mana bumi adalah hadiah utamanya. Kumpul mata, buka lencana eksklusif, dan naik ke kedudukan teratas sambil menjadikan SKBD tempat yang lebih hijau dan hebat.</p>
-            <blockquote class="intro-highlight" data-i18n="intro.highlight">"Tindakan kecil. Impak besar. Anda adalah hero hijau seterusnya."</blockquote>
+            <p data-i18n="intro.p1">
+              Kami bukan sekadar belajar tentang alam sekitar; kami turun padang. Dari mengitar semula kertas terpakai hingga menanam taman sekolah sendiri, di sinilah perubahan sebenar berlaku.
+            </p>
+            <p data-i18n="intro.p2">
+              Anggap ini sebagai satu permainan di mana bumi adalah hadiah utamanya. Kumpul mata, buka lencana eksklusif, dan naik ke kedudukan teratas sambil menjadikan SKBD tempat yang lebih hijau dan hebat.
+            </p>
+            
+            <blockquote class="intro-highlight" data-i18n="intro.highlight">
+              "Tindakan kecil. Impak besar. Anda adalah hero hijau seterusnya."
+            </blockquote>
           </div>
+
           <aside class="ls-mission">
             <h3 data-i18n="intro.mission.title">Misi Anda</h3>
             <ul>
@@ -119,18 +199,43 @@
       <div class="wrap">
         <p class="kicker" data-i18n="inside.kicker">Program Dalam Sekolah</p>
         <h2 class="ls-title" data-i18n="inside.title">Aktiviti yang murid boleh buat setiap minggu</h2>
+
         <div class="ls-grid">
-          <article class="ls-card"><span class="ls-emoji">♻️</span><h3 data-i18n="inside.card1.title">Kitar Semula Sekolah</h3><p data-i18n="inside.card1.desc">Kertas, plastik bersih, dan tin aluminium dipisahkan sebelum direkod.</p></article>
-          <article class="ls-card"><span class="ls-emoji">🌱</span><h3 data-i18n="inside.card2.title">Taman Lestari</h3><p data-i18n="inside.card2.desc">Murid bergilir menyiram, mencabut rumput, dan menjaga tanaman sekolah.</p></article>
-          <article class="ls-card"><span class="ls-emoji">🪱</span><h3 data-i18n="inside.card3.title">Kompos Sekolah</h3><p data-i18n="inside.card3.desc">Daun kering dan sisa hijau boleh jadi baja untuk taman sekolah.</p></article>
-          <article class="ls-card"><span class="ls-emoji">💧</span><h3 data-i18n="inside.card4.title">Jimat Air</h3><p data-i18n="inside.card4.desc">Tutup paip rapat-rapat dan laporkan paip bocor kepada guru.</p></article>
-          <article class="ls-card"><span class="ls-emoji">📣</span><h3 data-i18n="inside.card5.title">Ceramahan Ringkas</h3><p data-i18n="inside.card5.desc">Ahli program sampaikan pesanan hijau semasa perhimpunan sekolah.</p></article>
-          <article class="ls-card"><span class="ls-emoji">🧹</span><h3 data-i18n="inside.card6.title">Got-Green</h3><p data-i18n="inside.card6.desc">Bersihkan kawasan sekolah supaya persekitaran belajar lebih selesa.</p></article>
+          <article class="ls-card">
+            <span class="ls-emoji">♻️</span>
+            <h3 data-i18n="inside.card1.title">Kitar Semula Sekolah</h3>
+            <p data-i18n="inside.card1.desc">Kertas, plastik bersih, dan tin aluminium dipisahkan sebelum direkod.</p>
+          </article>
+          <article class="ls-card">
+            <span class="ls-emoji">🌱</span>
+            <h3 data-i18n="inside.card2.title">Taman Lestari</h3>
+            <p data-i18n="inside.card2.desc">Murid bergilir menyiram, mencabut rumput, dan menjaga tanaman sekolah.</p>
+          </article>
+          <article class="ls-card">
+            <span class="ls-emoji">🪱</span>
+            <h3 data-i18n="inside.card3.title">Kompos Sekolah</h3>
+            <p data-i18n="inside.card3.desc">Daun kering dan sisa hijau boleh jadi baja untuk taman sekolah.</p>
+          </article>
+          <article class="ls-card">
+            <span class="ls-emoji">💧</span>
+            <h3 data-i18n="inside.card4.title">Jimat Air</h3>
+            <p data-i18n="inside.card4.desc">Tutup paip rapat-rapat dan laporkan paip bocor kepada guru.</p>
+          </article>
+          <article class="ls-card">
+            <span class="ls-emoji">📣</span>
+            <h3 data-i18n="inside.card5.title">Ceramahan Ringkas</h3>
+            <p data-i18n="inside.card5.desc">Ahli program sampaikan pesanan hijau semasa perhimpunan sekolah.</p>
+          </article>
+          <article class="ls-card">
+            <span class="ls-emoji">🧹</span>
+            <h3 data-i18n="inside.card6.title">Got-Green</h3>
+            <p data-i18n="inside.card6.desc">Bersihkan kawasan sekolah supaya persekitaran belajar lebih selesa.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- RECYCLING TABLE (EXACT MATCH FROM IMAGE) -->
+    <!-- RECYCLING TABLE (EXACT MATCH FROM PHOTO) -->
     <section class="ls-section" id="laporan">
       <div class="wrap">
         <p class="kicker" data-i18n="report.kicker">Laporan Program</p>
@@ -197,7 +302,7 @@
       </div>
     </section>
 
-    <!-- MEMBER PORTAL (Chart Removed) -->
+    <!-- MEMBER PORTAL (NO CHART) -->
     <section class="portal" id="portal" data-locked="true">
       <div class="wrap">
         <div class="portal__head">
@@ -412,6 +517,7 @@
     </div>
   </div>
 
+  <!-- SUPABASE SCRIPT -->
   <script type="module">
     import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
@@ -581,6 +687,7 @@
     bootSession(false);
   </script>
   
+  <!-- LANGUAGE SCRIPT -->
   <script src="./js/i18n.js"></script>
 </body>
 </html>
