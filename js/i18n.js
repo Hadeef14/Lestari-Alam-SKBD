@@ -7,11 +7,8 @@
       "nav.logout": "Log Out",
       "nav.intro": "Introduction",
       "nav.inside": "Inside School",
-      "nav.outside": "Outside School",
       "nav.report": "Program Report",
-      "nav.learn": "Learning",
-      "nav.comp": "Competitions",
-      "nav.project": "Special Projects",
+      "nav.portal": "Member Portal",
       "hero.pill": "🌿 SK Bukit Damansara",
       "hero.title": "Become a <em>green hero</em> for our school.",
       "hero.subtitle": "Lestari Alam SKBD is more than a program. It's a student movement for Years 4 to 6 to recycle, plant, compost, save water, and make our school cleaner.",
@@ -30,23 +27,14 @@
       "hero.panel.points": "Green Points",
       "hero.panel.points.desc": "Log records, collect badges",
       "hero.panel.foot": "Open to students in Years 4 to 6.",
-      "mq.1": "♻️ Recycle",
-      "mq.2": "🌱 Plant",
-      "mq.3": "🪱 Compost",
-      "mq.4": "💧 Save Water",
-      "mq.5": "🧹 Got-Green",
-      "mq.6": "📣 Awareness",
-      "mq.7": "🏅 Green Challenge",
-      "mq.8": "🌍 Lestari SKBD",
-      "intro.kicker": "Introduction",
-      "intro.title": "Who is Lestari SKBD?",
-      "intro.p1": "<strong>Lestari Alam SKBD</strong> is a student program focused on green practices, recycling, garden care, composting, and environmental awareness.",
-      "intro.p2": "We believe big changes start with small actions — bringing your own bottle, your own food container, using both sides of paper, and putting waste in the right bin.",
-      "intro.chip1": "🌿 Green",
-      "intro.chip2": "♻️ Sustain",
-      "intro.chip3": "🤝 Community",
-      "intro.chip4": "🏅 Challenge",
-      "intro.mission.title": "Program Mission",
+      "mq.1": "♻️ Recycle", "mq.2": "🌱 Plant", "mq.3": "🪱 Compost", "mq.4": "💧 Save Water",
+      "mq.5": "🧹 Got-Green", "mq.6": "📣 Awareness", "mq.7": "🏅 Green Challenge", "mq.8": "🌍 Lestari SKBD",
+      "intro.kicker": "The Movement",
+      "intro.title": "More than a program. It's a <em>lifestyle shift</em>.",
+      "intro.p1": "We don't just learn about the environment; we get our hands dirty. From recycling old paper to growing our own school garden, this is where real change happens.",
+      "intro.p2": "Think of it as a game where the planet is the grand prize. Collect points, unlock exclusive badges, and climb the ranks while making SKBD a greener, cooler place to be.",
+      "intro.highlight": "\"Small actions. Big impact. You are the next green hero.\"",
+      "intro.mission.title": "Your Missions",
       "intro.mission.1": "Reduce single-use plastic.",
       "intro.mission.2": "Recycle with clear records.",
       "intro.mission.3": "Care for the school garden together.",
@@ -146,11 +134,8 @@
       "nav.logout": "Log Keluar",
       "nav.intro": "Pengenalan",
       "nav.inside": "Dalam Sekolah",
-      "nav.outside": "Luar Sekolah",
       "nav.report": "Laporan Program",
-      "nav.learn": "Pembelajaran",
-      "nav.comp": "Pertandingan",
-      "nav.project": "Projek Khas",
+      "nav.portal": "Portal Ahli",
       "hero.pill": "🌿 SK Bukit Damansara",
       "hero.title": "Jadi <em>hero hijau</em> untuk sekolah kita.",
       "hero.subtitle": "Lestari Alam SKBD bukan sekadar program. Ini gerakan murid Tahun 4 hingga 6 untuk kitar semula, tanam, kompos, jimat air, dan buat sekolah lebih bersih.",
@@ -169,23 +154,14 @@
       "hero.panel.points": "Green Points",
       "hero.panel.points.desc": "Log rekod, kumpul badge",
       "hero.panel.foot": "Terbuka kepada murid Tahun 4 hingga 6.",
-      "mq.1": "♻️ Kitar Semula",
-      "mq.2": "🌱 Tanam",
-      "mq.3": "🪱 Kompos",
-      "mq.4": "💧 Jimat Air",
-      "mq.5": "🧹 Got-Green",
-      "mq.6": "📣 Kesedaran",
-      "mq.7": "🏅 Cabaran Hijau",
-      "mq.8": "🌍 Lestari SKBD",
-      "intro.kicker": "Pengenalan",
-      "intro.title": "Siapa Lestari SKBD?",
-      "intro.p1": "<strong>Lestari Alam SKBD</strong> ialah program murid yang fokus kepada amalan hijau, kitar semula, penjagaan taman, pengkomposan, dan kesedaran alam sekitar.",
-      "intro.p2": "Kami percaya perubahan besar bermula daripada tindakan kecil — botol sendiri, bekas makan sendiri, kertas dua sisi, dan tong sampah yang betul.",
-      "intro.chip1": "🌿 Hijau",
-      "intro.chip2": "♻️ Sustain",
-      "intro.chip3": "🤝 Komuniti",
-      "intro.chip4": "🏅 Cabaran",
-      "intro.mission.title": "Misi Program",
+      "mq.1": "♻️ Kitar Semula", "mq.2": "🌱 Tanam", "mq.3": "🪱 Kompos", "mq.4": "💧 Jimat Air",
+      "mq.5": "🧹 Got-Green", "mq.6": "📣 Kesedaran", "mq.7": "🏅 Cabaran Hijau", "mq.8": "🌍 Lestari SKBD",
+      "intro.kicker": "Gerakan Kita",
+      "intro.title": "Bukan sekadar program. Ia satu <em>perubahan gaya hidup</em>.",
+      "intro.p1": "Kami bukan sekadar belajar tentang alam sekitar; kami turun padang. Dari mengitar semula kertas terpakai hingga menanam taman sekolah sendiri, di sinilah perubahan sebenar berlaku.",
+      "intro.p2": "Anggap ini sebagai satu permainan di mana bumi adalah hadiah utamanya. Kumpul mata, buka lencana eksklusif, dan naik ke kedudukan teratas sambil menjadikan SKBD tempat yang lebih hijau dan hebat.",
+      "intro.highlight": "\"Tindakan kecil. Impak besar. Anda adalah hero hijau seterusnya.\"",
+      "intro.mission.title": "Misi Anda",
       "intro.mission.1": "Kurangkan plastik sekali guna.",
       "intro.mission.2": "Kitar semula dengan rekod jelas.",
       "intro.mission.3": "Jaga taman sekolah bersama.",
@@ -285,17 +261,13 @@
   
   try {
     currentLang = localStorage.getItem("lestari-lang") || defaultLang;
-  } catch (e) {
-    console.warn("localStorage is blocked. Language preference won't be saved.");
-  }
+  } catch (e) {}
 
   function translate(lang) {
     const dict = translations[lang] || translations.en;
     
-    // Update html lang attribute
     document.documentElement.lang = lang;
 
-    // Update text nodes
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (dict[key] !== undefined) {
@@ -307,7 +279,6 @@
       }
     });
 
-    // Update placeholders
     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
       const key = el.getAttribute("data-i18n-placeholder");
       if (dict[key] !== undefined) {
@@ -315,7 +286,6 @@
       }
     });
 
-    // Toggle button text
     const btn = document.getElementById("langToggle");
     if (btn) {
       btn.textContent = lang === "en" ? "BM" : "EN";
@@ -328,16 +298,16 @@
     currentLang = lang;
   }
 
-  // Use EVENT DELEGATION to ensure the click is captured even if the DOM updates
+  // Repaired: Using closest() to ensure the click works even if the text node is clicked
   document.addEventListener("click", function(e) {
-    if (e.target && e.target.id === "langToggle") {
+    const btn = e.target.closest("#langToggle");
+    if (btn) {
       e.preventDefault();
       const nextLang = currentLang === "en" ? "ms" : "en";
       translate(nextLang);
     }
   });
 
-  // Run translation when the page is ready
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => translate(currentLang));
   } else {
