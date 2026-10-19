@@ -187,7 +187,7 @@
       "col.teacher": "NAMA GURU",
       "col.newspaper": "SURAT KHABAR",
       "col.white_paper": "KERTAS PUTIH",
-      "col.mixed_paper": "K.CAMPUR & BUKU",
+      "col.mixed_paper": "K.CAMPUR DAN BUKU",
       "col.magazine": "MAJALAH",
       "col.battery": "BATERI",
       "col.aluminium": "ALUMINIUM",
@@ -265,7 +265,6 @@
 
   function translate(lang) {
     const dict = translations[lang] || translations.en;
-    
     document.documentElement.lang = lang;
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -298,7 +297,6 @@
     currentLang = lang;
   }
 
-  // Repaired: Using closest() to ensure the click works even if the text node is clicked
   document.addEventListener("click", function(e) {
     const btn = e.target.closest("#langToggle");
     if (btn) {
