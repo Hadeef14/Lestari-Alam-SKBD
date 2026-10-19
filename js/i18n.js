@@ -1,7 +1,6 @@
 (function () {
   const translations = {
     en: {
-      // Brand & Nav
       "brand.name": "Lestari Alam SKBD",
       "nav.login": "Member Login",
       "nav.join": "Join Program",
@@ -13,8 +12,6 @@
       "nav.learn": "Learning",
       "nav.comp": "Competitions",
       "nav.project": "Special Projects",
-
-      // Hero
       "hero.pill": "🌿 SK Bukit Damansara",
       "hero.title": "Become a <em>green hero</em> for our school.",
       "hero.subtitle": "Lestari Alam SKBD is more than a program. It's a student movement for Years 4 to 6 to recycle, plant, compost, save water, and make our school cleaner.",
@@ -33,8 +30,6 @@
       "hero.panel.points": "Green Points",
       "hero.panel.points.desc": "Log records, collect badges",
       "hero.panel.foot": "Open to students in Years 4 to 6.",
-
-      // Marquee
       "mq.1": "♻️ Recycle",
       "mq.2": "🌱 Plant",
       "mq.3": "🪱 Compost",
@@ -43,8 +38,6 @@
       "mq.6": "📣 Awareness",
       "mq.7": "🏅 Green Challenge",
       "mq.8": "🌍 Lestari SKBD",
-
-      // Intro
       "intro.kicker": "Introduction",
       "intro.title": "Who is Lestari SKBD?",
       "intro.p1": "<strong>Lestari Alam SKBD</strong> is a student program focused on green practices, recycling, garden care, composting, and environmental awareness.",
@@ -59,8 +52,6 @@
       "intro.mission.3": "Care for the school garden together.",
       "intro.mission.4": "Build young green leaders.",
       "intro.mission.5": "Make the school cleaner and more beautiful.",
-
-      // Inside School
       "inside.kicker": "Inside School Program",
       "inside.title": "Activities students can do every week",
       "inside.card1.title": "School Recycling",
@@ -75,8 +66,6 @@
       "inside.card5.desc": "Program members deliver green messages during school assemblies.",
       "inside.card6.title": "Got-Green",
       "inside.card6.desc": "Clean the school area so the learning environment is more comfortable.",
-
-      // Report & Table
       "report.kicker": "Program Report",
       "report.title": "Recycling Collection Record",
       "report.note": "This record can be updated by the teacher advisor or program committee.",
@@ -97,14 +86,10 @@
       "col.fabric": "FABRIC",
       "col.ewaste": "E-WASTE",
       "placeholder.teacher": "e.g. Mr. Ali",
-
-      // CTA
       "cta.title": "The member portal is ready. Log your first record.",
       "cta.subtitle": "After joining, students can log recycling records, collect Green Points, and unlock badges.",
       "cta.join": "Join Now 🌱",
       "cta.login": "Member Login",
-
-      // Portal
       "portal.kicker": "Member Portal",
       "portal.title": "Your profile, your contribution",
       "portal.login": "Member login ↗",
@@ -130,16 +115,12 @@
       "portal.veil.desc": "Members can log in to view their member card, track contributions, collect badges, and view their progress.",
       "portal.veil.login": "Member Login",
       "portal.veil.join": "Join Program",
-
-      // Footer
       "footer.desc": "Official school program of SK Bukit Damansara — building green habits through student-led environmental activities.",
       "footer.contact.title": "Contact Us",
       "footer.contact.address": "Address:",
       "footer.contact.phone": "Phone:",
       "footer.contact.email": "Email:",
       "footer.copy": "© 2026 Lestari Alam SKBD · SK Bukit Damansara.",
-
-      // Auth Modal
       "auth.login.tab": "Login",
       "auth.signup.tab": "Join Program",
       "auth.login.title": "Welcome back 🌿",
@@ -159,7 +140,6 @@
       "auth.signup.submit": "Create account"
     },
     ms: {
-      // Brand & Nav
       "brand.name": "Lestari Alam SKBD",
       "nav.login": "Login Ahli",
       "nav.join": "Sertai Program",
@@ -171,8 +151,6 @@
       "nav.learn": "Pembelajaran",
       "nav.comp": "Pertandingan",
       "nav.project": "Projek Khas",
-
-      // Hero
       "hero.pill": "🌿 SK Bukit Damansara",
       "hero.title": "Jadi <em>hero hijau</em> untuk sekolah kita.",
       "hero.subtitle": "Lestari Alam SKBD bukan sekadar program. Ini gerakan murid Tahun 4 hingga 6 untuk kitar semula, tanam, kompos, jimat air, dan buat sekolah lebih bersih.",
@@ -191,8 +169,6 @@
       "hero.panel.points": "Green Points",
       "hero.panel.points.desc": "Log rekod, kumpul badge",
       "hero.panel.foot": "Terbuka kepada murid Tahun 4 hingga 6.",
-
-      // Marquee
       "mq.1": "♻️ Kitar Semula",
       "mq.2": "🌱 Tanam",
       "mq.3": "🪱 Kompos",
@@ -201,8 +177,6 @@
       "mq.6": "📣 Kesedaran",
       "mq.7": "🏅 Cabaran Hijau",
       "mq.8": "🌍 Lestari SKBD",
-
-      // Intro
       "intro.kicker": "Pengenalan",
       "intro.title": "Siapa Lestari SKBD?",
       "intro.p1": "<strong>Lestari Alam SKBD</strong> ialah program murid yang fokus kepada amalan hijau, kitar semula, penjagaan taman, pengkomposan, dan kesedaran alam sekitar.",
@@ -217,8 +191,6 @@
       "intro.mission.3": "Jaga taman sekolah bersama.",
       "intro.mission.4": "Bina pemimpin hijau muda.",
       "intro.mission.5": "Buat sekolah lebih bersih dan cantik.",
-
-      // Inside School
       "inside.kicker": "Program Dalam Sekolah",
       "inside.title": "Aktiviti yang murid boleh buat setiap minggu",
       "inside.card1.title": "Kitar Semula Sekolah",
@@ -233,8 +205,6 @@
       "inside.card5.desc": "Ahli program sampaikan pesanan hijau semasa perhimpunan sekolah.",
       "inside.card6.title": "Got-Green",
       "inside.card6.desc": "Bersihkan kawasan sekolah supaya persekitaran belajar lebih selesa.",
-
-      // Report & Table
       "report.kicker": "Laporan Program",
       "report.title": "Rekod Kutipan Kitar Semula",
       "report.note": "Rekod ini boleh dikemas kini oleh guru penasihat atau AJK program.",
@@ -255,14 +225,10 @@
       "col.fabric": "FABRIK",
       "col.ewaste": "EWASTE",
       "placeholder.teacher": "Cth: Cikgu Ali",
-
-      // CTA
       "cta.title": "Portal ahli dah siap. Jom log rekod pertama kamu.",
       "cta.subtitle": "Selepas sertai program, murid boleh log rekod kitar semula, kumpul Green Points, dan unlock badge.",
       "cta.join": "Sertai Sekarang 🌱",
       "cta.login": "Login Ahli",
-
-      // Portal
       "portal.kicker": "Portal Ahli",
       "portal.title": "Profil anda, sumbangan anda",
       "portal.login": "Login Ahli ↗",
@@ -288,16 +254,12 @@
       "portal.veil.desc": "Ahli boleh log masuk untuk melihat kad ahli, menjejak sumbangan, mengumpul lencana, dan melihat kemajuan.",
       "portal.veil.login": "Login Ahli",
       "portal.veil.join": "Sertai Program",
-
-      // Footer
       "footer.desc": "Program rasmi sekolah SK Bukit Damansara — membina tabiat hijau melalui aktiviti alam sekitar yang dipimpin murid.",
       "footer.contact.title": "Hubungi Kami",
       "footer.contact.address": "Alamat:",
       "footer.contact.phone": "Telefon:",
       "footer.contact.email": "E-mel:",
       "footer.copy": "© 2026 Lestari Alam SKBD · SK Bukit Damansara.",
-
-      // Auth Modal
       "auth.login.tab": "Login",
       "auth.signup.tab": "Sertai Program",
       "auth.login.title": "Selamat kembali 🌿",
@@ -319,7 +281,13 @@
   };
 
   const defaultLang = navigator.language.toLowerCase().startsWith("ms") ? "ms" : "en";
-  let currentLang = localStorage.getItem("lestari-lang") || defaultLang;
+  let currentLang = defaultLang;
+  
+  try {
+    currentLang = localStorage.getItem("lestari-lang") || defaultLang;
+  } catch (e) {
+    console.warn("localStorage is blocked. Language preference won't be saved.");
+  }
 
   function translate(lang) {
     const dict = translations[lang] || translations.en;
@@ -331,7 +299,6 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (dict[key] !== undefined) {
-        // If it contains HTML (like <em>), use innerHTML
         if (dict[key].includes("<")) {
           el.innerHTML = dict[key];
         } else {
@@ -352,21 +319,28 @@
     const btn = document.getElementById("langToggle");
     if (btn) {
       btn.textContent = lang === "en" ? "BM" : "EN";
-      btn.setAttribute("aria-label", lang === "en" ? "Tukar ke Bahasa Melayu" : "Switch to English");
     }
 
-    localStorage.setItem("lestari-lang", lang);
+    try {
+      localStorage.setItem("lestari-lang", lang);
+    } catch (e) {}
+    
     currentLang = lang;
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    translate(currentLang);
-
-    const btn = document.getElementById("langToggle");
-    if (btn) {
-      btn.addEventListener("click", () => {
-        translate(currentLang === "en" ? "ms" : "en");
-      });
+  // Use EVENT DELEGATION to ensure the click is captured even if the DOM updates
+  document.addEventListener("click", function(e) {
+    if (e.target && e.target.id === "langToggle") {
+      e.preventDefault();
+      const nextLang = currentLang === "en" ? "ms" : "en";
+      translate(nextLang);
     }
   });
+
+  // Run translation when the page is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => translate(currentLang));
+  } else {
+    translate(currentLang);
+  }
 })();
